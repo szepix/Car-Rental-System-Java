@@ -16,4 +16,9 @@ public class UserController {
     private void switchToMainMenu() throws IOException {
         App.setRoot("main_menu");
     }
+
+    @FXML
+    private void switchToCarList() throws IOException {
+        App.setRoot("main_menu");
+    }
 }
