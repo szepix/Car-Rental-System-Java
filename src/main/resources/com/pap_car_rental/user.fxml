@@ -15,6 +15,11 @@
    <center>
       <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" spacing="10.0">
          <children>
+            <HBox prefHeight="19.0" prefWidth="534.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="546.0" text="WYPOŻYCZALNIA U MIETKA" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+               </children>
+            </HBox>
             <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label alignment="TOP_LEFT" text="Marka" />
@@ -53,9 +58,11 @@
       </VBox>
    </center>
    <top>
-      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="393.0" text="WYPOŻYCZALNIA U MIETKA" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
             <GridPane prefWidth="146.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,13 +76,7 @@
                   <Label alignment="CENTER" contentDisplay="CENTER" text="User view" />
                </children>
             </GridPane>
-         </children>
-      </HBox>
-   </top>
-   <right>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Moje Konto" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" prefWidth="145.0" text="Moje Konto" />
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="145.0" text="Wypożyczone Auta" />
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Zażalenia" />
          </children>
