@@ -3,12 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane prefHeight="194.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.UserController">
    <center>
@@ -29,14 +30,23 @@
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="37.6" text="Data" />
-                  <SplitPane dividerPositions="0.25, 0.5, 0.75">
-                     <items>
-                        <Label pickOnBounds="false" text="Od" />
-                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                        <Label pickOnBounds="false" text="Do" />
-                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                     </items>
-                  </SplitPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label pickOnBounds="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-border-color: darkgray;" text="Od:" />
+                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" />
+                        <Label pickOnBounds="false" prefHeight="39.0" prefWidth="30.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-border-color: darkgray;" text="Do:" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
                </children>
             </HBox>
          </children>
@@ -46,12 +56,19 @@
       <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="393.0" text="WYPOŻYCZALNIA U MIETKA" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
-            <SplitPane dividerPositions="0.5" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="143.0">
-               <items>
+            <GridPane prefWidth="146.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" text="SIGN OFF" GridPane.columnIndex="1" />
                   <Label alignment="CENTER" contentDisplay="CENTER" text="User view" />
-                  <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" text="SIGN OFF" />
-               </items>
-            </SplitPane>
+               </children>
+            </GridPane>
          </children>
       </HBox>
    </top>
