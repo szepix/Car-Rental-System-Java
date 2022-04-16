@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-image: url('file:src/main/resources/com/pap_car_rental/bckg.jpeg'); -fx-background-size: 640, 480;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.MainMenuController">
+    <children>
+      <AnchorPane>
+         <children>
+              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="414.0" text="Car Renatal system" textAlignment="CENTER" textFill="#505050" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Haettenschweiler" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+              <Button fx:id="adminButton" onAction="#switchToAdmin" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="LOGIN as chad ADMIN" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+              <Button fx:id="userButton" onAction="#switchToUser" prefHeight="25.0" prefWidth="137.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" styleClass="button_ish" text="LOGIN as casual USER" textFill="#505050" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
