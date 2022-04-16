@@ -15,6 +15,10 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    public static boolean isUser = false;
+    public static boolean isAdmin = false;
+    public static String[] currentUser = new String[2];
+    public static String[] currentAdmin = new String[2];
 
     @Override
     public void start(Stage stage) throws IOException {
