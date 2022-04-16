@@ -4,13 +4,8 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class UserController {
+public class CarList {
     @FXML private Label userNameDisplay;
-
-    @FXML
-    private void initialize() throws IOException {
-        userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
-    }
 
     @FXML
     private void switchToMainMenu() throws IOException {
@@ -18,7 +13,7 @@ public class UserController {
     }
 
     @FXML
-    private void switchToCarList() throws IOException {
-        App.setRoot("car_list");
+    private void switchToUser() throws IOException {
+        App.setRoot("user");
     }
 }
