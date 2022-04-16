@@ -73,7 +73,7 @@
               </rowConstraints>
                <children>
                   <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" text="SIGN OFF" GridPane.columnIndex="1" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="User view" />
+                  <Label fx:id="userNameDisplay" alignment="CENTER" contentDisplay="CENTER" text="User view" />
                </children>
             </GridPane>
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" prefWidth="145.0" text="Moje Konto" />

@@ -85,7 +85,9 @@ public class MainMenuController {
             throw new IOException("file error");
         }
 
-        if(App.isUser) App.setRoot("user");
+        if(App.isUser){
+            App.setRoot("user");
+        }
         else{
              invalidUser.setText("Invalid username or password.");
              userName.setText("");

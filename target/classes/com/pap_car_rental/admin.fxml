@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="194.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.UserController">
+<BorderPane prefHeight="194.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.AdminController">
    <top>
       <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
          <children>
@@ -24,7 +24,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Admin view" />
+                  <Label fx:id="adminNameDisplay" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Admin view" />
                   <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" text="SIGN OFF" GridPane.columnIndex="1" />
                </children>
             </GridPane>
