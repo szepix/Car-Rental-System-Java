@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 
 /**
@@ -17,10 +18,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
         scene = new Scene(loadFXML("main_menu"), 640, 240);
         stage.setScene(scene);
         stage.setTitle("Car Rental System v0.0");
         stage.show();
+
     }
 
     static void setRoot(String fxml) throws IOException {
