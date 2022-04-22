@@ -23,13 +23,13 @@
             <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label alignment="TOP_LEFT" text="Marka" />
-                  <TextField fx:id="marka_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="np. BMW" />
+                  <TextField fx:id="searched_make_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="np. BMW" />
                </children>
             </HBox>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label pickOnBounds="false" text="Model" />
-                  <TextField fx:id="model_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="np. I8" />
+                  <TextField fx:id="searched_model_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="np. I8" />
                </children>
             </HBox>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">

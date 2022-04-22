@@ -20,6 +20,9 @@ public class App extends Application {
     public static String[] currentUser = new String[2];
     public static String[] currentAdmin = new String[2];
 
+    public static String searched_make;
+    public static String searched_model;
+
     @Override
     public void start(Stage stage) throws IOException {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
