@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.time.LocalDate;
 
 /**
  * JavaFX App
@@ -22,7 +23,11 @@ public class App extends Application {
 
     public static String searched_make;
     public static String searched_model;
-
+    public static boolean[] carType = new boolean[6];
+    public static int costLow;
+    public static int costHigh;
+    public static LocalDate dateFrom;
+    public static LocalDate dateTo;
     @Override
     public void start(Stage stage) throws IOException {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();

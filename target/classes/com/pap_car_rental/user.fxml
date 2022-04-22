@@ -25,12 +25,12 @@
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label pickOnBounds="false" prefWidth="50.0" text="Car type" />
-                  <CheckBox mnemonicParsing="false" text="City" />
-                  <CheckBox mnemonicParsing="false" text="Mid" />
-                  <CheckBox mnemonicParsing="false" text="Large" />
-                  <CheckBox mnemonicParsing="false" text="SUV" />
-                  <CheckBox mnemonicParsing="false" text="Sport" />
-                  <CheckBox mnemonicParsing="false" text="Special" />
+                  <CheckBox fx:id="carType0" mnemonicParsing="false" text="City" />
+                  <CheckBox fx:id="carType1" mnemonicParsing="false" text="Mid" />
+                  <CheckBox fx:id="carType2" mnemonicParsing="false" text="Large" />
+                  <CheckBox fx:id="carType3" mnemonicParsing="false" text="SUV" />
+                  <CheckBox fx:id="carType4" mnemonicParsing="false" text="Sport" />
+                  <CheckBox fx:id="carType5" mnemonicParsing="false" text="Special" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
@@ -48,8 +48,8 @@
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
                   <Label pickOnBounds="false" prefWidth="50.0" text="Cost $/d" />
-                  <Slider majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-                  <Slider majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="200.0" />
+                  <Slider fx:id="costLow" majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                  <Slider fx:id="costHigh" majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="200.0" />
                </children>
             </HBox>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
@@ -67,8 +67,8 @@
                     </rowConstraints>
                      <children>
                         <Label alignment="CENTER" pickOnBounds="false" prefHeight="30.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-border-color: darkgray;" text="From:" />
-                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
-                        <DatePicker maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" />
+                        <DatePicker fx:id="dateFrom" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                        <DatePicker fx:id="dateTo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" />
                         <Label alignment="CENTER" pickOnBounds="false" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-border-color: darkgray;" text="To:" GridPane.columnIndex="2" />
                      </children>
                   </GridPane>
