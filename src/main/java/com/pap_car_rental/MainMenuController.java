@@ -1,9 +1,6 @@
 package com.pap_car_rental;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
@@ -89,7 +86,60 @@ public class MainMenuController {
             App.setRoot("user");
         }
         else{
-             invalidUser.setText("Invalid username or password.");
+             invalidUser.setText("Invalid username\nor password.");
+             userName.setText("");
+             userPwd.setText("");
+        }
+    }
+
+    @FXML
+    private void switchToUserRegister() throws IOException {
+        invalidUser.setText("");
+        String[] potentialUser = {userName.getText(), userPwd.getText()};
+        App.currentUser = new String[2];
+        App.isUser = false;
+        App.isAdmin = false;
+        ArrayList<String[]> allNames = new ArrayList<String[]>();
+        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"));){
+            String line;
+            while ((line = buf.readLine()) != null) {
+                String[] data = line.split(",");
+                allNames.add(data);
+            }
+
+            allNames.forEach(e->{
+                boolean isUser = false;
+                if(e[0].equals(potentialUser[0])) isUser = true;
+                if(isUser){
+                    App.isUser=true;
+                }
+            });
+        }catch(Exception e){
+            throw new IOException("file error");
+        }
+
+
+
+        if(!App.isUser){
+            //register
+            App.currentUser[0]=potentialUser[0];
+            App.currentUser[1]=potentialUser[1];
+            App.isUser=true;
+
+            try(BufferedWriter buf = new BufferedWriter(new FileWriter("src/main/resources/com/pap_car_rental/user_list.csv", true));){
+                buf.newLine();
+                String line = potentialUser[0]+","+potentialUser[1];
+                buf.write(line);
+            }catch(Exception e){
+                throw new IOException("file error");
+            }
+
+
+
+            App.setRoot("user");
+        }
+        else{
+             invalidUser.setText("Already registered.");
              userName.setText("");
              userPwd.setText("");
         }

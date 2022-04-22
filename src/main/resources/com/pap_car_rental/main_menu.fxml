@@ -17,22 +17,22 @@
 
 <VBox alignment="CENTER" spacing="20.0" style="-fx-background-image: url('file:src/main/resources/com/pap_car_rental/bckg.jpeg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.MainMenuController">
     <children>
-      <AnchorPane prefHeight="36.0" prefWidth="414.0">
+      <AnchorPane prefHeight="112.0" prefWidth="414.0">
          <children>
-              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="414.0" text="Car Renatal system" textAlignment="CENTER" textFill="#505050" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutY="-25.0" prefHeight="61.0" prefWidth="414.0" text="Car Renatal system" textAlignment="CENTER" textFill="#505050" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
-                  <Font name="Haettenschweiler" size="30.0" />
+                  <Font name="Haettenschweiler" size="60.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <HBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="200.0">
          <children>
-            <TabPane prefHeight="200.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="138.0">
+            <TabPane prefHeight="291.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="138.0">
               <tabs>
                 <Tab text="USER">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="300.0" style="-fx-background-color: rgba(120,120,120,0.7);">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="325.0" style="-fx-background-color: rgba(120,120,120,0.7);">
                            <children>
                               <GridPane layoutX="14.0" layoutY="14.0" prefHeight="97.0" prefWidth="284.0">
                                 <columnConstraints>
@@ -44,10 +44,23 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                      <Button fx:id="userButton" onAction="#switchToUser" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="LOGIN" textFill="#505050" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                                     <PasswordField fx:id="userPwd" promptText="Enter password" GridPane.rowIndex="1" />
                                     <TextField fx:id="userName" promptText="Enter username" />
                                     <Label fx:id="invalidUser" textFill="#a80000" GridPane.rowIndex="2" />
+                                    <GridPane prefWidth="220.0" GridPane.rowIndex="2">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                            <Button fx:id="userButton" onAction="#switchToUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="LOGIN" textFill="#505050" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                          <Button fx:id="userButton1" onAction="#switchToUserRegister" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="REGISTER" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
                                  </children>
                               </GridPane>
                            </children>
@@ -56,7 +69,7 @@
                 </Tab>
                 <Tab text="ADMIN">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="301.0" style="-fx-background-color: rgba(120,120,120,0.7);">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="301.0" style="-fx-background-color: rgba(120,120,120,0.7);">
                            <children>
                             <GridPane layoutX="14.0" layoutY="14.0" prefHeight="97.0" prefWidth="284.0">
                                 <columnConstraints>
