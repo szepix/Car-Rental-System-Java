@@ -49,7 +49,7 @@ public class UserController {
         App.carType[4]=carType4.isSelected();
         App.carType[5]=carType5.isSelected();
         App.costLow=(int)costLow.getValue();
-        App.costLow=(int)costHigh.getValue();
+        App.costHigh=(int)costHigh.getValue();
         try{
             App.dateFrom= Date.valueOf(dateFrom.getValue());
             App.dateTo= Date.valueOf(dateTo.getValue());
@@ -62,6 +62,7 @@ public class UserController {
 
 
         System.out.println("From "+App.dateFrom+" To "+App.dateTo);
+        System.out.println("Cost Low " + App.costLow + " Cost High "+App.costHigh);
         App.setRoot("car_list");
     }
 }

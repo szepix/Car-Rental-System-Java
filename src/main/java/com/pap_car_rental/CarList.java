@@ -21,6 +21,7 @@ public class CarList {
         ArrayList<Car> matchingModel = new ArrayList<>();
         ArrayList<Car> matchingCost = new ArrayList<>();
         ArrayList<Car> matchingType = new ArrayList<>();
+        ArrayList<Car> matchingDate = new ArrayList<>();
 
         //Checking Brand
         if (App.searched_make.equals(""))
@@ -85,14 +86,26 @@ public class CarList {
             for (Car car6 : matchingCost) {
                 if (searchedTypes.contains(car6.Car_type))
                 {
-                matchingCost.add(car6);
+                matchingType.add(car6);
                 }
             }
         }
 
-        System.out.println(App.searched_make+ " "+ App.searched_model);
-        for (Car car: matchingType)
+        //Checking Date
+        if (App.dateFrom == null & App.dateTo == null)
         {
+            matchingDate.addAll(matchingType);
+        }
+        else
+        {
+            matchingDate.addAll(matchingType);
+        }
+
+        System.out.println(App.searched_make+ " "+ App.searched_model);
+        for (Car car: matchingCost)
+        {
+            System.out.println(App.costHigh);
+            System.out.println(App.costLow);
             System.out.println(car.Car_type);
         }
     }
