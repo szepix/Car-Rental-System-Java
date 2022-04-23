@@ -19,8 +19,8 @@ public class MainMenuController {
         App.currentAdmin = new String[2];
         App.isUser = false;
         App.isAdmin = false;
-        ArrayList<String[]> allNames = new ArrayList<String[]>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/admin_list.csv"));){
+        ArrayList<String[]> allNames = new ArrayList<>();
+        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/admin_list.csv"))){
             String line;
             while ((line = buf.readLine()) != null) {
                 String[] data = line.split(",");

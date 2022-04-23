@@ -31,5 +31,12 @@ public class DatabaseControl {
         }
         return car_list;
     }
-
+    public void addCar(String car_type,String brand,int cost,String model) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("INSERT INTO `CAR_LIST`(Car_type, Brand, Cost, Model) VALUES (?, ?, ?, ?)");
+        pstmt.setString(1, car_type);
+        pstmt.setString(2, brand);
+        pstmt.setInt(3, cost);
+        pstmt.setString(4, model);
+        pstmt.executeUpdate();
+    }
 }

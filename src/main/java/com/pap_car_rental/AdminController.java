@@ -8,12 +8,16 @@ public class AdminController {
     @FXML private Label adminNameDisplay;
 
     @FXML
-    private void initialize() throws IOException {
+    private void initialize() {
         adminNameDisplay.setText("HAIL, "+App.currentAdmin[0]+"!");
     }
 
     @FXML
     private void switchToMainMenu() throws IOException {
         App.setRoot("main_menu");
+    }
+    @FXML
+    private void switchToAddCar() throws IOException {
+        App.setRoot("car_add");
     }
 }
