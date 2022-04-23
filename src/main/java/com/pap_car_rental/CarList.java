@@ -2,40 +2,30 @@ package com.pap_car_rental;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CarList {
     @FXML private Label userNameDisplay;
 
-    @FXML private void initialize() throws IOException {
-        ArrayList<String[]> allCars = new ArrayList<String[]>();
-        ArrayList<String[]> matchingBrand = new ArrayList<String[]>();
-        ArrayList<String[]> matchingCars = new ArrayList<String[]>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/car_list.csv"));)
-            {
-            String line;
-            while ((line = buf.readLine()) != null) {
-                String[] data = line.split(",");
-                allCars.add(data);
-            }
-        }catch(Exception e){
-            throw new IOException("file error");}
+    @FXML private void initialize() throws IOException, SQLException {
+        ArrayList<Car> allCars = App.db.listCars();
+        ArrayList<Car> matchingBrand = new ArrayList<>();
+        ArrayList<Car> matchingCars = new ArrayList<>();
 
         //Checking Brand
         if (App.searched_make.equals(""))
         {
-            for (String[] car1 : allCars)
-            {
-                matchingBrand.add(car1);
-            }
+            matchingBrand.addAll(allCars);
         }
         else
         {
-            for (String[] car2 : allCars) {
-                if (car2[0].equals(App.searched_make))
+            for (Car car2 : allCars) {
+                if (car2.Brand.equals(App.searched_make))
                 {
                 matchingCars.add(car2);
                 }
@@ -45,15 +35,12 @@ public class CarList {
         //Checking Model
         if (App.searched_model.equals(""))
         {
-            for (String[] car3 : matchingBrand)
-            {
-                matchingCars.add(car3);
-            }
+            matchingCars.addAll(matchingBrand);
         }
         else
         {
-            for (String[] car4 : matchingBrand) {
-                if (car4[1].equals(App.searched_model))
+            for (Car car4 : matchingBrand) {
+                if (car4.Model.equals(App.searched_model))
                 {
                 matchingCars.add(car4);
                 }
@@ -61,9 +48,9 @@ public class CarList {
         }
 
         System.out.println(App.searched_make+ " "+ App.searched_model);
-        for (String[] car: matchingCars)
+        for (Car car: matchingCars)
         {
-            System.out.println(car[2]);
+            System.out.println(car.Car_type);
         }
     }
 

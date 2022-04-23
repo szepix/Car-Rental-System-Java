@@ -8,7 +8,9 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -16,6 +18,7 @@ import java.time.LocalDate;
 public class App extends Application {
 
     private static Scene scene;
+    public static DatabaseControl db = new DatabaseControl();
     public static boolean isUser = false;
     public static boolean isAdmin = false;
     public static String[] currentUser = new String[2];
@@ -29,7 +32,8 @@ public class App extends Application {
     public static LocalDate dateFrom;
     public static LocalDate dateTo;
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, SQLException {
+        ArrayList<Car> cars= db.listCars();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
@@ -51,6 +55,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+
     }
 
 }
