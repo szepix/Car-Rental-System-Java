@@ -33,7 +33,7 @@ public class CarList {
             for (Car car2 : allCars) {
                 if (car2.Brand.equals(App.searched_make))
                 {
-                matchingModel.add(car2);
+                matchingMake.add(car2);
                 }
             }
         }
@@ -60,7 +60,7 @@ public class CarList {
         }
         else
         {
-            for (Car car5 : matchingMake) {
+            for (Car car5 : matchingModel) {
                 if ((car5.Cost <= App.costHigh) & (car5.Cost >= App.costLow))
                 {
                 matchingCost.add(car5);
@@ -72,7 +72,6 @@ public class CarList {
         for(int i=0;i<possibleTypes.size(); i++)
         {
             if(App.carType[i]){
-                System.out.println(i);
                 searchedTypes.add(possibleTypes.get(i));
             }
         }
@@ -101,12 +100,10 @@ public class CarList {
             matchingDate.addAll(matchingType);
         }
 
-        System.out.println(App.searched_make+ " "+ App.searched_model);
-        for (Car car: matchingCost)
+        //Diagnostics
+        for (Car car: matchingType)
         {
-            System.out.println(App.costHigh);
-            System.out.println(App.costLow);
-            System.out.println(car.Car_type);
+            System.out.println("Searched: " + car.Brand + " "+ car.Car_type + " "+ car.Model + " " + car.Cost);
         }
     }
 
