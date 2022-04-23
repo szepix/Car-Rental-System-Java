@@ -32,6 +32,7 @@ public class App extends Application {
     public static int costHigh;
     public static Date dateFrom;
     public static Date dateTo;
+
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         ArrayList<Car> cars= db.listCars();

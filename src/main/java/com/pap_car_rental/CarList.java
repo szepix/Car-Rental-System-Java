@@ -2,16 +2,24 @@ package com.pap_car_rental;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.image.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 
 import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CarList {
+public class CarList{
     @FXML private Label userNameDisplay;
+
+    @FXML private VBox carScroller;
 
     @FXML private void initialize() throws IOException, SQLException {
         ArrayList<Car> allCars = App.db.listCars();
@@ -22,6 +30,7 @@ public class CarList {
         ArrayList<Car> matchingCost = new ArrayList<>();
         ArrayList<Car> matchingType = new ArrayList<>();
         ArrayList<Car> matchingDate = new ArrayList<>();
+
 
         //Checking Brand
         if (App.searched_make.equals(""))
@@ -105,6 +114,25 @@ public class CarList {
         {
             System.out.println("Searched: " + car.Brand + " "+ car.Car_type + " "+ car.Model + " " + car.Cost);
         }
+
+        for (var car: matchingDate)
+        {
+            FXMLLoader fxmloader = new FXMLLoader();
+            fxmloader.setLocation(getClass().getResource("car_search_pane.fxml"));
+
+            try{
+            HBox hbox = fxmloader.load();
+            CarPaneController carPane = fxmloader.getController();
+            carPane.setData(car);
+            carScroller.getChildren().add(hbox);
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+
+
     }
 
     @FXML
