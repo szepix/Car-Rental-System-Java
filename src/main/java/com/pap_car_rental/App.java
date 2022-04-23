@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,8 +30,8 @@ public class App extends Application {
     public static boolean[] carType = new boolean[6];
     public static int costLow;
     public static int costHigh;
-    public static LocalDate dateFrom;
-    public static LocalDate dateTo;
+    public static Date dateFrom;
+    public static Date dateTo;
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         ArrayList<Car> cars= db.listCars();

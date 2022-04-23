@@ -1,6 +1,8 @@
 package com.pap_car_rental;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
@@ -48,8 +50,16 @@ public class UserController {
         App.carType[5]=carType5.isSelected();
         App.costLow=(int)costLow.getValue();
         App.costLow=(int)costHigh.getValue();
-        App.dateFrom=dateFrom.getValue();
-        App.dateTo=dateTo.getValue();
+        try{
+            App.dateFrom= Date.valueOf(dateFrom.getValue());
+            App.dateTo= Date.valueOf(dateTo.getValue());
+        } catch (Exception e)
+        {
+            App.dateFrom=null;
+            App.dateTo=null;
+
+        }
+
 
         System.out.println("From "+App.dateFrom+" To "+App.dateTo);
         App.setRoot("car_list");
