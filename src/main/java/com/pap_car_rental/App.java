@@ -38,7 +38,7 @@ public class App extends Application {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
-        scene = new Scene(loadFXML("main_menu"), 800, 480);
+        scene = new Scene(loadFXML("main_menu"), 720, 480);
         stage.setScene(scene);
         stage.setTitle("Car Rental System v0.0");
         stage.show();

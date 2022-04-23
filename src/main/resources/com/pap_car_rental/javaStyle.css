@@ -1,0 +1,122 @@
+* {
+    -fx-aqua: #61bbff;
+    -fx-aqua-dark: #00365f;
+}
+
+.button-1 {
+    -fx-font: 14px "System";
+    -fx-text-fill: -fx-aqua-dark;
+    -fx-font-weight: bold;
+
+    -fx-background-color: -fx-aqua;
+    -fx-background-radius: 8;
+}
+
+.button-1:hover {
+    -fx-background-color: derive(-fx-aqua, 20%);
+    -fx-scale-x: 1.01;
+}
+
+.button-2 {
+    -fx-font: 14px "System";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: -fx-aqua-dark;
+    -fx-background-radius: 8;
+}
+
+.button-2:hover {
+    -fx-background-color: derive(-fx-aqua-dark, 20%);
+    -fx-scale-x: 1.01;
+}
+
+.check-1 .box {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: -fx-aqua-dark;
+    -fx-border-radius: 8;
+}
+
+.check-1:selected .mark {
+    -fx-background-color: -fx-aqua;
+}
+
+.check-1:selected .box {
+    -fx-border-color: -fx-aqua;
+}
+
+.check-1:hover .box {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.label-1 {
+    -fx-font: 14px "System";
+    -fx-text-fill: -fx-aqua-dark;
+    -fx-font-weight: bold;
+}
+
+.title {
+    -fx-font: 28px "System";
+    -fx-text-fill: -fx-aqua-dark;
+    -fx-font-weight: bold;
+}
+
+.text-field-1 {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: -fx-aqua-dark;
+    -fx-border-radius: 8;
+}
+
+.text-field-1:focused {
+    -fx-border-color: -fx-aqua;
+    -fx-scale-x: 1.01;
+}
+
+.date-field-1 {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+}
+
+.date-field-1 .date-picker-display-node {
+    -fx-background-color: white;
+    -fx-border-color: -fx-aqua-dark;
+    -fx-border-radius: 8 0 0 8;
+}
+
+.date-field-1 .arrow-button {
+    -fx-background-color: -fx-aqua-dark;
+    -fx-background-radius: 0 6 6 0;
+    -fx-border-color: -fx-aqua-dark;
+    -fx-border-radius: 0 8 8 0;
+}
+
+.date-field-1:focused {
+    -fx-scale-x: 1.01;
+}
+.date-field-1:focused .date-picker-display-node {
+    -fx-border-color: -fx-aqua;
+}
+
+.date-field-1:focused .arrow-button {
+    -fx-background-color: -fx-aqua;
+    -fx-border-color: -fx-aqua;
+}
+
+.date-filed-1:hover .arrow-button {
+    -fx-background-color: derive(-fx-aqua-dark, 20%);
+}
+
+.slider-1 .axis {
+    -fx-tick-label-fill: -fx-aqua-dark;
+}
+
+.slider-1 .track {
+    -fx-background-color: -fx-aqua;
+}
+
+.slider-1 .thumb {
+    -fx-background-color: -fx-aqua-dark;
+}
