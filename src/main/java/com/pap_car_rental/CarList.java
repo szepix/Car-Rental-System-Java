@@ -8,6 +8,7 @@ import javafx.scene.image.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 
@@ -18,6 +19,8 @@ import java.util.Arrays;
 
 public class CarList{
     @FXML private Label userNameDisplay;
+
+    @FXML private Button goBackButton;
 
     @FXML private VBox carScroller;
 
