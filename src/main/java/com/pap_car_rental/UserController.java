@@ -40,8 +40,8 @@ public class UserController {
 
     @FXML
     private void switchToCarList() throws IOException {
-        App.searched_make = searched_make_text.getText();
-        App.searched_model = searched_model_text.getText();
+        App.searched_make = searched_make_text.getText().toUpperCase();
+        App.searched_model = searched_model_text.getText().toUpperCase();
         App.carType[0]=carType0.isSelected();
         App.carType[1]=carType1.isSelected();
         App.carType[2]=carType2.isSelected();
