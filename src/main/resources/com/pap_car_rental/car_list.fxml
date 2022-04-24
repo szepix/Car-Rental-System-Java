@@ -29,10 +29,16 @@
                   <Insets top="5.0" />
                </VBox.margin>
             </HBox>
-            <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="480.0">
+            <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <content>
-                  <VBox fx:id="carScroller" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="560.0" prefWidth="481.0" />
+                  <VBox fx:id="carScroller" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
                </content>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </ScrollPane>
          </children>
          <BorderPane.margin>

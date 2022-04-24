@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.image.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.chart.PieChart;
@@ -24,7 +25,7 @@ public class CarList{
 
     @FXML private VBox carScroller;
 
-    @FXML private void initialize() throws IOException, SQLException {
+    @FXML private void initialize() throws SQLException {
         ArrayList<Car> allCars = App.db.listCars();
         ArrayList<String> possibleTypes = new ArrayList<>(Arrays.asList("City", "Mid", "Large", "SUV", "Sport", "Special"));
         ArrayList<String> searchedTypes = new ArrayList<>();
@@ -124,7 +125,7 @@ public class CarList{
             fxmloader.setLocation(getClass().getResource("car_search_pane.fxml"));
 
             try{
-            HBox hbox = fxmloader.load();
+            BorderPane hbox = fxmloader.load();
             CarPaneController carPane = fxmloader.getController();
             carPane.setData(car);
             carScroller.getChildren().add(hbox);

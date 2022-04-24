@@ -26,7 +26,7 @@ public class CarPaneController implements Initializable{
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
         carName.setText("Car");
-        carType.setText(car.Car_type);
+        carType.setText("("+car.Car_type+")");
     }
 
     @Override
