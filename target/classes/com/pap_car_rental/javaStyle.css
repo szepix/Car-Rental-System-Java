@@ -155,3 +155,7 @@
 .tab-bckg-1 {
     -fx-background-color: -fx-aqua-mid;
 }
+
+.line {
+    -fx-stroke: -fx-aqua-mid;
+}
