@@ -60,8 +60,8 @@ public class MainMenuController {
         App.currentUser = new String[2];
         App.isUser = false;
         App.isAdmin = false;
-        ArrayList<String[]> allNames = new ArrayList<String[]>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"));){
+        ArrayList<String[]> allNames = new ArrayList<>();
+        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"))){
             String line;
             while ((line = buf.readLine()) != null) {
                 String[] data = line.split(",");
@@ -99,8 +99,8 @@ public class MainMenuController {
         App.currentUser = new String[2];
         App.isUser = false;
         App.isAdmin = false;
-        ArrayList<String[]> allNames = new ArrayList<String[]>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"));){
+        ArrayList<String[]> allNames = new ArrayList<>();
+        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"))){
             String line;
             while ((line = buf.readLine()) != null) {
                 String[] data = line.split(",");
@@ -126,7 +126,7 @@ public class MainMenuController {
             App.currentUser[1]=potentialUser[1];
             App.isUser=true;
 
-            try(BufferedWriter buf = new BufferedWriter(new FileWriter("src/main/resources/com/pap_car_rental/user_list.csv", true));){
+            try(BufferedWriter buf = new BufferedWriter(new FileWriter("src/main/resources/com/pap_car_rental/user_list.csv", true))){
                 buf.newLine();
                 String line = potentialUser[0]+","+potentialUser[1];
                 buf.write(line);
