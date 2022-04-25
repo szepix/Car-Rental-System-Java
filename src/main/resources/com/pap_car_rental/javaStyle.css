@@ -1,6 +1,7 @@
 * {
     -fx-aqua: #61bbff;
     -fx-aqua-dark: #00365f;
+    -fx-aqua-mid: #507896;
 }
 
 .button-1 {
@@ -137,7 +138,7 @@
 
 .tab-pane-1 .tab:selected
 {
-    -fx-background-color: -fx-aqua;
+    -fx-background-color: -fx-aqua-mid;
 }
 
 .tab-pane-1:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
@@ -152,5 +153,5 @@
 }
 
 .tab-bckg-1 {
-    -fx-background-color: -fx-aqua;
+    -fx-background-color: -fx-aqua-mid;
 }
