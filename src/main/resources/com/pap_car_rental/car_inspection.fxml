@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: rgb(240,240,240);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarList">
+<BorderPane prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: rgb(240,240,240);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarInspectionControl">
    <center>
       <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefWidth="533.0" spacing="10.0">
          <children>
@@ -31,17 +31,14 @@
             </HBox>
             <Pane prefHeight="243.0" prefWidth="480.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@MERCEDES_GLS.jpg" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="223.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Name" />
-                  <Label layoutX="306.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Made" />
-                  <Label layoutX="383.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Model" />
-                  <Label layoutX="223.0" layoutY="56.0" prefHeight="17.0" prefWidth="83.0" text="Price" />
+                  <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="InspectedName" layoutX="223.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Name" />
+                  <Label fx:id="InspectedMake" layoutX="306.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Make" />
+                  <Label fx:id="InspectedModel" layoutX="383.0" layoutY="14.0" prefHeight="17.0" prefWidth="83.0" text="Car Model" />
+                  <Label fx:id="InspectedPrice" layoutX="223.0" layoutY="56.0" prefHeight="17.0" prefWidth="83.0" text="Price" />
                   <Label layoutX="211.0" layoutY="96.0" prefHeight="17.0" prefWidth="83.0" />
                   <Button id="button-1" fx:id="goBackButton1" layoutY="131.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToUser" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="Reserve" />
+                  <Label fx:id="InspectedType" layoutX="294.0" layoutY="56.0" prefHeight="17.0" prefWidth="83.0" text="Type" />
                </children>
             </Pane>
          </children>
@@ -100,7 +97,7 @@
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin></Button>
-            <Button id="button-1" fx:id="goBackButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToUser" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="Go Back">
+            <Button id="button-1" fx:id="goBackButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToCarList" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="Go Back">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                </VBox.margin>

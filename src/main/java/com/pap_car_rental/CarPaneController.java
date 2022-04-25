@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.CharBuffer;
 import java.util.ResourceBundle;
 
 
@@ -39,6 +40,13 @@ public class CarPaneController implements Initializable{
     public static String selectedName;
     public static String selectedType;
 
+    public static int inspectedCost;
+    public static String inspectedMake;
+    public static String inspectedModel;
+    public static String inspectedName;
+    public static String inspectedType;
+
+
     Image carImg;
 
     public void setData(Car car)
@@ -64,6 +72,16 @@ public class CarPaneController implements Initializable{
                 System.out.println("Model:" + car.Model);
                 System.out.println("Cost:" + car.Cost);
                 System.out.println("Type:" + car.Car_type);
+                inspectedCost = car.Cost;
+                inspectedMake = car.Brand;
+                inspectedModel = car.Model;
+                inspectedName = "Car";
+                inspectedType = car.Car_type;
+                try {
+                    App.setRoot("car_inspection");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }});
 }
 
