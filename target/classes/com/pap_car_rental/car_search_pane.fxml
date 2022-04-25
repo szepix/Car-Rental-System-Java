@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-
 <BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
    <left>
-      <ImageView fx:id="image" fitHeight="100.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@sus_bike.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
    </left>
    <center>
       <HBox spacing="30.0" BorderPane.alignment="CENTER">
@@ -25,6 +20,7 @@
                </HBox.margin>
             </Label>
             <Label fx:id="carName" contentDisplay="CENTER" text="Car Name" textAlignment="CENTER" />
+            <Button fx:id="selectButton" mnemonicParsing="false" text="Select" />
          </children>
       </HBox>
    </center>

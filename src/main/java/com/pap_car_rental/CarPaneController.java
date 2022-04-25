@@ -1,13 +1,19 @@
 package com.pap_car_rental;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.event.ActionEvent;
 
+import java.io.IOError;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 
 public class CarPaneController implements Initializable{
@@ -24,6 +30,14 @@ public class CarPaneController implements Initializable{
     private Label carType;
     @FXML
     private ImageView image;
+    @FXML
+    private Button selectButton;
+
+    public static int selectedCost;
+    public static String selectedMake;
+    public static String selectedModel;
+    public static String selectedName;
+    public static String selectedType;
 
     Image carImg;
 
@@ -43,7 +57,16 @@ public class CarPaneController implements Initializable{
         carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/sus_bike.jpg"));
         }
         image.setImage(carImg);
-    }
+        selectButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event ){
+                System.out.println("Make:" + car.Brand);
+                System.out.println("Model:" + car.Model);
+                System.out.println("Cost:" + car.Cost);
+                System.out.println("Type:" + car.Car_type);
+            }});
+}
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
