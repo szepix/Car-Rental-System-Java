@@ -19,7 +19,7 @@
     <children>
       <HBox alignment="TOP_CENTER" prefHeight="227.0" prefWidth="600.0">
          <children>
-              <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="61.0" prefWidth="600.0" text="Car Renatal system" textAlignment="CENTER" textFill="#252525">
+              <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="61.0" prefWidth="600.0" text="Car Renatal system" textAlignment="CENTER" textFill="#00365f">
                <font>
                   <Font name="Haettenschweiler" size="60.0" />
                </font>
@@ -28,11 +28,11 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="200.0">
          <children>
-            <TabPane prefHeight="291.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="138.0">
+            <TabPane prefHeight="291.0" prefWidth="300.0" styleClass="tab-pane-1" stylesheets="@javaStyle.css" tabClosingPolicy="UNAVAILABLE" tabMinWidth="138.0">
               <tabs>
-                <Tab text="USER">
+                <Tab styleClass="tab-1" text="USER">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="325.0" style="-fx-background-color: rgba(80,80,80,0.7);">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="325.0" styleClass="tab-bckg-1" stylesheets="@javaStyle.css">
                            <children>
                               <GridPane layoutX="14.0" layoutY="14.0" prefHeight="97.0" prefWidth="284.0">
                                 <columnConstraints>
@@ -44,8 +44,8 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <PasswordField fx:id="userPwd" promptText="Enter password" GridPane.rowIndex="1" />
-                                    <TextField fx:id="userName" promptText="Enter username" />
+                                    <PasswordField fx:id="userPwd" promptText="Enter password" styleClass="text-field-1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="userName" promptText="Enter username" styleClass="text-field-1" stylesheets="@javaStyle.css" />
                                     <Label fx:id="invalidUser" textFill="#a80000" GridPane.rowIndex="2" />
                                     <GridPane prefWidth="220.0" GridPane.rowIndex="2">
                                       <columnConstraints>
@@ -59,8 +59,8 @@
                                           <RowConstraints />
                                       </rowConstraints>
                                        <children>
-                                            <Button fx:id="userButton" onAction="#switchToUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="LOGIN" textFill="#505050" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                                          <Button fx:id="userButton1" onAction="#switchToUserRegister" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="REGISTER" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                            <Button fx:id="userButton" onAction="#switchToUser" prefHeight="25.0" prefWidth="80.0" style="-fx-font-size: 12;" styleClass="button-2" text="LOGIN" textFill="#505050" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                          <Button fx:id="userButton1" onAction="#switchToUserRegister" prefHeight="25.0" prefWidth="80.0" style="-fx-font-size: 12;" styleClass="button-2" text="REGISTER" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -69,9 +69,9 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="ADMIN">
+                <Tab styleClass="tab-1" text="ADMIN">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="301.0" style="-fx-background-color: rgba(0,40,0,0.7);">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="301.0" styleClass="tab-bckg-1" stylesheets="@javaStyle.css">
                            <children>
                             <GridPane layoutX="14.0" layoutY="14.0" prefHeight="97.0" prefWidth="284.0">
                                 <columnConstraints>
@@ -83,8 +83,8 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <PasswordField fx:id="adminPwd" promptText="Enter password" GridPane.rowIndex="1" />
-                                    <TextField fx:id="adminName" promptText="Enter username" />
+                                    <PasswordField fx:id="adminPwd" promptText="Enter password" styleClass="text-field-1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="adminName" promptText="Enter username" styleClass="text-field-1" />
                                     <Label fx:id="invalidAdmin" textFill="#a80000" GridPane.rowIndex="2" />
                                     <GridPane GridPane.rowIndex="2">
                                       <columnConstraints>
@@ -93,9 +93,11 @@
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints />
+                                          <RowConstraints />
                                       </rowConstraints>
                                        <children>
-                                            <Button fx:id="adminButton" onAction="#switchToAdmin" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 8; -fx-background-color: lightgray;" text="LOGIN" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                            <Button fx:id="adminButton" onAction="#switchToAdmin" prefHeight="25.0" prefWidth="80.0" style="-fx-font-size: 12;" styleClass="button-2" text="LOGIN" textFill="#505050" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                                        </children>
                                     </GridPane>
                                  </children>

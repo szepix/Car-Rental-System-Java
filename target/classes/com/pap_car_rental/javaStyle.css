@@ -120,3 +120,37 @@
 .slider-1 .thumb {
     -fx-background-color: -fx-aqua-dark;
 }
+
+.tab-pane-1 .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-1{
+    -fx-background-insets: 0 0 0 0,0,0;
+}
+
+.tab-pane-1 .tab
+{
+    -fx-background-color: -fx-aqua-dark;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab-pane-1 .tab:selected
+{
+    -fx-background-color: -fx-aqua;
+}
+
+.tab-pane-1:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.tab-1 .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tab-bckg-1 {
+    -fx-background-color: -fx-aqua;
+}
