@@ -9,10 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.CharBuffer;
 import java.util.ResourceBundle;
 
 
@@ -65,9 +63,9 @@ public class CarPaneController implements Initializable{
         carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/sus_bike.jpg"));
         }
         image.setImage(carImg);
-        selectButton.setOnAction(new EventHandler<ActionEvent>(){
+        selectButton.setOnAction(new EventHandler<>() {
             @Override
-            public void handle(ActionEvent event ){
+            public void handle(ActionEvent event) {
                 System.out.println("Make:" + car.Brand);
                 System.out.println("Model:" + car.Model);
                 System.out.println("Cost:" + car.Cost);
@@ -82,7 +80,8 @@ public class CarPaneController implements Initializable{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }});
+            }
+        });
 }
 
 

@@ -10,7 +10,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    public static DatabaseControl db = new DatabaseControl();
+    public static final DatabaseControl db = new DatabaseControl();
     public static boolean isUser = false;
     public static boolean isAdmin = false;
     public static String[] currentUser = new String[2];

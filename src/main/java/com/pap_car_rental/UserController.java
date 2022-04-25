@@ -15,7 +15,7 @@ public class UserController {
     @FXML private Label userNameDisplay;
 
     @FXML
-    private void initialize() throws IOException {
+    private void initialize() {
         userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
     }
 

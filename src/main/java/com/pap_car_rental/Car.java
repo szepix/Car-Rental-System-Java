@@ -1,7 +1,6 @@
 package com.pap_car_rental;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class Car {
     String Car_type;

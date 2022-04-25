@@ -40,7 +40,7 @@ public class CarInspectionControl {
     Image carImg;
 
     @FXML
-    private void initialize()throws IOException{
+    private void initialize() {
         InspectedMake.setText(CarPaneController.inspectedMake);
         InspectedModel.setText(CarPaneController.inspectedModel);
         InspectedName.setText(CarPaneController.inspectedName);
