@@ -52,7 +52,7 @@ public class CarInspectionControl {
         }
         catch(Exception e)
         {
-        carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/sus_bike.jpg"));
+        carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
         }
         image.setImage(carImg);
 
