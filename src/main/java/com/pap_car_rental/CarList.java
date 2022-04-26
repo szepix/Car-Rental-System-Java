@@ -20,6 +20,8 @@ public class CarList{
     @FXML private VBox carScroller;
 
     @FXML private void initialize() throws SQLException {
+        userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
+
         ArrayList<Car> allCars = App.db.listCars();
         ArrayList<String> possibleTypes = new ArrayList<>(Arrays.asList("City", "Mid", "Large", "SUV", "Sport", "Special"));
         ArrayList<String> searchedTypes = new ArrayList<>();

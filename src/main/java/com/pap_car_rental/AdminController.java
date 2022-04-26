@@ -9,7 +9,7 @@ public class AdminController {
 
     @FXML
     private void initialize() {
-        adminNameDisplay.setText("HAIL, "+App.currentAdmin[0]+"!");
+        adminNameDisplay.setText("Hi, "+App.currentAdmin[0]+"!");
     }
 
     @FXML
