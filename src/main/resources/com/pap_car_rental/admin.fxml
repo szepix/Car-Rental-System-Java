@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,20 +19,45 @@
          <children>
             <GridPane>
               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="adminNameDisplay" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Admin view" />
-                  <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" styleClass="button-2" stylesheets="@javaStyle.css" text="SIGN OFF" GridPane.columnIndex="1" />
+                  <Label fx:id="adminNameDisplay" alignment="BOTTOM_LEFT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="adminName" textFill="WHITE" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="3.0" top="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" prefWidth="85.0" styleClass="button-2" stylesheets="@javaStyle.css" text="SIGN OFF" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </GridPane.margin></Button>
+                  <Label>
+                     <GridPane.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <graphic>
+                        <ImageView fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@user1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
                </children>
             </GridPane>
             <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="My account">
                <VBox.margin>
-                  <Insets />
+                  <Insets left="5.0" right="5.0" />
                </VBox.margin></Button>
          </children>
       </VBox>
