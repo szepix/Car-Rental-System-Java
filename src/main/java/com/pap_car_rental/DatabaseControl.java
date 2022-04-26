@@ -10,7 +10,9 @@ public class DatabaseControl {
     {
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:car_list.db");
+            String dir = System.getProperty("user.dir");
+            System.out.println(dir+ "/src/main/resources/com/car_list.db");
+            c = DriverManager.getConnection("jdbc:sqlite:file:src/main/resources/com/pap_car_rental/car_list.db");
             System.out.println("Connected to DB");
         } catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
