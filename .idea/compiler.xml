@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pap_car_rental" />
+        <module name="pap22l-z05" />
       </profile>
     </annotationProcessing>
   </component>
