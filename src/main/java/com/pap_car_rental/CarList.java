@@ -38,7 +38,7 @@ public class CarList{
         else
         {
             for (Car car2 : allCars) {
-                if (car2.Brand.equals(App.searched_make))
+                if (car2.Brand.toUpperCase().equals(App.searched_make))
                 {
                 matchingMake.add(car2);
                 }
@@ -53,7 +53,7 @@ public class CarList{
         else
         {
             for (Car car4 : matchingMake) {
-                if (car4.Model.equals(App.searched_model))
+                if (car4.Model.toUpperCase().equals(App.searched_model))
                 {
                 matchingModel.add(car4);
                 }
