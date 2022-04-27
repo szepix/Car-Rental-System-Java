@@ -31,7 +31,7 @@ public class UserController {
                 super.updateItem(date, empty);
                 LocalDate today = LocalDate.now();
 
-                setDisable(empty || date.compareTo(today) < 0 );
+                setDisable(empty || date.compareTo(today) < 0);
             }
         });
 
@@ -44,6 +44,15 @@ public class UserController {
                 setDisable(empty || date.compareTo(today) < 1 );
             }
         });
+
+        //block typing in date picker
+        dateTo.getEditor().setDisable(true);
+        dateTo.getEditor().setOpacity(1);
+        dateFrom.getEditor().setDisable(true);
+        dateFrom.getEditor().setOpacity(1);
+
+
+        //got to limit the date from the top, when decided what is the limit
     }
 
     @FXML
