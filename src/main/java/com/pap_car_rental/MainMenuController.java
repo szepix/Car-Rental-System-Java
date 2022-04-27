@@ -119,8 +119,12 @@ public class MainMenuController {
         }
 
 
+        //pass check
+        boolean badText = false;
+        if(potentialUser[0].indexOf(',') != -1) badText=true;
+        if(potentialUser[1].indexOf(',') != -1) badText=true;
 
-        if(!App.isUser){
+        if(!App.isUser && !badText){
             //register
             App.currentUser[0]=potentialUser[0];
             App.currentUser[1]=potentialUser[1];
@@ -139,9 +143,12 @@ public class MainMenuController {
             App.setRoot("user");
         }
         else{
-             invalidUser.setText("Already registered.");
-             userName.setText("");
-             userPwd.setText("");
+            if(badText)
+                invalidUser.setText("Cannot contain ','");
+            else
+                invalidUser.setText("Already registered.");
+            userName.setText("");
+            userPwd.setText("");
         }
     }
 }
