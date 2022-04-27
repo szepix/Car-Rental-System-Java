@@ -19,7 +19,7 @@
     <children>
       <HBox alignment="TOP_CENTER" prefHeight="227.0" prefWidth="600.0">
          <children>
-              <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="61.0" prefWidth="600.0" text="Car Renatal system" textAlignment="CENTER" textFill="#00365f">
+              <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="61.0" prefWidth="600.0" text="Car Rental system" textAlignment="CENTER" textFill="#00365f">
                <font>
                   <Font name="Haettenschweiler" size="60.0" />
                </font>
