@@ -56,7 +56,7 @@ public class CarPaneController implements Initializable{
         carType.setText("("+car.Car_type+")");
         try
         {
-        carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/"+ car.Brand + "_" + car.Model +".jpg"));
+        carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/"+ car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() +".jpg"));
         }
         catch(Exception e)
         {
