@@ -6,6 +6,8 @@ import java.sql.Date;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
+import java.time.LocalDate;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -13,10 +15,35 @@ import javafx.scene.control.TextField;
 
 public class UserController {
     @FXML private Label userNameDisplay;
+    @FXML private DatePicker dateFrom;
+    @FXML private DatePicker dateTo;
 
     @FXML
     private void initialize() {
+        //initialize username
         userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
+
+        //block illegal dates:
+
+        //block from dates older than today
+        dateFrom.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(today) < 0 );
+            }
+        });
+
+        //block to dates older than today
+        dateTo.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(today) < 1 );
+            }
+        });
     }
 
     @FXML
@@ -34,8 +61,6 @@ public class UserController {
     @FXML private CheckBox carType5;
     @FXML private Slider costLow;
     @FXML private Slider costHigh;
-    @FXML private DatePicker dateFrom;
-    @FXML private DatePicker dateTo;
 
 
     @FXML
@@ -62,6 +87,19 @@ public class UserController {
 
         System.out.println("From "+App.dateFrom+" To "+App.dateTo);
         App.setRoot("car_list");
+    }
+
+    @FXML
+    private void limitToDate() throws IOException {
+        //block to dates older than from day + 1
+        dateTo.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate min = dateFrom.getValue();
+
+                setDisable(empty || date.compareTo(min) < 1 );
+            }
+        });
     }
 }
 
