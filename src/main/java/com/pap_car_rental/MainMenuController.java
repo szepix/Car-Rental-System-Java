@@ -124,7 +124,11 @@ public class MainMenuController {
         if(potentialUser[0].indexOf(',') != -1) badText=true;
         if(potentialUser[1].indexOf(',') != -1) badText=true;
 
-        if(!App.isUser && !badText){
+        boolean toShort = false;
+        if(potentialUser[0].length()<4) toShort=true;
+        if(potentialUser[1].length()<4) toShort=true;
+
+        if(!App.isUser && !badText && !toShort){
             //register
             App.currentUser[0]=potentialUser[0];
             App.currentUser[1]=potentialUser[1];
@@ -145,6 +149,8 @@ public class MainMenuController {
         else{
             if(badText)
                 invalidUser.setText("Cannot contain ','");
+            else if(toShort)
+                invalidUser.setText("Too short. Must be\nmin 4 chars long.");
             else
                 invalidUser.setText("Already registered.");
             userName.setText("");
