@@ -110,5 +110,19 @@ public class UserController {
             }
         });
     }
+
+    @FXML
+    private void limitFromDate() throws IOException {
+        //block to dates older than from day + 1
+        dateFrom.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate max = dateTo.getValue();
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(max) > -1 || date.compareTo(today) < 0);
+            }
+        });
+    }
 }
 

@@ -66,7 +66,7 @@
                <children>
                   <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Dates" />
                   <DatePicker fx:id="dateFrom" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#limitToDate" prefWidth="180.0" promptText="From" styleClass="date-field-1" stylesheets="@javaStyle.css" />
-                  <DatePicker fx:id="dateTo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="180.0" promptText="To" styleClass="date-field-1" stylesheets="@javaStyle.css" />
+                  <DatePicker fx:id="dateTo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#limitFromDate" prefWidth="180.0" promptText="To" styleClass="date-field-1" stylesheets="@javaStyle.css" />
                </children>
             </HBox>
             <GridPane prefHeight="20.0" prefWidth="521.0">
