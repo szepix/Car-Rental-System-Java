@@ -6,3 +6,7 @@ Instrukcja uruchomienia programu dla środowiska linuksowego:
 
 UWAGA!
 Aby program miał możliwość kompilacji niezbędny jest zainstalowany openjdk.
+
+Przykładowe dane do logowania administratora: login: admin hasło: admin
+Przykładowe dane do logowania użytkownika: login: adam hasło: misiak
+
