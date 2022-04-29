@@ -32,9 +32,7 @@ public class CarAddController {
         String Brand = brand_text.getText();
         int Cost = Integer.parseInt(cost_text.getText());
         String Model = model_text.getText();
-        Date dateFrom = Date.valueOf(dateFrom_button.getValue());
-        Date dateTo = Date.valueOf(dateTo_button.getValue());
-        App.db.addCar(Car_type, Brand, Cost, Model, dateFrom, dateTo);
+        App.db.addCar(Car_type, Brand, Cost, Model);
         car_type.setValue(null);
         brand_text.clear();
         cost_text.clear();
