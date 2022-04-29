@@ -21,7 +21,7 @@ public class App extends Application {
     public static final DatabaseControl db = new DatabaseControl();
     public static boolean isUser = false;
     public static boolean isAdmin = false;
-    public static String[] currentUser = new String[2];
+    public static Client currentUser;
     public static String[] currentAdmin = new String[2];
 
     public static String searched_make;
@@ -35,6 +35,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         ArrayList<Car> cars= db.listCars();
+        ArrayList<Client> clients = db.listClients();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();

@@ -21,7 +21,7 @@ public class UserController {
     @FXML
     private void initialize() {
         //initialize username
-        userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
+        userNameDisplay.setText("Hi, "+App.currentUser.login+"!");
 
         //block illegal dates:
 

@@ -1,6 +1,7 @@
 package com.pap_car_rental;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
@@ -54,33 +55,22 @@ public class MainMenuController {
     @FXML private Label invalidUser;
 
     @FXML
-    private void switchToUser() throws IOException {
+    private void switchToUser() throws IOException, SQLException {
         invalidUser.setText("");
         String[] potentialUser = {userName.getText(), userPwd.getText()};
-        App.currentUser = new String[2];
+        ArrayList<Client> client_list = App.db.listClients();
         App.isUser = false;
         App.isAdmin = false;
         ArrayList<String[]> allNames = new ArrayList<>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"))){
-            String line;
-            while ((line = buf.readLine()) != null) {
-                String[] data = line.split(",");
-                allNames.add(data);
+        client_list.forEach(e->{
+            boolean isUser = true;
+            if(!e.login.equals(potentialUser[0])) isUser = false;
+            if(!e.password.equals(potentialUser[1])) isUser = false;
+            if(isUser){
+                App.currentUser=e;
+                App.isUser=true;
             }
-
-            allNames.forEach(e->{
-                boolean isUser = true;
-                if(!e[0].equals(potentialUser[0])) isUser = false;
-                if(!e[1].equals(potentialUser[1])) isUser = false;
-                if(isUser){
-                    App.currentUser[0]=potentialUser[0];
-                    App.currentUser[1]=potentialUser[1];
-                    App.isUser=true;
-                }
-            });
-        }catch(Exception e){
-            throw new IOException("file error");
-        }
+        });
 
         if(App.isUser){
             App.setRoot("user");
@@ -93,31 +83,20 @@ public class MainMenuController {
     }
 
     @FXML
-    private void switchToUserRegister() throws IOException {
+    private void switchToUserRegister() throws IOException, SQLException {
         invalidUser.setText("");
         String[] potentialUser = {userName.getText(), userPwd.getText()};
-        App.currentUser = new String[2];
         App.isUser = false;
         App.isAdmin = false;
-        ArrayList<String[]> allNames = new ArrayList<>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/user_list.csv"))){
-            String line;
-            while ((line = buf.readLine()) != null) {
-                String[] data = line.split(",");
-                allNames.add(data);
+        ArrayList<Client> user_list = App.db.listClients();
+        Client currentUser;
+        user_list.forEach(e->{
+            boolean isUser = false;
+            if(e.login.equals(potentialUser[0])) isUser = true;
+            if(isUser){
+                App.isUser=true;
             }
-
-            allNames.forEach(e->{
-                boolean isUser = false;
-                if(e[0].equals(potentialUser[0])) isUser = true;
-                if(isUser){
-                    App.isUser=true;
-                }
-            });
-        }catch(Exception e){
-            throw new IOException("file error");
-        }
-
+        });
 
         //pass check
         boolean badText = false;
@@ -130,18 +109,19 @@ public class MainMenuController {
 
         if(!App.isUser && !badText && !toShort){
             //register
-            App.currentUser[0]=potentialUser[0];
-            App.currentUser[1]=potentialUser[1];
-            App.isUser=true;
-
-            try(BufferedWriter buf = new BufferedWriter(new FileWriter("src/main/resources/com/pap_car_rental/user_list.csv", true))){
-                buf.newLine();
-                String line = potentialUser[0]+","+potentialUser[1];
-                buf.write(line);
-            }catch(Exception e){
-                throw new IOException("file error");
+            if(user_list.size() == 0)
+            {
+                user_list.add(new Client(0, potentialUser[0], potentialUser[1]));
+                App.currentUser = user_list.get(0);
+            }
+            else
+            {
+                user_list.add(new Client(user_list.get(user_list.size()-1).id+1,potentialUser[0], potentialUser[1]));
+                App.currentUser=user_list.get(user_list.size()-1);
             }
 
+            App.isUser=true;
+            App.db.addClient(potentialUser[0], potentialUser[1]);
 
 
             App.setRoot("user");
