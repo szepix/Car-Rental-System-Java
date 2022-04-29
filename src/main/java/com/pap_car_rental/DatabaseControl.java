@@ -35,8 +35,11 @@ public class DatabaseControl {
         }
         return car_list;
     }
-    public void addCar(String car_type,String brand,int cost,String model, Date dateFrom, Date dateTo) throws SQLException {
+    public void addCar(String car_type,String brand,int cost,String model) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("INSERT INTO `CAR_LIST`(Car_type, Brand, Cost, Model, DateFrom, DateTo) VALUES (?, ?, ?, ?, ?, ?)");
+        //THAT IS NOT HOW DATES IN A DATABAASE SHOULD BE
+        Date dateFrom = new Date(1999, 1, 1);
+        Date dateTo = new Date(2999, 1, 1);
         pstmt.setString(1, car_type);
         pstmt.setString(2, brand);
         pstmt.setInt(3, cost);

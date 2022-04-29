@@ -41,7 +41,7 @@ public class UserController {
                 super.updateItem(date, empty);
                 LocalDate today = LocalDate.now();
 
-                setDisable(empty || date.compareTo(today) < 1 );
+                setDisable(empty || date.compareTo(today) < 0 );
             }
         });
 
@@ -106,7 +106,7 @@ public class UserController {
                 super.updateItem(date, empty);
                 LocalDate min = dateFrom.getValue();
 
-                setDisable(empty || date.compareTo(min) < 1 );
+                setDisable(empty || date.compareTo(min) < 0 );
             }
         });
     }
@@ -120,7 +120,7 @@ public class UserController {
                 LocalDate max = dateTo.getValue();
                 LocalDate today = LocalDate.now();
 
-                setDisable(empty || date.compareTo(max) > -1 || date.compareTo(today) < 0);
+                setDisable(empty || date.compareTo(max) > 0 || date.compareTo(today) < 0);
             }
         });
     }

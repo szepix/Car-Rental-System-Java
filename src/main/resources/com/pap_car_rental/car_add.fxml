@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
@@ -50,17 +49,6 @@
             </HBox>
             <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <children>
-                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="56.0" styleClass="label-1" text="Dates" />
-                  <HBox>
-                     <children>
-                        <DatePicker fx:id="dateFrom_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="185.0" promptText="From" styleClass="date-field-1" />
-                        <DatePicker fx:id="dateTo_button" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="185.0" promptText="To" styleClass="date-field-1" />
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
                   <HBox />
                   <Button fx:id="addCarButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addCar" prefWidth="370.0" styleClass="button-1" text="Add Car">
                      <HBox.margin>
@@ -80,7 +68,10 @@
    <right>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToAdminMenu" styleClass="button-2" stylesheets="@javaStyle.css" text="Go Back" />
+            <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToAdminMenu" styleClass="button-2" stylesheets="@javaStyle.css" text="Go Back">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin></Button>
          </children>
       </VBox>
    </right>
