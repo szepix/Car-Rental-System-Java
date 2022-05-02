@@ -20,4 +20,8 @@ public class AdminController {
     private void switchToAddCar() throws IOException {
         App.setRoot("car_add");
     }
+    @FXML
+    private void switchToEditCars() throws IOException {
+        App.setRoot("car_edit");
+    }
 }

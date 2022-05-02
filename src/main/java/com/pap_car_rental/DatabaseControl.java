@@ -65,4 +65,14 @@ public class DatabaseControl {
         pstmt.setString(2, password);
         pstmt.executeUpdate();
     }
+    public void editCar(Car car) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("UPDATE `CAR_LIST`SET Car_type = ?, Brand = ?, Cost = ?, Model = ?, DateFrom = NULL, DateTo = NULL  WHERE Id = ?");
+        pstmt.setString(1, car.Car_type);
+        pstmt.setString(2, car.Brand);
+        pstmt.setString(3, String.valueOf(car.Cost));
+        pstmt.setString(4, car.Model);
+        pstmt.setString(5, String.valueOf(car.id));
+        System.out.println(pstmt.toString());
+        pstmt.executeUpdate();
+    }
 }
