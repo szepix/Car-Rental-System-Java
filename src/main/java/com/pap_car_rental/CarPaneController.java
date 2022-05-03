@@ -38,6 +38,8 @@ public class CarPaneController implements Initializable{
     public static String selectedName;
     public static String selectedType;
 
+    public static Car inspectedCar;
+
     public static int inspectedCost;
     public static String inspectedMake;
     public static String inspectedModel;
@@ -63,23 +65,21 @@ public class CarPaneController implements Initializable{
         carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
         }
         image.setImage(carImg);
-        selectButton.setOnAction(new EventHandler<>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Make:" + car.Brand);
-                System.out.println("Model:" + car.Model);
-                System.out.println("Cost:" + car.Cost);
-                System.out.println("Type:" + car.Car_type);
-                inspectedCost = car.Cost;
-                inspectedMake = car.Brand;
-                inspectedModel = car.Model;
-                inspectedName = "Car";
-                inspectedType = car.Car_type;
-                try {
-                    App.setRoot("car_inspection");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        selectButton.setOnAction(event -> {
+            System.out.println("Make:" + car.Brand);
+            System.out.println("Model:" + car.Model);
+            System.out.println("Cost:" + car.Cost);
+            System.out.println("Type:" + car.Car_type);
+            inspectedCar = car;
+            inspectedCost = car.Cost;
+            inspectedMake = car.Brand;
+            inspectedModel = car.Model;
+            inspectedName = "Car";
+            inspectedType = car.Car_type;
+            try {
+                App.setRoot("car_inspection");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
 }

@@ -17,6 +17,22 @@ public class DatabaseControl {
             System.out.println("Error: " + e.getMessage());
     }
     }
+    public ArrayList<Reservation> listReservations() throws  SQLException{
+        this.stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM RESERVATIONS");
+        ArrayList<Reservation> reservation_list= new ArrayList<>();
+        while(rs.next())
+        {
+            int id = rs.getInt("Id");
+            Date dateFrom = rs.getDate("DateFrom");
+            Date dateTo = rs.getDate("DateTo");
+            int clientId = rs.getInt("ClientId");
+            int carId = rs.getInt("CarId");
+            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId);
+            reservation_list.add(reservation);
+        }
+        return reservation_list;
+    }
     public ArrayList<Car> listCars() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM CAR_LIST");
@@ -73,6 +89,14 @@ public class DatabaseControl {
         pstmt.setString(4, car.Model);
         pstmt.setString(5, String.valueOf(car.id));
         System.out.println(pstmt.toString());
+        pstmt.executeUpdate();
+    }
+    public void addReservation(Date DateFrom, Date DateTo, int ClientId, int CarId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("INSERT INTO `RESERVATIONS`(Id, DateFrom, DateTo, ClientId, CarId) VALUES (NULL, ?, ?, ?, ?)");
+        pstmt.setDate(1, DateFrom);
+        pstmt.setDate(2, DateTo);
+        pstmt.setInt(3, ClientId);
+        pstmt.setInt(4, CarId);
         pstmt.executeUpdate();
     }
 }

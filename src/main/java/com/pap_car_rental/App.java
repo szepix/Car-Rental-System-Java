@@ -36,6 +36,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException, SQLException {
         ArrayList<Car> cars= db.listCars();
         ArrayList<Client> clients = db.listClients();
+        ArrayList<Reservation> reservations = db.listReservations();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
