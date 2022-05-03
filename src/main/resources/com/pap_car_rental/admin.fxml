@@ -92,7 +92,7 @@
               </rowConstraints>
                <children>
                   <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToEditCars" styleClass="button-1" text="Edit car list" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="List of customers" GridPane.columnIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchClientList" styleClass="button-1" stylesheets="@javaStyle.css" text="List of customers" GridPane.columnIndex="1" />
                   <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAddCar" styleClass="button-1" text="Add a car" GridPane.rowIndex="1" />
                   <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Reserve/pick up cars" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" text="List of rented cars" GridPane.rowIndex="2" />

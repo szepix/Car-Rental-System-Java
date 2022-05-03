@@ -24,4 +24,8 @@ public class AdminController {
     private void switchToEditCars() throws IOException {
         App.setRoot("car_edit");
     }
+    @FXML
+    private void switchClientList() throws IOException {
+        App.setRoot("client_list");
+    }
 }
