@@ -17,35 +17,19 @@ import java.util.ArrayList;
  */
 public class App extends Application {
 
-    private static Scene scene;
     public static final DatabaseControl db = new DatabaseControl();
     public static boolean isUser = false;
     public static boolean isAdmin = false;
     public static Client currentUser;
     public static String[] currentAdmin = new String[2];
-
     public static String searched_make;
     public static String searched_model;
-    public static boolean[] carType = new boolean[6];
+    public static final boolean[] carType = new boolean[6];
     public static int costLow;
     public static int costHigh;
     public static Date dateFrom;
     public static Date dateTo;
-
-    @Override
-    public void start(Stage stage) throws IOException, SQLException {
-        ArrayList<Car> cars= db.listCars();
-        ArrayList<Client> clients = db.listClients();
-        ArrayList<Reservation> reservations = db.listReservations();
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        int width = gd.getDisplayMode().getWidth();
-        int height = gd.getDisplayMode().getHeight();
-        scene = new Scene(loadFXML("main_menu"), 720, 480);
-        stage.setScene(scene);
-        stage.setTitle("Car Rental System v0.0");
-        stage.show();
-
-    }
+    private static Scene scene;
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
@@ -58,6 +42,21 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException, SQLException {
+        ArrayList<Car> cars = db.listCars();
+        ArrayList<Client> clients = db.listClients();
+        ArrayList<Reservation> reservations = db.listReservations();
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
+        scene = new Scene(loadFXML("main_menu"), 720, 480);
+        stage.setScene(scene);
+        stage.setTitle("Car Rental System v0.0");
+        stage.show();
 
     }
 

@@ -1,17 +1,28 @@
 package com.pap_car_rental;
 
-import java.io.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
-
 public class MainMenuController {
-    @FXML private TextField adminName;
-    @FXML private TextField adminPwd;
-    @FXML private Label invalidAdmin;
+    @FXML
+    private TextField adminName;
+    @FXML
+    private TextField adminPwd;
+    @FXML
+    private Label invalidAdmin;
+    @FXML
+    private TextField userName;
+    @FXML
+    private TextField userPwd;
+    @FXML
+    private Label invalidUser;
 
     @FXML
     private void switchToAdmin() throws IOException {
@@ -21,38 +32,33 @@ public class MainMenuController {
         App.isUser = false;
         App.isAdmin = false;
         ArrayList<String[]> allNames = new ArrayList<>();
-        try(BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/admin_list.csv"))){
+        try (BufferedReader buf = new BufferedReader(new FileReader("src/main/resources/com/pap_car_rental/admin_list.csv"))) {
             String line;
             while ((line = buf.readLine()) != null) {
                 String[] data = line.split(",");
                 allNames.add(data);
             }
 
-            allNames.forEach(e->{
-                boolean isAdmin = true;
-                if(!e[0].equals(potentialAdmin[0])) isAdmin = false;
-                if(!e[1].equals(potentialAdmin[1])) isAdmin = false;
-                if(isAdmin){
-                    App.currentAdmin[0]=potentialAdmin[0];
-                    App.currentAdmin[1]=potentialAdmin[1];
-                    App.isAdmin=true;
+            allNames.forEach(e -> {
+                boolean isAdmin = e[0].equals(potentialAdmin[0]);
+                if (!e[1].equals(potentialAdmin[1])) isAdmin = false;
+                if (isAdmin) {
+                    App.currentAdmin[0] = potentialAdmin[0];
+                    App.currentAdmin[1] = potentialAdmin[1];
+                    App.isAdmin = true;
                 }
             });
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new IOException("file error");
         }
 
-        if(App.isAdmin) App.setRoot("admin");
-        else{
+        if (App.isAdmin) App.setRoot("admin");
+        else {
             invalidAdmin.setText("Invalid username or password.");
             adminName.setText("");
             adminPwd.setText("");
-       }
+        }
     }
-
-    @FXML private TextField userName;
-    @FXML private TextField userPwd;
-    @FXML private Label invalidUser;
 
     @FXML
     private void switchToUser() throws IOException, SQLException {
@@ -62,23 +68,21 @@ public class MainMenuController {
         App.isUser = false;
         App.isAdmin = false;
         ArrayList<String[]> allNames = new ArrayList<>();
-        client_list.forEach(e->{
-            boolean isUser = true;
-            if(!e.login.equals(potentialUser[0])) isUser = false;
-            if(!e.password.equals(potentialUser[1])) isUser = false;
-            if(isUser){
-                App.currentUser=e;
-                App.isUser=true;
+        client_list.forEach(e -> {
+            boolean isUser = e.login.equals(potentialUser[0]);
+            if (!e.password.equals(potentialUser[1])) isUser = false;
+            if (isUser) {
+                App.currentUser = e;
+                App.isUser = true;
             }
         });
 
-        if(App.isUser){
+        if (App.isUser) {
             App.setRoot("user");
-        }
-        else{
-             invalidUser.setText("Invalid username\nor password.");
-             userName.setText("");
-             userPwd.setText("");
+        } else {
+            invalidUser.setText("Invalid username\nor password.");
+            userName.setText("");
+            userPwd.setText("");
         }
     }
 
@@ -90,46 +94,39 @@ public class MainMenuController {
         App.isAdmin = false;
         ArrayList<Client> user_list = App.db.listClients();
         Client currentUser;
-        user_list.forEach(e->{
-            boolean isUser = false;
-            if(e.login.equals(potentialUser[0])) isUser = true;
-            if(isUser){
-                App.isUser=true;
+        user_list.forEach(e -> {
+            boolean isUser = e.login.equals(potentialUser[0]);
+            if (isUser) {
+                App.isUser = true;
             }
         });
 
         //pass check
-        boolean badText = false;
-        if(potentialUser[0].indexOf(',') != -1) badText=true;
-        if(potentialUser[1].indexOf(',') != -1) badText=true;
+        boolean badText = potentialUser[0].indexOf(',') != -1;
+        if (potentialUser[1].indexOf(',') != -1) badText = true;
 
-        boolean toShort = false;
-        if(potentialUser[0].length()<4) toShort=true;
-        if(potentialUser[1].length()<4) toShort=true;
+        boolean toShort = potentialUser[0].length() < 4;
+        if (potentialUser[1].length() < 4) toShort = true;
 
-        if(!App.isUser && !badText && !toShort){
+        if (!App.isUser && !badText && !toShort) {
             //register
-            if(user_list.size() == 0)
-            {
+            if (user_list.size() == 0) {
                 user_list.add(new Client(0, potentialUser[0], potentialUser[1]));
                 App.currentUser = user_list.get(0);
-            }
-            else
-            {
-                user_list.add(new Client(user_list.get(user_list.size()-1).id+1,potentialUser[0], potentialUser[1]));
-                App.currentUser=user_list.get(user_list.size()-1);
+            } else {
+                user_list.add(new Client(user_list.get(user_list.size() - 1).id + 1, potentialUser[0], potentialUser[1]));
+                App.currentUser = user_list.get(user_list.size() - 1);
             }
 
-            App.isUser=true;
+            App.isUser = true;
             App.db.addClient(potentialUser[0], potentialUser[1]);
 
 
             App.setRoot("user");
-        }
-        else{
-            if(badText)
+        } else {
+            if (badText)
                 invalidUser.setText("Cannot contain ','");
-            else if(toShort)
+            else if (toShort)
                 invalidUser.setText("Too short. Must be\nmin 4 chars long.");
             else
                 invalidUser.setText("Already registered.");

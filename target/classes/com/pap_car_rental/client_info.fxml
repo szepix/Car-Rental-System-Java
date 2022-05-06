@@ -7,42 +7,40 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="line" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.ClientInfoController">
    <top>
-      <HBox BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Id:">
-               <HBox.margin>
+       <HBox BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+               <Insets bottom="10.0" />
+           </BorderPane.margin>
+           <Label text="Id:">
+              <HBox.margin>
                   <Insets left="10.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="id_label" text="Id">
-               <HBox.margin>
+              </HBox.margin>
+           </Label>
+           <Label fx:id="id_label" text="Id">
+              <HBox.margin>
                   <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </Label>
-            <Label text="login:">
-               <HBox.margin>
+              </HBox.margin>
+           </Label>
+           <Label text="login:">
+              <HBox.margin>
                   <Insets />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="login_label" text="login">
-               <HBox.margin>
+              </HBox.margin>
+           </Label>
+           <Label fx:id="login_label" text="login">
+              <HBox.margin>
                   <Insets left="10.0" />
-               </HBox.margin>
-            </Label>
-            <Label text="password:">
-               <HBox.margin>
+              </HBox.margin>
+           </Label>
+           <Label text="password:">
+              <HBox.margin>
                   <Insets left="10.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="password_label" text="password">
-               <HBox.margin>
+              </HBox.margin>
+           </Label>
+           <Label fx:id="password_label" text="password">
+              <HBox.margin>
                   <Insets left="10.0" right="10.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="10.0" />
-         </BorderPane.margin>
-      </HBox>
+              </HBox.margin>
+           </Label>
+       </HBox>
    </top>
 </BorderPane>

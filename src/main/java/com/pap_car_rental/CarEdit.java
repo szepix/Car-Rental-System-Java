@@ -12,32 +12,33 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CarEdit {
-    @FXML private Label adminNameDisplay;
-    @FXML private Button goBackButton;
-    @FXML private VBox carScroller;
+    @FXML
+    private Label adminNameDisplay;
+    @FXML
+    private Button goBackButton;
+    @FXML
+    private VBox carScroller;
 
 
-    @FXML private void initialize() throws SQLException {
-        adminNameDisplay.setText("Hi, "+App.currentAdmin[0]+"!");
+    @FXML
+    private void initialize() throws SQLException {
+        adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
 
         ArrayList<Car> allCars = App.db.listCars();
 
-        for (var car: allCars)
-        {
+        for (var car : allCars) {
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("car_edit_pane.fxml"));
 
-            try{
+            try {
                 BorderPane hbox = fxmloader.load();
                 CarEditPaneController carPane = fxmloader.getController();
                 carPane.setData(car);
                 carScroller.getChildren().add(hbox);
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
 
 
     }

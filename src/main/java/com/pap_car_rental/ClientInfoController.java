@@ -16,12 +16,12 @@ public class ClientInfoController implements Initializable {
     @FXML
     private Label id_label;
 
-    public void setData(Client client)
-    {
+    public void setData(Client client) {
         login_label.setText(client.login);
         password_label.setText(client.password);
         id_label.setText(String.valueOf(client.id));
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

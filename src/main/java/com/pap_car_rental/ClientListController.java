@@ -12,32 +12,33 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ClientListController {
-    @FXML private Label adminNameDisplay;
-    @FXML private Button goBackButton;
-    @FXML private VBox clientList;
+    @FXML
+    private Label adminNameDisplay;
+    @FXML
+    private Button goBackButton;
+    @FXML
+    private VBox clientList;
 
 
-    @FXML private void initialize() throws SQLException {
-        adminNameDisplay.setText("Hi, "+App.currentAdmin[0]+"!");
+    @FXML
+    private void initialize() throws SQLException {
+        adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
 
         ArrayList<Client> allClients = App.db.listClients();
 
-        for (var client: allClients)
-        {
+        for (var client : allClients) {
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("client_info.fxml"));
 
-            try{
+            try {
                 BorderPane hbox = fxmloader.load();
                 ClientInfoController clientInfo = fxmloader.getController();
                 clientInfo.setData(client);
                 clientList.getChildren().add(hbox);
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
 
 
     }
