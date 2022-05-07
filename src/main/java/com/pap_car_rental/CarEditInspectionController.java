@@ -50,7 +50,7 @@ public class CarEditInspectionController {
     @FXML
     private void editCar() throws SQLException, IOException {
         System.out.println(CarEditPaneController.car.id);
-        Car car = new Car(CarEditPaneController.car.id, car_type.getText(), car_make.getText(), Integer.parseInt(car_price.getText()), car_model.getText(), null, null);
+        Car car = new Car(CarEditPaneController.car.id, car_type.getText(), car_make.getText(), Integer.parseInt(car_price.getText()), car_model.getText());
         App.db.editCar(car);
         App.setRoot("car_edit");
     }
