@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.sql.Date;
 
 public class CarList {
     @FXML
@@ -34,7 +35,8 @@ public class CarList {
         ArrayList<Car> matchingCost = new ArrayList<>();
         ArrayList<Car> matchingType = new ArrayList<>();
         ArrayList<Car> matchingDate = new ArrayList<>();
-
+        ArrayList<Reservation> reservations = App.db.listReservations();
+        boolean valid;
 
         //Checking Brand
         if (App.searched_make.equals("")) {
@@ -89,13 +91,42 @@ public class CarList {
         //Checking Date
         if (App.dateFrom == null & App.dateTo == null) {
             matchingDate.addAll(matchingType);
-        } else {
-            matchingDate.addAll(matchingType);
+        }
+        else
+        {
+            for (Car car7 : matchingType)
+            {
+            valid = true;
+            for (Reservation res : reservations)
+            {
+                if(res.carId == car7.id)
+                {
+                    System.out.println((App.dateTo.compareTo(res.dateFrom) < 0));
+                    if((App.dateTo.compareTo(res.dateFrom) < 0) & (App.dateFrom.compareTo(res.dateFrom)>0)){
+                        ;
+                    }
+                    if((App.dateFrom.compareTo(res.dateTo) > 0) & (App.dateTo.compareTo(res.dateTo) > 0))
+                    {
+                        ;
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
+
+                }
+
+            }
+            if(valid == true){
+                matchingDate.add(car7);
+            }
+            }
         }
 
         //Diagnostics
         for (Car car : matchingType) {
-            System.out.println("Searched: " + car.Brand + " " + car.Car_type + " " + car.Model + " " + car.Cost);
+            //System.out.println("Searched: " + car.Brand + " " + car.Car_type + " " + car.Model + " " + car.Cost);
+            //System.out.print(App.dateFrom);
         }
 
         for (var car : matchingDate) {
