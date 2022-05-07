@@ -15,94 +15,108 @@
 
 <BorderPane prefHeight="300.0" prefWidth="700.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.AdminController">
    <right>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" style="-fx-background-color: rgb(80,120,150);" styleClass="axis" stylesheets="@javaStyle.css" BorderPane.alignment="CENTER">
-         <children>
-            <GridPane>
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label fx:id="adminNameDisplay" alignment="BOTTOM_LEFT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="adminName" textFill="WHITE" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="3.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToMainMenu" prefWidth="85.0" styleClass="button-2" stylesheets="@javaStyle.css" text="SIGN OFF" GridPane.columnIndex="2">
-                     <GridPane.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </GridPane.margin></Button>
-                  <Label>
-                     <GridPane.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <graphic>
-                        <ImageView fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@user1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </GridPane>
-            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="My account">
-               <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </VBox.margin></Button>
-         </children>
-      </VBox>
+       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+             style="-fx-background-color: rgb(80,120,150);" styleClass="axis" stylesheets="@javaStyle.css"
+             BorderPane.alignment="CENTER">
+           <GridPane>
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.0" minWidth="35.0" prefWidth="35.0"/>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0"/>
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               </rowConstraints>
+               <Label fx:id="adminNameDisplay" alignment="BOTTOM_LEFT" contentDisplay="CENTER"
+                      maxWidth="1.7976931348623157E308" text="adminName" textFill="WHITE" GridPane.columnIndex="1">
+                   <GridPane.margin>
+                       <Insets left="3.0" top="5.0"/>
+                   </GridPane.margin>
+                   <font>
+                       <Font size="14.0"/>
+                   </font>
+               </Label>
+               <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER"
+                       maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       onAction="#switchToMainMenu" prefWidth="85.0" styleClass="button-2"
+                       stylesheets="@javaStyle.css" text="SIGN OFF" GridPane.columnIndex="2">
+                   <GridPane.margin>
+                       <Insets right="5.0" top="5.0"/>
+                   </GridPane.margin>
+               </Button>
+               <Label>
+                   <GridPane.margin>
+                       <Insets left="5.0" top="5.0"/>
+                   </GridPane.margin>
+                   <graphic>
+                       <ImageView fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@user1.png"/>
+                       </ImageView>
+                   </graphic>
+                   <padding>
+                       <Insets top="5.0"/>
+                   </padding>
+               </Label>
+           </GridPane>
+           <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                   mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="My account">
+              <VBox.margin>
+                  <Insets left="5.0" right="5.0"/>
+              </VBox.margin>
+           </Button>
+       </VBox>
    </right>
    <center>
-      <VBox alignment="TOP_CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <children>
-            <HBox alignment="CENTER" stylesheets="@javaStyle.css">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="546.0" styleClass="title" stylesheets="@javaStyle.css" text="MIETEK car rental" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-                     <font>
-                        <Font name="AdobeHeitiStd-Regular" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
+       <VBox alignment="TOP_CENTER">
+           <BorderPane.margin>
+               <Insets/>
+           </BorderPane.margin>
+           <HBox alignment="CENTER" stylesheets="@javaStyle.css">
                <VBox.margin>
-                  <Insets />
+                   <Insets/>
                </VBox.margin>
-            </HBox>
-            <GridPane alignment="CENTER" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" stylesheets="@javaStyle.css" vgap="10.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" text="Edit car list" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="List of customers" GridPane.columnIndex="1" />
-                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAddCar" styleClass="button-1" text="Add a car" GridPane.rowIndex="1" />
-                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Reserve/pick up cars" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" text="List of rented cars" GridPane.rowIndex="2" />
-                  <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" text="Customer complaints" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-               </children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="546.0"
+                      styleClass="title" stylesheets="@javaStyle.css" text="MIETEK car rental" textAlignment="CENTER"
+                      textOverrun="CENTER_ELLIPSIS">
+                   <font>
+                       <Font name="AdobeHeitiStd-Regular" size="20.0"/>
+                   </font>
+               </Label>
+           </HBox>
+           <GridPane alignment="CENTER" hgap="10.0" maxHeight="1.7976931348623157E308"
+                     maxWidth="1.7976931348623157E308" prefHeight="500.0" stylesheets="@javaStyle.css" vgap="10.0">
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               </rowConstraints>
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" />
+                   <Insets bottom="10.0" left="10.0" right="10.0"/>
                </VBox.margin>
-            </GridPane>
-         </children>
-      </VBox>
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       mnemonicParsing="false" onAction="#switchToEditCars" styleClass="button-1"
+                       text="Edit car list"/>
+               <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" lineSpacing="10.0"
+                       maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                       onAction="#switchClientList" styleClass="button-1" stylesheets="@javaStyle.css"
+                       text="List of customers" GridPane.columnIndex="1"/>
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       mnemonicParsing="false" onAction="#switchToAddCar" styleClass="button-1" text="Add a car"
+                       GridPane.rowIndex="1"/>
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css"
+                       text="Reserve/pick up cars" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       mnemonicParsing="false" styleClass="button-1" text="List of rented cars"
+                       GridPane.rowIndex="2"/>
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       mnemonicParsing="false" styleClass="button-1" text="Customer complaints"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+           </GridPane>
+       </VBox>
    </center>
 </BorderPane>

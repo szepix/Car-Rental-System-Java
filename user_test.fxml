@@ -9,32 +9,28 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Pane layoutX="9.0" layoutY="32.0" prefHeight="146.0" prefWidth="393.0">
-         <children>
-            <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="22.0" text="Marka" />
-            <TextField layoutX="84.0" layoutY="17.0" prefHeight="27.0" prefWidth="300.0" promptText="np. BMW" />
-            <Label layoutX="24.0" layoutY="64.0" pickOnBounds="false" text="Model" />
-            <TextField layoutX="84.0" layoutY="59.0" prefHeight="27.0" prefWidth="300.0" promptText="np. I8" />
-            <Label layoutX="24.0" layoutY="101.0" text="Data" />
-            <SplitPane dividerPositions="0.47989276139410186, 0.556970509383378, 0.5" layoutX="84.0" layoutY="95.0" prefHeight="27.0" prefWidth="300.0">
-               <items>
-                  <Label pickOnBounds="false" text="Od" />
-                  <DatePicker prefHeight="26.0" prefWidth="125.0" />
-                  <Label pickOnBounds="false" text="Do" />
-                  <DatePicker prefWidth="123.0" />
-               </items>
-            </SplitPane>
-            <Separator layoutX="-9.0" layoutY="-1.0" prefHeight="3.0" prefWidth="808.0" />
-         </children>
-      </Pane>
-      <SplitPane dividerPositions="0.5" layoutX="668.0" layoutY="-2.0">
-         <items>
-            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="User view" />
-            <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#switchToMainMenu" text="SIGN OFF" />
-         </items>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0"
+      prefWidth="806.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <Pane layoutX="9.0" layoutY="32.0" prefHeight="146.0" prefWidth="393.0">
+      <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="22.0" text="Marka"/>
+      <TextField layoutX="84.0" layoutY="17.0" prefHeight="27.0" prefWidth="300.0" promptText="np. BMW"/>
+      <Label layoutX="24.0" layoutY="64.0" pickOnBounds="false" text="Model"/>
+      <TextField layoutX="84.0" layoutY="59.0" prefHeight="27.0" prefWidth="300.0" promptText="np. I8"/>
+      <Label layoutX="24.0" layoutY="101.0" text="Data"/>
+      <SplitPane dividerPositions="0.47989276139410186, 0.556970509383378, 0.5" layoutX="84.0" layoutY="95.0"
+                 prefHeight="27.0" prefWidth="300.0">
+         <Label pickOnBounds="false" text="Od"/>
+         <DatePicker prefHeight="26.0" prefWidth="125.0"/>
+         <Label pickOnBounds="false" text="Do"/>
+         <DatePicker prefWidth="123.0"/>
       </SplitPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="3.0" prefHeight="29.0" prefWidth="665.0" text="WYPOŻYCZALNIA U MIETKA" />
-   </children>
+      <Separator layoutX="-9.0" layoutY="-1.0" prefHeight="3.0" prefWidth="808.0"/>
+   </Pane>
+   <SplitPane dividerPositions="0.5" layoutX="668.0" layoutY="-2.0">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="User view"/>
+      <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#switchToMainMenu"
+              text="SIGN OFF"/>
+   </SplitPane>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="3.0" prefHeight="29.0" prefWidth="665.0"
+          text="WYPOŻYCZALNIA U MIETKA"/>
 </Pane>

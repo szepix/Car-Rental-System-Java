@@ -12,67 +12,67 @@
 
 <BorderPane prefHeight="300.0" prefWidth="700.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarAddController">
    <center>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-         <children>
-            <HBox alignment="TOP_CENTER">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" stylesheets="@javaStyle.css" text="MIETEK car rental" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-                     <font>
-                        <Font name="AdobeHeitiStd-Regular" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
-                  <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type" />
-                  <ChoiceBox fx:id="car_type" prefWidth="370.0" styleClass="button-1" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
-                  <Label alignment="TOP_LEFT" prefWidth="56.0" styleClass="label-1" text="Brand" />
-                  <TextField fx:id="brand_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="370.0" promptText="All" styleClass="text-field-1" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
-                  <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" text="Model" />
-                  <TextField fx:id="model_text" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="370.0" promptText="Any" styleClass="text-field-1" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
-                  <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" text="Cost $/d" />
-                  <TextField fx:id="cost_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="370.0" promptText="Any" styleClass="text-field-1" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
-               <children>
-                  <HBox />
-                  <Button fx:id="addCarButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addCar" prefWidth="370.0" styleClass="button-1" text="Add Car">
-                     <HBox.margin>
-                        <Insets left="56.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-         </children>
-      </VBox>
+       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+           <HBox alignment="TOP_CENTER">
+               <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" stylesheets="@javaStyle.css"
+                      text="MIETEK car rental" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                   <font>
+                       <Font name="AdobeHeitiStd-Regular" size="20.0"/>
+                   </font>
+               </Label>
+           </HBox>
+           <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 spacing="10.0">
+               <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" stylesheets="@javaStyle.css"
+                      text="Car type"/>
+               <ChoiceBox fx:id="car_type" prefWidth="370.0" styleClass="button-1"/>
+           </HBox>
+           <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 spacing="10.0">
+               <Label alignment="TOP_LEFT" prefWidth="56.0" styleClass="label-1" text="Brand"/>
+               <TextField fx:id="brand_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                          prefWidth="370.0" promptText="All" styleClass="text-field-1"/>
+           </HBox>
+           <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 spacing="10.0">
+               <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" text="Model"/>
+               <TextField fx:id="model_text" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308"
+                          maxWidth="1.7976931348623157E308" prefWidth="370.0" promptText="Any"
+                          styleClass="text-field-1"/>
+           </HBox>
+           <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 spacing="10.0">
+               <Label pickOnBounds="false" prefWidth="56.0" styleClass="label-1" text="Cost $/d"/>
+               <TextField fx:id="cost_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                          prefWidth="370.0" promptText="Any" styleClass="text-field-1"/>
+           </HBox>
+           <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 spacing="10.0">
+               <HBox/>
+               <Button fx:id="addCarButton" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                       onAction="#addCar" prefWidth="370.0" styleClass="button-1" text="Add Car">
+                   <HBox.margin>
+                       <Insets left="56.0"/>
+                   </HBox.margin>
+               </Button>
+           </HBox>
+           <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+              <VBox.margin>
+                  <Insets/>
+              </VBox.margin>
+           </HBox>
+       </VBox>
    </center>
    <right>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToAdminMenu" styleClass="button-2" stylesheets="@javaStyle.css" text="Go Back">
-               <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </VBox.margin></Button>
-         </children>
-      </VBox>
+       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+             BorderPane.alignment="CENTER">
+           <Button fx:id="mainMenuButton" alignment="CENTER_RIGHT" contentDisplay="CENTER"
+                   maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToAdminMenu"
+                   styleClass="button-2" stylesheets="@javaStyle.css" text="Go Back">
+              <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+              </VBox.margin>
+           </Button>
+       </VBox>
    </right>
 </BorderPane>

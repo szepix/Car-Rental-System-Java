@@ -1,5 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController adminName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.AdminController adminNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEdit adminNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientListController adminNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController adminPwd" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController brand_text" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController car_make" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController car_model" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController car_name" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController car_price" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController car_type" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController car_type" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController carCost" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController carCost" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController carMake" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController carMake" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController carModel" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController carModel" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController carName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController carName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEdit carScroller" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarList carScroller" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController carType" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController carType" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType0" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType1" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType2" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType3" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType4" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController carType5" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.Reservation clientId" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientListController clientList" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController cost_text" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController costHigh" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController costLow" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.Car dateFrom" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl dateFrom" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController dateFrom" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController dateFrom_button" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.Car dateTo" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl dateTo" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController dateTo" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController dateTo_button" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController editButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEdit goBackButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController goBackButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl goBackButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarList goBackButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientListController goBackButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.Reservation id" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientInfoController id_label" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController image" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController image" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl image" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController image" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl InspectedMake" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl InspectedModel" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl InspectedName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl InspectedPrice" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl InspectedType" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController invalidAdmin" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController invalidUser" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientInfoController login_label" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditInspectionController mainMenuButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl mainMenuButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarAddController model_text" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.ClientInfoController password_label" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl reserveButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController searched_make_text" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController searched_model_text" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectButton" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectedCost" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectedCost" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectedMake" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectedMake" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectedModel" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectedModel" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectedName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectedName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarEditPaneController selectedType" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarPaneController selectedType" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController userName" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarInspectionControl userNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.CarList userNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.UserController userNameDisplay" />
+      <entry_point TYPE="field" FQNAME="com.pap_car_rental.MainMenuController userPwd" />
+    </entry_points>
+    <pattern value="com.pap_car_rental.CarAddController" method="addCar" />
+    <pattern value="com.pap_car_rental.AdminController" />
+    <pattern value="com.pap_car_rental.App" />
+    <pattern value="com.pap_car_rental.Car" />
+    <pattern value="com.pap_car_rental.Car" method="Car" />
+    <pattern value="com.pap_car_rental.CarAddController" />
+    <pattern value="com.pap_car_rental.CarEdit" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" />
+    <pattern value="com.pap_car_rental.CarEditPaneController" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" />
+    <pattern value="com.pap_car_rental.CarList" />
+    <pattern value="com.pap_car_rental.CarPaneController" />
+    <pattern value="com.pap_car_rental.Client" />
+    <pattern value="com.pap_car_rental.Client" method="Client" />
+    <pattern value="com.pap_car_rental.ClientInfoController" />
+    <pattern value="com.pap_car_rental.ClientListController" />
+    <pattern value="com.pap_car_rental.DatabaseControl" />
+    <pattern value="com.pap_car_rental.DatabaseControl" method="DatabaseControl" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" method="editCar" />
+    <pattern value="com.pap_car_rental.Launcher" />
+    <pattern value="com.pap_car_rental.MainMenuController" />
+    <pattern value="com.pap_car_rental.UserController" />
+    <pattern value="com.pap_car_rental.AdminController" method="initialize" />
+    <pattern value="com.pap_car_rental.CarAddController" method="initialize" />
+    <pattern value="com.pap_car_rental.CarEdit" method="initialize" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" method="initialize" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" method="initialize" />
+    <pattern value="com.pap_car_rental.CarList" method="initialize" />
+    <pattern value="com.pap_car_rental.ClientListController" method="initialize" />
+    <pattern value="com.pap_car_rental.UserController" method="initialize" />
+    <pattern value="com.pap_car_rental.UserController" method="limitFromDate" />
+    <pattern value="com.pap_car_rental.UserController" method="limitToDate" />
+    <pattern value="com.pap_car_rental.App" method="main" />
+    <pattern value="com.pap_car_rental.Launcher" method="main" />
+    <pattern value="com.pap_car_rental.Reservation" />
+    <pattern value="com.pap_car_rental.Reservation" method="Reservation" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" method="reserve" />
+    <pattern value="com.pap_car_rental.App" method="start" />
+    <pattern value="com.pap_car_rental.AdminController" method="switchClientList" />
+    <pattern value="com.pap_car_rental.AdminController" method="switchToAddCar" />
+    <pattern value="com.pap_car_rental.CarEdit" method="switchToAdmin" />
+    <pattern value="com.pap_car_rental.ClientListController" method="switchToAdmin" />
+    <pattern value="com.pap_car_rental.MainMenuController" method="switchToAdmin" />
+    <pattern value="com.pap_car_rental.CarAddController" method="switchToAdminMenu" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" method="switchToCarList" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" method="switchToCarList" />
+    <pattern value="com.pap_car_rental.UserController" method="switchToCarList" />
+    <pattern value="com.pap_car_rental.AdminController" method="switchToEditCars" />
+    <pattern value="com.pap_car_rental.AdminController" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.CarEdit" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.CarList" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.ClientListController" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.UserController" method="switchToMainMenu" />
+    <pattern value="com.pap_car_rental.CarEditInspectionController" method="switchToUser" />
+    <pattern value="com.pap_car_rental.CarInspectionControl" method="switchToUser" />
+    <pattern value="com.pap_car_rental.CarList" method="switchToUser" />
+    <pattern value="com.pap_car_rental.MainMenuController" method="switchToUser" />
+    <pattern value="com.pap_car_rental.MainMenuController" method="switchToUserRegister" />
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">

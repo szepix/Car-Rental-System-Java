@@ -1,21 +1,26 @@
 package com.pap_car_rental;
 
-import java.io.IOException;
-import java.sql.Date;
-import java.sql.SQLException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class CarAddController {
-    @FXML private ChoiceBox<String> car_type;
-    @FXML private TextField brand_text;
-    @FXML private TextField model_text;
-    @FXML private TextField cost_text;
-    @FXML private DatePicker dateFrom_button;
-    @FXML private DatePicker dateTo_button;
+    @FXML
+    private ChoiceBox<String> car_type;
+    @FXML
+    private TextField brand_text;
+    @FXML
+    private TextField model_text;
+    @FXML
+    private TextField cost_text;
+    @FXML
+    private DatePicker dateFrom_button;
+    @FXML
+    private DatePicker dateTo_button;
 
     @FXML
     private void initialize() {
@@ -26,6 +31,7 @@ public class CarAddController {
     private void switchToAdminMenu() throws IOException {
         App.setRoot("admin");
     }
+
     @FXML
     private void addCar() throws SQLException {
         String Car_type = car_type.getValue();

@@ -1,27 +1,47 @@
 package com.pap_car_rental;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+
 import java.io.IOException;
 import java.sql.Date;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
 import java.time.LocalDate;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 
 
 public class UserController {
-    @FXML private Label userNameDisplay;
-    @FXML private DatePicker dateFrom;
-    @FXML private DatePicker dateTo;
+    @FXML
+    private Label userNameDisplay;
+    @FXML
+    private DatePicker dateFrom;
+    @FXML
+    private DatePicker dateTo;
+    @FXML
+    private TextField searched_make_text;
+    @FXML
+    private TextField searched_model_text;
+    @FXML
+    private CheckBox carType0;
+    @FXML
+    private CheckBox carType1;
+    @FXML
+    private CheckBox carType2;
+    @FXML
+    private CheckBox carType3;
+    @FXML
+    private CheckBox carType4;
+    @FXML
+    private CheckBox carType5;
+    @FXML
+    private Slider costLow;
+    @FXML
+    private Slider costHigh;
 
+    public static LocalDate dateTo_search;
+    public static LocalDate dateFrom_search;
     @FXML
     private void initialize() {
         //initialize username
-        userNameDisplay.setText("Hi, "+App.currentUser[0]+"!");
+        userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
 
         //block illegal dates:
 
@@ -41,7 +61,7 @@ public class UserController {
                 super.updateItem(date, empty);
                 LocalDate today = LocalDate.now();
 
-                setDisable(empty || date.compareTo(today) < 0 );
+                setDisable(empty || date.compareTo(today) < 0);
             }
         });
 
@@ -60,59 +80,48 @@ public class UserController {
         App.setRoot("main_menu");
     }
 
-    @FXML private TextField searched_make_text;
-    @FXML private TextField searched_model_text;
-    @FXML private CheckBox carType0;
-    @FXML private CheckBox carType1;
-    @FXML private CheckBox carType2;
-    @FXML private CheckBox carType3;
-    @FXML private CheckBox carType4;
-    @FXML private CheckBox carType5;
-    @FXML private Slider costLow;
-    @FXML private Slider costHigh;
-
-
     @FXML
     private void switchToCarList() throws IOException {
         App.searched_make = searched_make_text.getText().toUpperCase();
         App.searched_model = searched_model_text.getText().toUpperCase();
-        App.carType[0]=carType0.isSelected();
-        App.carType[1]=carType1.isSelected();
-        App.carType[2]=carType2.isSelected();
-        App.carType[3]=carType3.isSelected();
-        App.carType[4]=carType4.isSelected();
-        App.carType[5]=carType5.isSelected();
-        App.costLow=(int)costLow.getValue();
-        App.costHigh=(int)costHigh.getValue();
-        try{
-            App.dateFrom= Date.valueOf(dateFrom.getValue());
-            App.dateTo= Date.valueOf(dateTo.getValue());
-        } catch (Exception e)
-        {
-            App.dateFrom=null;
-            App.dateTo=null;
+        App.carType[0] = carType0.isSelected();
+        App.carType[1] = carType1.isSelected();
+        App.carType[2] = carType2.isSelected();
+        App.carType[3] = carType3.isSelected();
+        App.carType[4] = carType4.isSelected();
+        App.carType[5] = carType5.isSelected();
+        App.costLow = (int) costLow.getValue();
+        App.costHigh = (int) costHigh.getValue();
+        dateFrom_search = dateFrom.getValue();
+        dateTo_search = dateTo.getValue();
+        try {
+            App.dateFrom = Date.valueOf(dateFrom.getValue());
+            App.dateTo = Date.valueOf(dateTo.getValue());
+        } catch (Exception e) {
+            App.dateFrom = null;
+            App.dateTo = null;
 
         }
 
-        System.out.println("From "+App.dateFrom+" To "+App.dateTo);
+        System.out.println("From " + App.dateFrom + " To " + App.dateTo);
         App.setRoot("car_list");
     }
 
     @FXML
-    private void limitToDate() throws IOException {
+    private void limitToDate() {
         //block to dates older than from day + 1
         dateTo.setDayCellFactory(picker -> new DateCell() {
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
                 LocalDate min = dateFrom.getValue();
 
-                setDisable(empty || date.compareTo(min) < 0 );
+                setDisable(empty || date.compareTo(min) < 0);
             }
         });
     }
 
     @FXML
-    private void limitFromDate() throws IOException {
+    private void limitFromDate() {
         //block to dates older than from day + 1
         dateFrom.setDayCellFactory(picker -> new DateCell() {
             public void updateItem(LocalDate date, boolean empty) {
