@@ -29,7 +29,7 @@ public class App extends Application {
     public static int costHigh;
     public static Date dateFrom;
     public static Date dateTo;
-    private static Scene scene;
+    public static Scene scene;  //was private
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
@@ -42,7 +42,6 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-
     }
 
     @Override
@@ -53,7 +52,7 @@ public class App extends Application {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
-        scene = new Scene(loadFXML("main_menu"), 720, 480);
+        scene = new Scene(loadFXML("main_menu"), 640, 320);
         stage.setScene(scene);
         stage.setTitle("Car Rental System v0.0");
         stage.show();

@@ -5,15 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-
+import java.util.*;
+import java.math.*;
 
 public class UserController {
     @FXML
@@ -47,10 +50,19 @@ public class UserController {
     public static LocalDate dateFrom_search;
 
     @FXML
-    private VBox carDisplay;
+    private GridPane carDisplay;
 
     @FXML
     private void initialize() throws SQLException {
+        //resize
+        Stage stage = (Stage) App.scene.getWindow();
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
+        stage.setWidth(720);
+        stage.setHeight(640);
+
+
         //initialize username
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
 
@@ -88,8 +100,21 @@ public class UserController {
 
 
         //add promoted cars
-        ArrayList<Car> cars = App.db.listCars();
-        for (var car : cars) {
+
+        ArrayList<Car> allCars = App.db.listCars();
+        Collections.sort(allCars);
+        Random rand = new Random();
+        ArrayList<Integer> usedIndices = new ArrayList<Integer>();
+        int k = 2; //num of displayed promoted cars, cannot be to large or error
+        for(int i=0; i<k; i++){
+            int randIndex;
+            do{
+                randIndex = rand.nextInt(Math.min(10, allCars.size()));
+            }while (usedIndices.contains(randIndex));
+            usedIndices.add(randIndex);
+
+
+            Car car = allCars.get(randIndex);
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("car_promo_pane.fxml"));
 
@@ -97,7 +122,7 @@ public class UserController {
                 BorderPane hbox = fxmloader.load();
                 CarPromoController carPane = fxmloader.getController();
                 carPane.setData(car);
-                carDisplay.getChildren().add(hbox);
+                carDisplay.add(hbox, i, 0);
             } catch (IOException e) {
                 e.printStackTrace();
             }

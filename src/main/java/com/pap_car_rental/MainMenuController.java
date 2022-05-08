@@ -10,6 +10,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
 public class MainMenuController {
     @FXML
     private TextField adminName;
@@ -23,6 +29,21 @@ public class MainMenuController {
     private TextField userPwd;
     @FXML
     private Label invalidUser;
+
+
+    @FXML
+    private void initialize() throws SQLException {
+        //resize
+        try{
+            Stage stage = (Stage) App.scene.getWindow();
+            GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+            int width = gd.getDisplayMode().getWidth();
+            int height = gd.getDisplayMode().getHeight();
+            stage.setWidth(660);    //+20 to keep size
+            stage.setHeight(360);   //+40 to keep size
+        }catch(Exception e){};
+    }
+
 
     @FXML
     private void switchToAdmin() throws IOException {

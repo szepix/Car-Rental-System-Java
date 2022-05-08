@@ -17,7 +17,6 @@ public class CarPromoController implements Initializable {
     public static int selectedCost;
     public static String selectedMake;
     public static String selectedModel;
-    public static String selectedName;
     public static String selectedType;
     public static Car inspectedCar;
     public static int inspectedCost;
@@ -33,8 +32,6 @@ public class CarPromoController implements Initializable {
     @FXML
     private Label carModel;
     @FXML
-    private Label carName;
-    @FXML
     private Label carType;
     @FXML
     private ImageView image;
@@ -45,7 +42,6 @@ public class CarPromoController implements Initializable {
         carCost.setText(Integer.toString(car.Cost));
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
-        carName.setText("Car");
         carType.setText("(" + car.Car_type + ")");
         try {
             carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));

@@ -57,6 +57,12 @@
     -fx-font-weight: bold;
 }
 
+.label-2 {
+    -fx-font: 14px "System";
+    -fx-text-fill: -fx-aqua;
+    -fx-font-weight: bold;
+}
+
 .title {
     -fx-font: 28px "System";
     -fx-text-fill: -fx-aqua-dark;
@@ -158,4 +164,9 @@
 
 .line {
     -fx-stroke: -fx-aqua-mid;
+}
+
+.backbox-1 {
+    -fx-background-color: -fx-aqua-mid;
+    -fx-background-radius: 8;
 }
