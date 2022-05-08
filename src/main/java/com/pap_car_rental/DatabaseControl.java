@@ -84,7 +84,7 @@ public class DatabaseControl {
     }
 
     public void editCar(Car car) throws SQLException {
-        PreparedStatement pstmt = c.prepareStatement("UPDATE `CAR_LIST`SET Car_type = ?, Brand = ?, Cost = ?, Model = ?, DateFrom = NULL, DateTo = NULL  WHERE Id = ?");
+        PreparedStatement pstmt = c.prepareStatement("UPDATE `CAR_LIST`SET Car_type = ?, Brand = ?, Cost = ?, Model = ? WHERE Id = ?");
         pstmt.setString(1, car.Car_type);
         pstmt.setString(2, car.Brand);
         pstmt.setString(3, String.valueOf(car.Cost));
