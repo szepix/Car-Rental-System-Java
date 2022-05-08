@@ -35,6 +35,23 @@ public class DatabaseControl {
         return reservation_list;
     }
 
+    public ArrayList<Reservation> listClientReservations(int ClientId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM RESERVATIONS WHERE ClientId = ?");
+        pstmt.setInt(1, ClientId);
+        ResultSet rs = pstmt.executeQuery();
+        ArrayList<Reservation> reservation_list = new ArrayList<>();
+        while (rs.next()) {
+            int id = rs.getInt("Id");
+            Date dateFrom = rs.getDate("DateFrom");
+            Date dateTo = rs.getDate("DateTo");
+            int clientId = rs.getInt("ClientId");
+            int carId = rs.getInt("CarId");
+            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId);
+            reservation_list.add(reservation);
+        }
+        return reservation_list;
+    }
+
     public ArrayList<Car> listCars() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM CAR_LIST");
@@ -100,6 +117,11 @@ public class DatabaseControl {
         pstmt.setDate(2, DateTo);
         pstmt.setInt(3, ClientId);
         pstmt.setInt(4, CarId);
+        pstmt.executeUpdate();
+    }
+    public void removeReservation(int ReservationId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("DELETE FROM `RESERVATIONS` WHERE Id = ?");
+        pstmt.setInt(1, ReservationId);
         pstmt.executeUpdate();
     }
 }

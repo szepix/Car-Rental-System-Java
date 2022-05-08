@@ -159,5 +159,4 @@ public class CarInspectionControl {
         App.db.addReservation(DateFrom, DateTo, ClientId, CarId);
         App.setRoot("user");
     }
-
 }

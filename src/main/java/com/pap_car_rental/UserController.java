@@ -135,6 +135,11 @@ public class UserController {
     }
 
     @FXML
+    private void switchToRentedCars() throws IOException {
+        App.setRoot("client_rents");
+    }
+
+    @FXML
     private void switchToCarList() throws IOException {
         App.searched_make = searched_make_text.getText().toUpperCase();
         App.searched_model = searched_model_text.getText().toUpperCase();

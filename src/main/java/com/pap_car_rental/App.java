@@ -49,6 +49,7 @@ public class App extends Application {
         ArrayList<Car> cars = db.listCars();
         ArrayList<Client> clients = db.listClients();
         ArrayList<Reservation> reservations = db.listReservations();
+        System.out.println(db.listClientReservations(2));
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
