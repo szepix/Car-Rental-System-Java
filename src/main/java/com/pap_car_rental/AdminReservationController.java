@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AdminReservationController {
-    private ArrayList<Car> allCars = App.db.listCars();
-    private ArrayList<Reservation> reservations = App.db.listReservations();
+    private ArrayList<Car> allCars;
+    private ArrayList<Reservation> reservations;
     @FXML
     private Label adminNameDisplay;
     @FXML
@@ -38,14 +38,14 @@ public class AdminReservationController {
         reserveCarsButton.setOnAction(event -> {
             try {
                 changeToReservations();
-            } catch (IOException e) {
+            } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }
         });
         pickUpCarsButton.setOnAction(event -> {
             try {
                 changeToPickUp();
-            } catch (IOException e) {
+            } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }
         });
@@ -62,7 +62,9 @@ public class AdminReservationController {
         App.setRoot("admin");
     }
 
-    private void changeToReservations() throws IOException {
+    private void changeToReservations() throws IOException, SQLException {
+        allCars = App.db.listCars();
+        reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var car : allCars) {
             FXMLLoader fxmloader = new FXMLLoader();
@@ -81,18 +83,22 @@ public class AdminReservationController {
 
     }
 
-    private void changeToPickUp() throws IOException {
+    private void changeToPickUp() throws IOException, SQLException {
+        allCars = App.db.listCars();
+        reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var reservation : reservations) {
-            FXMLLoader fxmloader = new FXMLLoader();
-            fxmloader.setLocation(getClass().getResource("client_rented_car.fxml"));
-            try {
-                BorderPane hbox = fxmloader.load();
-                ClientRentedCarController carPane = fxmloader.getController();
-                carPane.setData(allCars.get(reservation.carId - 1), reservation);
-                carScroller.getChildren().add(hbox);
-            } catch (IOException e) {
-                e.printStackTrace();
+            if(!reservation.rented) {
+                FXMLLoader fxmloader = new FXMLLoader();
+                fxmloader.setLocation(getClass().getResource("admin_reserved_car.fxml"));
+                try {
+                    BorderPane hbox = fxmloader.load();
+                    AdminReservedCarController carPane = fxmloader.getController();
+                    carPane.setData(allCars.get(reservation.carId - 1), reservation);
+                    carScroller.getChildren().add(hbox);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

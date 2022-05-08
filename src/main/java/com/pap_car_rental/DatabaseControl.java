@@ -109,7 +109,11 @@ public class DatabaseControl {
         pstmt.setString(3, String.valueOf(car.Cost));
         pstmt.setString(4, car.Model);
         pstmt.setString(5, String.valueOf(car.id));
-        System.out.println(pstmt);
+        pstmt.executeUpdate();
+    }
+    public void rentCar(int reservationId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("UPDATE `RESERVATIONS`SET Rented = TRUE WHERE Id = ?");
+        pstmt.setInt(1, reservationId);
         pstmt.executeUpdate();
     }
 

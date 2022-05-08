@@ -35,7 +35,11 @@ public class AdminController {
     }
 
     @FXML
-    private void switchReservationController() throws IOException {
+    private void switchToReservationController() throws IOException {
         App.setRoot("admin_reservation");
+    }
+    @FXML
+    private void switchToRentedCarList() throws IOException {
+        App.setRoot("rented_cars_list");
     }
 }
