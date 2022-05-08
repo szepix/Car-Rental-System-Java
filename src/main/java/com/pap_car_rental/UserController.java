@@ -1,11 +1,18 @@
 package com.pap_car_rental;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class UserController {
@@ -38,8 +45,12 @@ public class UserController {
 
     public static LocalDate dateTo_search;
     public static LocalDate dateFrom_search;
+
     @FXML
-    private void initialize() {
+    private VBox carDisplay;
+
+    @FXML
+    private void initialize() throws SQLException {
         //initialize username
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
 
@@ -73,6 +84,24 @@ public class UserController {
 
 
         //got to limit the date from the top, when decided what is the limit
+
+
+
+        //add promoted cars
+        ArrayList<Car> cars = App.db.listCars();
+        for (var car : cars) {
+            FXMLLoader fxmloader = new FXMLLoader();
+            fxmloader.setLocation(getClass().getResource("car_promo_pane.fxml"));
+
+            try {
+                BorderPane hbox = fxmloader.load();
+                CarPromoController carPane = fxmloader.getController();
+                carPane.setData(car);
+                carDisplay.getChildren().add(hbox);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
