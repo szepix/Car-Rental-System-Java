@@ -29,7 +29,8 @@ public class DatabaseControl {
             Date dateTo = rs.getDate("DateTo");
             int clientId = rs.getInt("ClientId");
             int carId = rs.getInt("CarId");
-            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId);
+            boolean rented = rs.getBoolean("Rented");
+            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId, rented);
             reservation_list.add(reservation);
         }
         return reservation_list;
@@ -46,7 +47,8 @@ public class DatabaseControl {
             Date dateTo = rs.getDate("DateTo");
             int clientId = rs.getInt("ClientId");
             int carId = rs.getInt("CarId");
-            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId);
+            boolean rented = rs.getBoolean("Rented");
+            Reservation reservation = new Reservation(id, dateFrom, dateTo, clientId, carId, rented);
             reservation_list.add(reservation);
         }
         return reservation_list;
@@ -112,7 +114,7 @@ public class DatabaseControl {
     }
 
     public void addReservation(Date DateFrom, Date DateTo, int ClientId, int CarId) throws SQLException {
-        PreparedStatement pstmt = c.prepareStatement("INSERT INTO `RESERVATIONS`(Id, DateFrom, DateTo, ClientId, CarId) VALUES (NULL, ?, ?, ?, ?)");
+        PreparedStatement pstmt = c.prepareStatement("INSERT INTO `RESERVATIONS`(Id, DateFrom, DateTo, ClientId, CarId, Rented) VALUES (NULL, ?, ?, ?, ?, FALSE)");
         pstmt.setDate(1, DateFrom);
         pstmt.setDate(2, DateTo);
         pstmt.setInt(3, ClientId);

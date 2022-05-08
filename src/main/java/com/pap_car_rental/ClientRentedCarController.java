@@ -39,7 +39,7 @@ public class ClientRentedCarController implements Initializable {
     @FXML
     private ImageView image;
     @FXML
-    private Button selectButton;
+    private Button cancelButton;
 
     public void setData(Car car, Reservation reservation) {
         this.reservation = reservation;
@@ -56,23 +56,16 @@ public class ClientRentedCarController implements Initializable {
             carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
         }
         image.setImage(carImg);
-//        selectButton.setOnAction(event -> {
-//            CarEditPaneController.car = car;
-//            System.out.println("Make:" + car.Brand);
-//            System.out.println("Model:" + car.Model);
-//            System.out.println("Cost:" + car.Cost);
-//            System.out.println("Type:" + car.Car_type);
-//            inspectedCost = car.Cost;
-//            inspectedMake = car.Brand;
-//            inspectedModel = car.Model;
-//            inspectedName = "Car";
-//            inspectedType = car.Car_type;
-//            try {
-//                App.setRoot("car_edit_inspection");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
+
+        cancelButton.setOnAction(event -> {
+            ClientRentedCarController.reservation = reservation;
+            try {
+                App.db.removeReservation(reservation.id);
+                App.setRoot("client_rents");
+            } catch (IOException | SQLException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 
@@ -80,9 +73,9 @@ public class ClientRentedCarController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    @FXML
-    private void cancelReservation() throws SQLException, IOException {
-        App.db.removeReservation(reservation.id);
-        App.setRoot("client_rents");
-    }
+//    @FXML
+//    private void cancelReservation() throws SQLException, IOException {
+//        App.db.removeReservation(reservation.id);
+//        App.setRoot("client_rents");
+//    }
 }
