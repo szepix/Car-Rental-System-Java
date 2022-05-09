@@ -138,4 +138,50 @@ public class DatabaseControl {
         pstmt.setInt(1, ReservationId);
         pstmt.executeUpdate();
     }
+
+    public Client findClientById(int clientId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CLIENT_LIST WHERE Id = ?");
+        pstmt.setInt(1, clientId);
+        ResultSet rs = pstmt.executeQuery();
+        int id = rs.getInt("Id");
+        String login = rs.getString("Login");
+        String password = rs.getString("Password");
+        Client searched = new Client(id, login, password);
+        return searched;
+    }
+    public Client findClientByName(String clientName) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CLIENT_LIST WHERE Login = ?");
+        pstmt.setString(1, clientName);
+        ResultSet rs = pstmt.executeQuery();
+        int id = rs.getInt("Id");
+        String login = rs.getString("Login");
+        String password = rs.getString("Password");
+        Client searched = new Client(id, login, password);
+        return searched;
+    }
+    public Car findCar(int carId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CAR_LIST WHERE Id = ?");
+        pstmt.setInt(1, carId);
+        ResultSet rs = pstmt.executeQuery();
+        int id = rs.getInt("Id");
+        int cost = rs.getInt("Cost");
+        String carType = rs.getString("Car_type");
+        String Brand = rs.getString("Brand");
+        String Model = rs.getString("Model");
+        Car searched = new Car(id, carType, Brand, cost, Model);
+        return searched;
+    }
+    public Reservation findReservation(int resId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM RESERVATIONS WHERE Id = ?");
+        pstmt.setInt(1, resId);
+        ResultSet rs = pstmt.executeQuery();
+        int id = rs.getInt("Id");
+        int clientId = rs.getInt("ClientId");
+        int carId = rs.getInt("CarId");
+        boolean rented = rs.getBoolean("Rented");
+        Date dateFrom = rs.getDate("DateFrom");
+        Date dateTo = rs.getDate("DateTo");
+        Reservation searched = new Reservation(id, dateFrom, dateTo, clientId, carId, rented);
+        return  searched;
+    }
 }

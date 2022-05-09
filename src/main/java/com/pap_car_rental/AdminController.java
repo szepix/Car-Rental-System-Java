@@ -8,7 +8,7 @@ import java.io.IOException;
 public class AdminController {
     @FXML
     private Label adminNameDisplay;
-
+    public static String mode;
     @FXML
     private void initialize() {
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");

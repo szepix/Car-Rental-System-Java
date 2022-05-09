@@ -42,8 +42,10 @@ public class AdminReservedCarController implements Initializable {
     private Button cancelButton;
     @FXML
     private Button rentButton;
+    @FXML
+    private Label username;
 
-    public void setData(Car car, Reservation reservation) {
+    public void setData(Car car, Reservation reservation) throws SQLException {
         this.reservation = reservation;
         carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(),reservation.dateTo.toLocalDate().plusDays(1))*car.Cost));
         dateFrom.setText(String.valueOf(reservation.dateFrom));
@@ -52,6 +54,7 @@ public class AdminReservedCarController implements Initializable {
         carModel.setText(car.Model);
         carName.setText("Car");
         carType.setText("(" + car.Car_type + ")");
+        username.setText(App.db.findClientById(reservation.clientId).login);
         try {
             carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));
         } catch (Exception e) {
@@ -64,14 +67,19 @@ public class AdminReservedCarController implements Initializable {
             try {
                 App.db.removeReservation(reservation.id);
                 App.setRoot("admin_reservation");
-            } catch (IOException | SQLException e) {
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         rentButton.setOnAction(event -> {
             try {
                 App.db.rentCar(reservation.id);
+                App.setRoot("admin_reservation");
             } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });

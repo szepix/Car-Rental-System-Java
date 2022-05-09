@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class CarEditPaneController implements Initializable {
+public class AdminReservationPaneController implements Initializable {
 
     public static Car car;
     public static int selectedCost;
@@ -54,27 +54,20 @@ public class CarEditPaneController implements Initializable {
         }
         image.setImage(carImg);
         selectButton.setOnAction(event -> {
-            CarEditPaneController.car = car;
-            System.out.println("Make:" + car.Brand);
-            System.out.println("Model:" + car.Model);
-            System.out.println("Cost:" + car.Cost);
-            System.out.println("Type:" + car.Car_type);
+            AdminReservationPaneController.car = car;
             inspectedCost = car.Cost;
             inspectedMake = car.Brand;
             inspectedModel = car.Model;
             inspectedName = "Car";
             inspectedType = car.Car_type;
             try {
-                App.setRoot("car_edit_inspection");
+                App.setRoot("admin_car_inspection");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
-    @FXML
-    private void switchToReservationInspection() throws IOException {
-        App.setRoot("admin_car_inspection");
-    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -10,7 +10,6 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class AdminReservationController {
     private ArrayList<Car> allCars;
@@ -32,7 +31,16 @@ public class AdminReservationController {
     }
 
     @FXML
-    private void initialize() throws SQLException {
+    private void initialize() throws SQLException, IOException {
+        System.out.println(AdminController.mode);
+        if(AdminController.mode == "reserve")
+        {
+            this.changeToReservations();
+        }
+        else if(AdminController.mode == "pickup")
+        {
+            this.changeToPickUp();
+        }
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
 
         reserveCarsButton.setOnAction(event -> {
@@ -63,17 +71,17 @@ public class AdminReservationController {
     }
 
     private void changeToReservations() throws IOException, SQLException {
+        AdminController.mode = "reserve";
         allCars = App.db.listCars();
         reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var car : allCars) {
             FXMLLoader fxmloader = new FXMLLoader();
-            fxmloader.setLocation(getClass().getResource("client_rented_car.fxml"));
-
+            fxmloader.setLocation(getClass().getResource("admin_reservation_pane.fxml"));
             try {
                 BorderPane hbox = fxmloader.load();
-                ClientRentedCarController carPane = fxmloader.getController();
-                carPane.setData(car, reservations.get(0));
+                AdminReservationPaneController carPane = fxmloader.getController();
+                carPane.setData(car);
                 carScroller.getChildren().add(hbox);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -84,7 +92,7 @@ public class AdminReservationController {
     }
 
     private void changeToPickUp() throws IOException, SQLException {
-        allCars = App.db.listCars();
+        AdminController.mode = "pickup";
         reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var reservation : reservations) {
@@ -94,7 +102,7 @@ public class AdminReservationController {
                 try {
                     BorderPane hbox = fxmloader.load();
                     AdminReservedCarController carPane = fxmloader.getController();
-                    carPane.setData(allCars.get(reservation.carId - 1), reservation);
+                    carPane.setData(App.db.findCar(reservation.carId), reservation);
                     carScroller.getChildren().add(hbox);
                 } catch (IOException e) {
                     e.printStackTrace();
