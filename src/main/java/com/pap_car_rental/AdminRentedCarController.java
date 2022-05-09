@@ -2,18 +2,14 @@ package com.pap_car_rental;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.temporal.Temporal;
+import java.util.Objects;
 import java.util.ResourceBundle;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 
 public class AdminRentedCarController implements Initializable {
@@ -44,9 +40,9 @@ public class AdminRentedCarController implements Initializable {
         ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
         username.setText(App.db.findClientById(reservation.clientId).login);
         try {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
         image.setImage(carImg);
 
@@ -57,9 +53,4 @@ public class AdminRentedCarController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-//    @FXML
-//    private void cancelReservation() throws SQLException, IOException {
-//        App.db.removeReservation(reservation.id);
-//        App.setRoot("client_rents");
-//    }
 }

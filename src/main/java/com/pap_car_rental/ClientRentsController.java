@@ -25,15 +25,14 @@ public class ClientRentsController {
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         ArrayList<Car> allCars = App.db.listCars();
         ArrayList<Reservation> reservations = App.db.listClientReservations(App.currentUser.id);
-        for (var reservation : reservations)
-        {
+        for (var reservation : reservations) {
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("client_rented_car.fxml"));
 
             try {
                 BorderPane hbox = fxmloader.load();
                 ClientRentedCarController carPane = fxmloader.getController();
-                carPane.setData(allCars.get(reservation.carId-1), reservation);
+                carPane.setData(allCars.get(reservation.carId - 1), reservation);
                 carScroller.getChildren().add(hbox);
             } catch (IOException e) {
                 e.printStackTrace();

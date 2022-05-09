@@ -2,8 +2,6 @@ package com.pap_car_rental;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DateCell;
@@ -17,9 +15,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -63,9 +61,9 @@ public class CarInspectionControl {
         Timeline fiveSecondsWonder = new Timeline(
                 new KeyFrame(Duration.millis(100),
                         event -> {
-        if(dateTo.getValue() != null && dateFrom.getValue() != null) {
-            total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1))*CarPaneController.inspectedCost));
-        }
+                            if (dateTo.getValue() != null && dateFrom.getValue() != null) {
+                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * CarPaneController.inspectedCost));
+                            }
                         }));
         fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
         fiveSecondsWonder.play();
@@ -76,9 +74,9 @@ public class CarInspectionControl {
         InspectedPrice.setText(Integer.toString(CarPaneController.inspectedCost));
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         try {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + CarPaneController.inspectedMake + "_" + CarPaneController.inspectedModel + ".jpg"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + CarPaneController.inspectedMake + "_" + CarPaneController.inspectedModel + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
         image.setImage(carImg);
 

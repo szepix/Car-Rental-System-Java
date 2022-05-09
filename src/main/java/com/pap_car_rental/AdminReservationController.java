@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AdminReservationController {
     private ArrayList<Reservation> reservations;
@@ -26,18 +27,15 @@ public class AdminReservationController {
     @FXML
     private Button reserveCarsButton;
 
-    public AdminReservationController() throws SQLException {
+    public AdminReservationController() {
     }
 
     @FXML
-    private void initialize() throws SQLException, IOException {
+    private void initialize() throws SQLException {
         System.out.println(AdminController.mode);
-        if(AdminController.mode == "reserve")
-        {
+        if (Objects.equals(AdminController.mode, "reserve")) {
             this.changeToReservations();
-        }
-        else if(AdminController.mode == "pickup")
-        {
+        } else if (Objects.equals(AdminController.mode, "pickup")) {
             this.changeToPickUp();
         }
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
@@ -45,14 +43,14 @@ public class AdminReservationController {
         reserveCarsButton.setOnAction(event -> {
             try {
                 changeToReservations();
-            } catch (IOException | SQLException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         });
         pickUpCarsButton.setOnAction(event -> {
             try {
                 changeToPickUp();
-            } catch (IOException | SQLException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         });
@@ -69,7 +67,7 @@ public class AdminReservationController {
         App.setRoot("admin");
     }
 
-    private void changeToReservations() throws IOException, SQLException {
+    private void changeToReservations() throws SQLException {
         AdminController.mode = "reserve";
         ArrayList<Car> allCars = App.db.listCars();
         reservations = App.db.listReservations();
@@ -90,12 +88,12 @@ public class AdminReservationController {
 
     }
 
-    private void changeToPickUp() throws IOException, SQLException {
+    private void changeToPickUp() throws SQLException {
         AdminController.mode = "pickup";
         reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var reservation : reservations) {
-            if(!reservation.rented) {
+            if (!reservation.rented) {
                 FXMLLoader fxmloader = new FXMLLoader();
                 fxmloader.setLocation(getClass().getResource("admin_reserved_car.fxml"));
                 try {

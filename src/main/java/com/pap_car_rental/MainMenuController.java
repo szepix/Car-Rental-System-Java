@@ -3,18 +3,14 @@ package com.pap_car_rental;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 
 public class MainMenuController {
     @FXML
@@ -32,16 +28,18 @@ public class MainMenuController {
 
 
     @FXML
-    private void initialize() throws SQLException {
+    private void initialize() {
         //resize
-        try{
+        try {
             Stage stage = (Stage) App.scene.getWindow();
             GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
             int width = gd.getDisplayMode().getWidth();
             int height = gd.getDisplayMode().getHeight();
             stage.setWidth(660);    //+20 to keep size
             stage.setHeight(360);   //+40 to keep size
-        }catch(Exception e){}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -88,7 +86,6 @@ public class MainMenuController {
         ArrayList<Client> client_list = App.db.listClients();
         App.isUser = false;
         App.isAdmin = false;
-        ArrayList<String[]> allNames = new ArrayList<>();
         client_list.forEach(e -> {
             boolean isUser = e.login.equals(potentialUser[0]);
             if (!e.password.equals(potentialUser[1])) isUser = false;
@@ -114,7 +111,6 @@ public class MainMenuController {
         App.isUser = false;
         App.isAdmin = false;
         ArrayList<Client> user_list = App.db.listClients();
-        Client currentUser;
         user_list.forEach(e -> {
             boolean isUser = e.login.equals(potentialUser[0]);
             if (isUser) {

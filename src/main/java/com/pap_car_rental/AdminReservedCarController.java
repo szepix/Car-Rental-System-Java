@@ -10,10 +10,8 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.temporal.Temporal;
+import java.util.Objects;
 import java.util.ResourceBundle;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 
 public class AdminReservedCarController implements Initializable {
@@ -49,9 +47,9 @@ public class AdminReservedCarController implements Initializable {
         ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
         username.setText(App.db.findClientById(reservation.clientId).login);
         try {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
         image.setImage(carImg);
 
@@ -60,9 +58,7 @@ public class AdminReservedCarController implements Initializable {
             try {
                 App.db.removeReservation(reservation.id);
                 App.setRoot("admin_reservation");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -70,9 +66,7 @@ public class AdminReservedCarController implements Initializable {
             try {
                 App.db.rentCar(reservation.id);
                 App.setRoot("admin_reservation");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -83,9 +77,4 @@ public class AdminReservedCarController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-//    @FXML
-//    private void cancelReservation() throws SQLException, IOException {
-//        App.db.removeReservation(reservation.id);
-//        App.setRoot("client_rents");
-//    }
 }

@@ -2,23 +2,25 @@ package com.pap_car_rental;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.*;
-
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.*;
-import java.math.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class UserController {
+    public static LocalDate dateTo_search;
+    public static LocalDate dateFrom_search;
     @FXML
     private Label userNameDisplay;
     @FXML
@@ -45,10 +47,6 @@ public class UserController {
     private Slider costLow;
     @FXML
     private Slider costHigh;
-
-    public static LocalDate dateTo_search;
-    public static LocalDate dateFrom_search;
-
     @FXML
     private GridPane carDisplay;
 
@@ -98,19 +96,18 @@ public class UserController {
         //got to limit the date from the top, when decided what is the limit
 
 
-
         //add promoted cars
 
         ArrayList<Car> allCars = App.db.listCars();
         Collections.sort(allCars);
         Random rand = new Random();
-        ArrayList<Integer> usedIndices = new ArrayList<Integer>();
+        ArrayList<Integer> usedIndices = new ArrayList<>();
         int k = 2; //num of displayed promoted cars, cannot be to large or error
-        for(int i=0; i<k; i++){
+        for (int i = 0; i < k; i++) {
             int randIndex;
-            do{
+            do {
                 randIndex = rand.nextInt(Math.min(10, allCars.size()));
-            }while (usedIndices.contains(randIndex));
+            } while (usedIndices.contains(randIndex));
             usedIndices.add(randIndex);
 
 

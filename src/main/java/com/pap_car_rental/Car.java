@@ -1,8 +1,6 @@
 package com.pap_car_rental;
 
-import java.sql.Date;
-
-public class Car implements Comparable<Car>{
+public class Car implements Comparable<Car> {
     final int id;
     final String Car_type;
     final String Brand;
@@ -21,7 +19,6 @@ public class Car implements Comparable<Car>{
 
     @Override
     public int compareTo(Car comp) {
-        int compCost= comp.Cost;
-        return compCost-this.Cost;
+        return comp.Cost - this.Cost;
     }
 }

@@ -54,7 +54,6 @@ public class ClientListController {
                 App.isUser = false;
                 App.isAdmin = false;
                 ArrayList<Client> user_list = App.db.listClients();
-                Client currentUser;
                 user_list.forEach(e -> {
                     boolean isUser = e.login.equals(potentialUser[0]);
                     if (isUser) {

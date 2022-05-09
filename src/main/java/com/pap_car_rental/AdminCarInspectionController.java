@@ -2,8 +2,6 @@ package com.pap_car_rental;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -14,9 +12,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -52,21 +50,21 @@ public class AdminCarInspectionController {
     @FXML
     private ImageView image;
     @FXML
-    private ChoiceBox userName;
+    private ChoiceBox<String> userName;
 
     @FXML
     private void initialize() throws SQLException {
         Timeline fiveSecondsWonder = new Timeline(
                 new KeyFrame(Duration.millis(100),
-                event -> {
-                    if(dateTo.getValue() != null && dateFrom.getValue() != null) {
-                        total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1))*AdminReservationPaneController.inspectedCost));
-                    }}));
+                        event -> {
+                            if (dateTo.getValue() != null && dateFrom.getValue() != null) {
+                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * AdminReservationPaneController.inspectedCost));
+                            }
+                        }));
         fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
         fiveSecondsWonder.play();
         ArrayList<Client> allClients = App.db.listClients();
-        for(var client : allClients)
-        {
+        for (var client : allClients) {
             userName.getItems().add(client.login);
         }
         InspectedMake.setText(AdminReservationPaneController.inspectedMake);
@@ -76,9 +74,9 @@ public class AdminCarInspectionController {
         InspectedPrice.setText(Integer.toString(AdminReservationPaneController.inspectedCost));
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
         try {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
         image.setImage(carImg);
 

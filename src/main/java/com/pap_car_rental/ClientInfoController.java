@@ -20,6 +20,7 @@ public class ClientInfoController implements Initializable {
     private Label id;
     @FXML
     private Button edit;
+
     public void setData(Client client) {
         login.setText(client.login);
         password.setText(client.password);

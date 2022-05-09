@@ -8,16 +8,15 @@ import java.awt.*;
 import java.io.IOException;
 
 public class AdminController {
+    public static String mode;
     @FXML
     private Label adminNameDisplay;
-    public static String mode;
+
     @FXML
     private void initialize() {
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
         Stage stage = (Stage) App.scene.getWindow();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        int width = gd.getDisplayMode().getWidth();
-        int height = gd.getDisplayMode().getHeight();
         stage.setWidth(720);
         stage.setHeight(640);
     }
@@ -46,6 +45,7 @@ public class AdminController {
     private void switchToReservationController() throws IOException {
         App.setRoot("admin_reservation");
     }
+
     @FXML
     private void switchToRentedCarList() throws IOException {
         App.setRoot("rented_cars_list");

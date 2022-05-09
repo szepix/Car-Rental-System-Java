@@ -10,7 +10,6 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.temporal.Temporal;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -40,6 +39,15 @@ public class ClientRentedCarController implements Initializable {
     @FXML
     private Button cancelButton;
 
+    static void textSetup(Car car, Reservation reservation, Label carTotalCost, Label dateFrom, Label dateTo, Label carMake, Label carModel, Label carType) {
+        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(), reservation.dateTo.toLocalDate().plusDays(1)) * car.Cost));
+        dateFrom.setText(String.valueOf(reservation.dateFrom));
+        dateTo.setText(String.valueOf(reservation.dateTo));
+        carMake.setText(car.Brand);
+        carModel.setText(car.Model);
+        carType.setText("(" + car.Car_type + ")");
+    }
+
     public void setData(Car car, Reservation reservation) {
         ClientRentedCarController.reservation = reservation;
         textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
@@ -61,23 +69,8 @@ public class ClientRentedCarController implements Initializable {
         });
     }
 
-    static void textSetup(Car car, Reservation reservation, Label carTotalCost, Label dateFrom, Label dateTo, Label carMake, Label carModel, Label carType) {
-        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(),reservation.dateTo.toLocalDate().plusDays(1))*car.Cost));
-        dateFrom.setText(String.valueOf(reservation.dateFrom));
-        dateTo.setText(String.valueOf(reservation.dateTo));
-        carMake.setText(car.Brand);
-        carModel.setText(car.Model);
-        carType.setText("(" + car.Car_type + ")");
-    }
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-//    @FXML
-//    private void cancelReservation() throws SQLException, IOException {
-//        App.db.removeReservation(reservation.id);
-//        App.setRoot("client_rents");
-//    }
 }

@@ -10,7 +10,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -18,13 +17,13 @@ import java.util.ArrayList;
 public class App extends Application {
 
     public static final DatabaseControl db = new DatabaseControl();
+    public static final boolean[] carType = new boolean[6];
     public static boolean isUser = false;
     public static boolean isAdmin = false;
     public static Client currentUser;
     public static String[] currentAdmin = new String[2];
     public static String searched_make;
     public static String searched_model;
-    public static final boolean[] carType = new boolean[6];
     public static int costLow;
     public static int costHigh;
     public static Date dateFrom;
@@ -46,9 +45,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        ArrayList<Car> cars = db.listCars();
-        ArrayList<Client> clients = db.listClients();
-        ArrayList<Reservation> reservations = db.listReservations();
         System.out.println(db.listClientReservations(2));
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
