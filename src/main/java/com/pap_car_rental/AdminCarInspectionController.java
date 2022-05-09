@@ -58,11 +58,10 @@ public class AdminCarInspectionController {
     private void initialize() throws SQLException {
         Timeline fiveSecondsWonder = new Timeline(
                 new KeyFrame(Duration.millis(100),
-                        event -> {
-                            if(dateTo.getValue() != null && dateFrom.getValue() != null) {
-                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1))*AdminReservationPaneController.inspectedCost));
-                            };
-                        }));
+                event -> {
+                    if(dateTo.getValue() != null && dateFrom.getValue() != null) {
+                        total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1))*AdminReservationPaneController.inspectedCost));
+                    }}));
         fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
         fiveSecondsWonder.play();
         ArrayList<Client> allClients = App.db.listClients();
@@ -121,7 +120,7 @@ public class AdminCarInspectionController {
 
                         }
                     }
-                    setDisable(empty || datesToDisable.contains(date) || date.compareTo(today) < 0 || date.compareTo(dateFrom.getValue()) < 0);
+                    setDisable(empty || datesToDisable.contains(date) || date.compareTo(today) < 0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
