@@ -65,8 +65,8 @@ public class CarInspectionControl {
                         event -> {
         if(dateTo.getValue() != null && dateFrom.getValue() != null) {
             total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1))*CarPaneController.inspectedCost));
-        };
-                }));
+        }
+                        }));
         fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
         fiveSecondsWonder.play();
         InspectedMake.setText(CarPaneController.inspectedMake);

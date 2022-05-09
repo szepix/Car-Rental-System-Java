@@ -21,7 +21,7 @@ public class Car implements Comparable<Car>{
 
     @Override
     public int compareTo(Car comp) {
-        int compCost=((Car)comp).Cost;
+        int compCost= comp.Cost;
         return compCost-this.Cost;
     }
 }

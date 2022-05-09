@@ -41,7 +41,7 @@ public class MainMenuController {
             int height = gd.getDisplayMode().getHeight();
             stage.setWidth(660);    //+20 to keep size
             stage.setHeight(360);   //+40 to keep size
-        }catch(Exception e){};
+        }catch(Exception e){}
     }
 
 

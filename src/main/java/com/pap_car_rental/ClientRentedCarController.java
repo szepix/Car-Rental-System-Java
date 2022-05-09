@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.temporal.Temporal;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -29,8 +30,6 @@ public class ClientRentedCarController implements Initializable {
     @FXML
     private Label carModel;
     @FXML
-    private Label carName;
-    @FXML
     private Label carType;
     @FXML
     private Label dateFrom;
@@ -42,18 +41,12 @@ public class ClientRentedCarController implements Initializable {
     private Button cancelButton;
 
     public void setData(Car car, Reservation reservation) {
-        this.reservation = reservation;
-        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(),reservation.dateTo.toLocalDate().plusDays(1))*car.Cost));
-        dateFrom.setText(String.valueOf(reservation.dateFrom));
-        dateTo.setText(String.valueOf(reservation.dateTo));
-        carMake.setText(car.Brand);
-        carModel.setText(car.Model);
-        carName.setText("Car");
-        carType.setText("(" + car.Car_type + ")");
+        ClientRentedCarController.reservation = reservation;
+        textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
         try {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png"));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
         image.setImage(carImg);
 
@@ -66,6 +59,15 @@ public class ClientRentedCarController implements Initializable {
                 e.printStackTrace();
             }
         });
+    }
+
+    static void textSetup(Car car, Reservation reservation, Label carTotalCost, Label dateFrom, Label dateTo, Label carMake, Label carModel, Label carType) {
+        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(),reservation.dateTo.toLocalDate().plusDays(1))*car.Cost));
+        dateFrom.setText(String.valueOf(reservation.dateFrom));
+        dateTo.setText(String.valueOf(reservation.dateTo));
+        carMake.setText(car.Brand);
+        carModel.setText(car.Model);
+        carType.setText("(" + car.Car_type + ")");
     }
 
 

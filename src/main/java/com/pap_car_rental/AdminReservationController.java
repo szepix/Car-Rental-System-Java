@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AdminReservationController {
-    private ArrayList<Car> allCars;
     private ArrayList<Reservation> reservations;
     @FXML
     private Label adminNameDisplay;
@@ -72,7 +71,7 @@ public class AdminReservationController {
 
     private void changeToReservations() throws IOException, SQLException {
         AdminController.mode = "reserve";
-        allCars = App.db.listCars();
+        ArrayList<Car> allCars = App.db.listCars();
         reservations = App.db.listReservations();
         carScroller.getChildren().clear();
         for (var car : allCars) {

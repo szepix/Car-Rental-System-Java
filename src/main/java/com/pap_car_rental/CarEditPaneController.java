@@ -33,8 +33,6 @@ public class CarEditPaneController implements Initializable {
     @FXML
     private Label carModel;
     @FXML
-    private Label carName;
-    @FXML
     private Label carType;
     @FXML
     private ImageView image;
@@ -45,7 +43,6 @@ public class CarEditPaneController implements Initializable {
         carCost.setText(Integer.toString(car.Cost));
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
-        carName.setText("Car");
         carType.setText("(" + car.Car_type + ")");
         try {
             carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));

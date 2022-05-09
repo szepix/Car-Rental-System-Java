@@ -28,8 +28,7 @@ public class AdminReservedCarController implements Initializable {
     private Label carMake;
     @FXML
     private Label carModel;
-    @FXML
-    private Label carName;
+
     @FXML
     private Label carType;
     @FXML
@@ -46,14 +45,8 @@ public class AdminReservedCarController implements Initializable {
     private Label username;
 
     public void setData(Car car, Reservation reservation) throws SQLException {
-        this.reservation = reservation;
-        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(),reservation.dateTo.toLocalDate().plusDays(1))*car.Cost));
-        dateFrom.setText(String.valueOf(reservation.dateFrom));
-        dateTo.setText(String.valueOf(reservation.dateTo));
-        carMake.setText(car.Brand);
-        carModel.setText(car.Model);
-        carName.setText("Car");
-        carType.setText("(" + car.Car_type + ")");
+        AdminReservedCarController.reservation = reservation;
+        ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
         username.setText(App.db.findClientById(reservation.clientId).login);
         try {
             carImg = new Image(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg"));
