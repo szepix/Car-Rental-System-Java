@@ -2,28 +2,39 @@ package com.pap_car_rental;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ClientInfoController implements Initializable {
 
     @FXML
-    private Label login_label;
+    private TextField login;
     @FXML
-    private Label password_label;
+    private TextField password;
     @FXML
-    private Label id_label;
-
+    private Label id;
+    @FXML
+    private Button edit;
     public void setData(Client client) {
-        login_label.setText(client.login);
-        password_label.setText(client.password);
-        id_label.setText(String.valueOf(client.id));
+        login.setText(client.login);
+        password.setText(client.password);
+        id.setText(String.valueOf(client.id));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        edit.setOnAction(event -> {
+            try {
+                App.db.editClient(Integer.parseInt(id.getText()), login.getText(), password.getText());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
 
     }
 }

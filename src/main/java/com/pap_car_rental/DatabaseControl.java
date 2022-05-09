@@ -102,6 +102,14 @@ public class DatabaseControl {
         pstmt.executeUpdate();
     }
 
+    public void editClient(int id, String login, String password) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("UPDATE `CLIENT_LIST`SET Login = ?, Password = ? WHERE Id = ?");
+        pstmt.setString(1, login);
+        pstmt.setString(2, password);
+        pstmt.setInt(3, id);
+        pstmt.executeUpdate();
+    }
+
     public void editCar(Car car) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("UPDATE `CAR_LIST`SET Car_type = ?, Brand = ?, Cost = ?, Model = ? WHERE Id = ?");
         pstmt.setString(1, car.Car_type);
