@@ -24,6 +24,8 @@ public class ClientInfoController implements Initializable {
     public void setData(Client client) {
         login.setText(client.login);
         password.setText(client.password);
+        System.out.println(client.login);
+        System.out.println(client.id);
         id.setText(String.valueOf(client.id));
     }
 

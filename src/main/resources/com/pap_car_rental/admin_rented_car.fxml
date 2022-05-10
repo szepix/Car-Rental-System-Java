@@ -42,7 +42,7 @@
                   <Label fx:id="carTotalCost" layoutX="39.0" layoutY="82.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
                   <Label fx:id="carTotalCost1" layoutX="19.0" layoutY="62.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Total cost:" />
                   <Label layoutX="18.0" layoutY="121.0" styleClass="label-1" text="Rented by:" />
-                  <Label fx:id="name" layoutX="34.0" layoutY="155.0" styleClass="label-1" text="Name" />
+                  <Label fx:id="userName" layoutX="34.0" layoutY="155.0" styleClass="label-1" text="Name" />
                </children>
             </Pane>
          </children>

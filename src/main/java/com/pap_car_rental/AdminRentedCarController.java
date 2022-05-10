@@ -33,12 +33,12 @@ public class AdminRentedCarController implements Initializable {
     @FXML
     private ImageView image;
     @FXML
-    private Label username;
+    private Label userName;
 
     public void setData(Car car, Reservation reservation) throws SQLException {
         AdminRentedCarController.reservation = reservation;
         ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
-        username.setText(App.db.findClientById(reservation.clientId).login);
+        userName.setText(App.db.findClientById(reservation.clientId).login);
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
