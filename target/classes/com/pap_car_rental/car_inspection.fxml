@@ -32,54 +32,44 @@
                </Label>
            </HBox>
            <Pane prefHeight="243.0" prefWidth="480.0">
-               <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               <Label fx:id="InspectedName" layoutX="291.0" layoutY="10.0" prefHeight="21.0" prefWidth="72.0" styleClass="label-1" stylesheets="@javaStyle.css" text="">
+               <ImageView fx:id="image" fitHeight="152.0" fitWidth="200.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+               <Label fx:id="InspectedMake" layoutX="294.0" layoutY="47.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Make">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label fx:id="InspectedMake" layoutX="296.0" layoutY="67.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Make">
+               <Label fx:id="InspectedModel" layoutX="294.0" layoutY="79.0" prefHeight="17.0" prefWidth="83.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label fx:id="InspectedModel" layoutX="296.0" layoutY="97.0" prefHeight="17.0" prefWidth="83.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model">
-                   <font>
-                       <Font size="15.0" />
-                   </font>
-               </Label>
-               <Label fx:id="InspectedPrice" layoutX="296.0" layoutY="123.0" prefHeight="21.0" prefWidth="48.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Price">
+               <Label fx:id="InspectedPrice" layoutX="294.0" layoutY="111.0" prefHeight="21.0" prefWidth="48.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Price">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
                <Button id="button-1" fx:id="reserveButton" layoutX="142.0" layoutY="214.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#reserve" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="Reserve" />
-               <Label fx:id="InspectedType" layoutX="297.0" layoutY="37.0" prefHeight="17.0" prefWidth="83.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Type">
+               <Label fx:id="InspectedType" layoutX="294.0" layoutY="17.0" prefHeight="17.0" prefWidth="83.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Type">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label layoutX="210.0" layoutY="64.0" prefHeight="28.0" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car make:">
+               <Label layoutX="210.0" layoutY="43.0" prefHeight="28.0" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car make:">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label layoutX="210.0" layoutY="97.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car model:">
+               <Label layoutX="210.0" layoutY="79.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car model:">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label layoutX="212.0" layoutY="34.0" prefHeight="28.0" prefWidth="60.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:">
+               <Label layoutX="210.0" layoutY="13.0" prefHeight="28.0" prefWidth="60.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:">
                    <font>
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label layoutX="210.0" layoutY="123.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Price:">
-                   <font>
-                       <Font size="15.0" />
-                   </font>
-               </Label>
-               <Label layoutX="211.0" layoutY="6.0" prefHeight="28.0" prefWidth="71.0" styleClass="label-1" stylesheets="@javaStyle.css" text=":">
+               <Label layoutX="210.0" layoutY="111.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Price:">
                    <font>
                        <Font size="15.0" />
                    </font>

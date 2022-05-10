@@ -10,7 +10,7 @@
 
 <BorderPane minHeight="232.0" minWidth="439.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
    <left>
-      <ImageView fx:id="image" fitHeight="185.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      <ImageView fx:id="image" fitHeight="185.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
    </left>
    <top>
        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
@@ -26,12 +26,12 @@
            <Pane prefHeight="100.0" prefWidth="107.0">
                <Button fx:id="selectButton" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Select" />
                <Label fx:id="carName" contentDisplay="CENTER" layoutX="19.0" layoutY="14.0" prefHeight="20.0" prefWidth="69.0" styleClass="label-1" stylesheets="@javaStyle.css" text="" textAlignment="CENTER" />
-               <Label fx:id="carCost" layoutX="39.0" layoutY="60.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
-            <Label fx:id="carCost1" layoutX="37.0" layoutY="40.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost:" />
+               <Label fx:id="carCost" layoutX="57.0" layoutY="40.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
+            <Label fx:id="carCost1" layoutX="14.0" layoutY="40.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost:" />
            </Pane>
        </HBox>
    </right>
    <bottom>
-      <Line endX="310.0" fill="BLACK" startX="-101.0" strokeLineCap="ROUND" strokeWidth="10.0" styleClass="line" BorderPane.alignment="CENTER" />
+      <Line endX="428.0" fill="BLACK" startX="-81.0" strokeLineCap="ROUND" strokeWidth="10.0" styleClass="line" />
    </bottom>
 </BorderPane>

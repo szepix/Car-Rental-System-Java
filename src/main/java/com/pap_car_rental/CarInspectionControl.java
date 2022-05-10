@@ -35,8 +35,6 @@ public class CarInspectionControl {
     @FXML
     private Label InspectedModel;
     @FXML
-    private Label InspectedName;
-    @FXML
     private Label InspectedPrice;
     @FXML
     private Label InspectedType;
@@ -69,7 +67,6 @@ public class CarInspectionControl {
         fiveSecondsWonder.play();
         InspectedMake.setText(CarPaneController.inspectedMake);
         InspectedModel.setText(CarPaneController.inspectedModel);
-        InspectedName.setText(CarPaneController.inspectedName);
         InspectedType.setText(CarPaneController.inspectedType);
         InspectedPrice.setText(Integer.toString(CarPaneController.inspectedCost));
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
