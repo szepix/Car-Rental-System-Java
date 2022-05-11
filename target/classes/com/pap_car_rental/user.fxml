@@ -49,7 +49,7 @@
                      <graphic>
                         <ImageView fitWidth="30.0" preserveRatio="true">
                            <image>
-                              <Image url="@user1.png" />
+                              <Image url="@images/user1.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -170,7 +170,7 @@
                    </GridPane.margin>
                    <graphic>
                        <ImageView fitWidth="30.0" preserveRatio="true">
-                           <Image url="@user1.png" />
+                           <Image url="@images/user1.png" />
                        </ImageView>
                    </graphic>
                </Label>

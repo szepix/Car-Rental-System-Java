@@ -40,9 +40,9 @@ public class CarEditInspectionController {
         car_type.setText(CarEditPaneController.inspectedType);
         car_price.setText(Integer.toString(CarEditPaneController.inspectedCost));
         try {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + CarEditPaneController.inspectedMake + "_" + CarEditPaneController.inspectedModel + ".jpg")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + CarEditPaneController.inspectedMake + "_" + CarEditPaneController.inspectedModel + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
         image.setImage(carImg);
 

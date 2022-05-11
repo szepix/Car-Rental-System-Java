@@ -45,9 +45,9 @@ public class CarPromoController implements Initializable {
         carModel.setText(car.Model);
         carType.setText("(" + car.Car_type + ")");
         try {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
         image.setImage(carImg);
         selectButton.setOnAction(event -> {

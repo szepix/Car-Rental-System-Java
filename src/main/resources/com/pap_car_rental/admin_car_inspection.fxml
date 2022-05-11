@@ -49,7 +49,7 @@
                      <graphic>
                         <ImageView fitWidth="30.0" preserveRatio="true">
                            <image>
-                              <Image url="@user1.png" />
+                              <Image url="@images/user1.png" />
                            </image>
                         </ImageView>
                      </graphic>

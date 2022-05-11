@@ -74,9 +74,9 @@ public class AdminCarInspectionController {
         InspectedPrice.setText(Integer.toString(AdminReservationPaneController.inspectedCost));
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
         try {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg")));
         } catch (Exception e) {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
         image.setImage(carImg);
 
