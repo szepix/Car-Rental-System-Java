@@ -24,6 +24,9 @@ public class CarList {
     private VBox carScroller;
 
     @FXML
+    private Label noResultLabel;
+
+    @FXML
     private void initialize() throws SQLException {
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
 
@@ -130,6 +133,15 @@ public class CarList {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        if (matchingDate.size() == 0)
+        {
+            noResultLabel.setText("No results Found");
+        }
+        else
+        {
+            noResultLabel.setText("");
         }
 
 
