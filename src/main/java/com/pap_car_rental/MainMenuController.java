@@ -1,5 +1,6 @@
 package com.pap_car_rental;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -44,6 +45,9 @@ public class MainMenuController {
             e.printStackTrace();
         }
 
+        //set first focus
+        Platform.runLater(() -> userName.requestFocus());
+
         //on enter, user pwd
         userPwd.setOnKeyPressed( event -> {
             if( event.getCode() == KeyCode.ENTER ) {
@@ -55,16 +59,30 @@ public class MainMenuController {
             }
           } );
 
-          //on enter, admin pwd
-          adminPwd.setOnKeyPressed( event -> {
-            if( event.getCode() == KeyCode.ENTER ) {
-                try {
-                    switchToAdmin();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        //on tab, user pwd
+        userName.setOnKeyPressed( event -> {
+            if( event.getCode() == KeyCode.TAB ) {
+                userPwd.requestFocus();
             }
           } );
+
+        //on enter, admin pwd
+        adminPwd.setOnKeyPressed( event -> {
+        if( event.getCode() == KeyCode.ENTER ) {
+            try {
+                switchToAdmin();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        } );
+
+        //on tab, admin pwd
+        adminName.setOnKeyPressed( event -> {
+            if( event.getCode() == KeyCode.TAB ) {
+                adminPwd.requestFocus();
+            }
+            } );
     }
 
 
