@@ -38,7 +38,8 @@ public class AdminRentedCarController implements Initializable {
     public void setData(Car car, Reservation reservation) throws SQLException {
         AdminRentedCarController.reservation = reservation;
         ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
-        userName.setText(App.db.findClientById(reservation.clientId).login);
+        Client client = App.db.findClientById(reservation.clientId);
+        userName.setText(client.login + " id: " + client.id);
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
