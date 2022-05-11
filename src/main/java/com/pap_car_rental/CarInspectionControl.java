@@ -157,8 +157,9 @@ public class CarInspectionControl {
     }
 
     @FXML
-    private void switchToCarList() throws IOException {
-        App.setRoot("car_list");
+    private void goBackAction() throws IOException {
+        if(!App.inspectionSourcePromo) App.setRoot("car_list");
+        else App.setRoot("user");
     }
 
     @FXML
