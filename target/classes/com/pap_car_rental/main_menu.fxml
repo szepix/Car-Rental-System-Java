@@ -31,7 +31,7 @@
             <padding>
                 <Insets left="-5.0" right="-20.0" />
             </padding>
-            <Tab styleClass="tab-1" text="USER">
+            <Tab fx:id="userTab" onSelectionChanged="#focusUser" styleClass="tab-1" text="USER">
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="325.0" styleClass="tab-bckg-1" stylesheets="@javaStyle.css">
                     <GridPane layoutX="14.0" layoutY="14.0" prefHeight="110.0" prefWidth="284.0">
                         <columnConstraints>
@@ -60,7 +60,7 @@
                     </GridPane>
                 </AnchorPane>
             </Tab>
-            <Tab styleClass="tab-1" text="ADMIN">
+            <Tab fx:id="adminTab" onSelectionChanged="#focusAdmin" styleClass="tab-1" text="ADMIN">
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="301.0" styleClass="tab-bckg-1" stylesheets="@javaStyle.css">
                     <GridPane layoutX="14.0" layoutY="14.0" prefHeight="110.0" prefWidth="284.0">
                         <columnConstraints>

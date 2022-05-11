@@ -3,6 +3,7 @@ package com.pap_car_rental;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyCode;
@@ -29,6 +30,10 @@ public class MainMenuController {
     private TextField userPwd;
     @FXML
     private Label invalidUser;
+    @FXML
+    private Tab userTab;
+    @FXML
+    private Tab adminTab;
 
 
     @FXML
@@ -46,7 +51,7 @@ public class MainMenuController {
         }
 
         //set first focus
-        Platform.runLater(() -> userName.requestFocus());
+        Platform.runLater(() -> invalidUser.requestFocus());
 
         //on enter, user pwd
         userPwd.setOnKeyPressed( event -> {
@@ -193,5 +198,15 @@ public class MainMenuController {
             userName.setText("");
             userPwd.setText("");
         }
+    }
+
+    @FXML
+    private void focusUser(){
+        Platform.runLater(() -> userName.requestFocus());
+    }
+
+    @FXML
+    private void focusAdmin(){
+        Platform.runLater(() -> adminName.requestFocus());
     }
 }
