@@ -63,6 +63,7 @@ public class CarPaneController implements Initializable {
             inspectedModel = car.Model;
             inspectedName = "Car";
             inspectedType = car.Car_type;
+            App.inspectionSourcePromo = false;
             try {
                 App.setRoot("car_inspection");
             } catch (IOException e) {

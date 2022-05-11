@@ -54,24 +54,45 @@ public class CarInspectionControl {
 
     @FXML
     private void initialize() {
+        //get paramteres
+        String insMake;
+        String insModel;
+        String insType;
+        int insCost;
+        int insID;
+        if(!App.inspectionSourcePromo){
+            insMake = CarPaneController.inspectedMake;
+            insModel = CarPaneController.inspectedModel;
+            insType = CarPaneController.inspectedType;
+            insCost = CarPaneController.inspectedCost;
+            insID = CarPaneController.inspectedCar.id;
+        }else{
+            insMake = CarPromoController.inspectedMake;
+            insModel = CarPromoController.inspectedModel;
+            insType = CarPromoController.inspectedType;
+            insCost = CarPromoController.inspectedCost;
+            insID = CarPromoController.inspectedCar.id;
+        }
+
+
         dateFrom.setValue(UserController.dateFrom_search);
         dateTo.setValue(UserController.dateTo_search);
         Timeline fiveSecondsWonder = new Timeline(
                 new KeyFrame(Duration.millis(100),
                         event -> {
                             if (dateTo.getValue() != null && dateFrom.getValue() != null) {
-                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * CarPaneController.inspectedCost));
+                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
                             }
                         }));
         fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
         fiveSecondsWonder.play();
-        InspectedMake.setText(CarPaneController.inspectedMake);
-        InspectedModel.setText(CarPaneController.inspectedModel);
-        InspectedType.setText(CarPaneController.inspectedType);
-        InspectedPrice.setText(Integer.toString(CarPaneController.inspectedCost));
+        InspectedMake.setText(insMake);
+        InspectedModel.setText(insModel);
+        InspectedType.setText(insType);
+        InspectedPrice.setText(Integer.toString(insCost));
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         try {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + CarPaneController.inspectedMake + "_" + CarPaneController.inspectedModel + ".jpg")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/" + insMake + "_" + insModel + ".jpg")));
         } catch (Exception e) {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/no_img_found.png")));
         }
@@ -86,7 +107,7 @@ public class CarInspectionControl {
                 try {
                     ArrayList<Reservation> reservations = App.db.listReservations();
                     for (Reservation res : reservations) {
-                        if (res.carId == CarPaneController.inspectedCar.id) {
+                        if (res.carId == insID) {
                             datesToDisable.addAll(res.dateFrom.toLocalDate().datesUntil(res.dateTo.toLocalDate().plusDays(1)).collect(Collectors.toSet()));
 
                         }
@@ -110,7 +131,7 @@ public class CarInspectionControl {
                 try {
                     ArrayList<Reservation> reservations = App.db.listReservations();
                     for (Reservation res : reservations) {
-                        if (res.carId == CarPaneController.inspectedCar.id) {
+                        if (res.carId == insID) {
                             datesToDisable.addAll(res.dateFrom.toLocalDate().datesUntil(res.dateTo.toLocalDate().plusDays(1)).collect(Collectors.toSet()));
 
                         }
@@ -149,7 +170,9 @@ public class CarInspectionControl {
     private void reserve() throws SQLException, IOException {
         Date DateFrom = Date.valueOf(dateFrom.getValue());
         Date DateTo = Date.valueOf(dateTo.getValue());
-        int CarId = CarPaneController.inspectedCar.id;
+        int CarId;
+        if(!App.inspectionSourcePromo) CarId = CarPaneController.inspectedCar.id;
+        else CarId = CarPromoController.inspectedCar.id;
         int ClientId = App.currentUser.id;
         App.db.addReservation(DateFrom, DateTo, ClientId, CarId);
         App.setRoot("user");

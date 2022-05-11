@@ -29,6 +29,7 @@ public class App extends Application {
     public static Date dateFrom;
     public static Date dateTo;
     public static Scene scene;  //was private
+    public static boolean inspectionSourcePromo;
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
