@@ -39,7 +39,11 @@
                </VBox.margin>
                <VBox fx:id="carScroller" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
            </ScrollPane>
-         <Label fx:id="noResultLabel" styleClass="label-1" stylesheets="@javaStyle.css" text="No results found" textFill="#f40606" />
+         <Label fx:id="noResultLabel" styleClass="label-1" stylesheets="@javaStyle.css" textFill="#040404">
+            <font>
+               <Font size="40.0" />
+            </font>
+         </Label>
        </VBox>
    </center>
    <right>
