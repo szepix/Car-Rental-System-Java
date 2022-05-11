@@ -115,11 +115,6 @@
                    </graphic>
                </Label>
            </GridPane>
-           <Button id="button-1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="My account">
-              <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
-              </VBox.margin>
-           </Button>
            <Button id="button-1" fx:id="goBackButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAdmin" prefHeight="30.0" prefWidth="200.0" styleClass="button-1" stylesheets="@javaStyle.css" text="Go Back">
               <VBox.margin>
                   <Insets left="5.0" right="5.0" />
