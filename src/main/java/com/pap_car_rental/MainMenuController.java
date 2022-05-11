@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.input.KeyCode;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -42,6 +43,28 @@ public class MainMenuController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //on enter, user pwd
+        userPwd.setOnKeyPressed( event -> {
+            if( event.getCode() == KeyCode.ENTER ) {
+                try {
+                    switchToUser();
+                } catch (IOException | SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+          } );
+
+          //on enter, admin pwd
+          adminPwd.setOnKeyPressed( event -> {
+            if( event.getCode() == KeyCode.ENTER ) {
+                try {
+                    switchToAdmin();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+          } );
     }
 
 
