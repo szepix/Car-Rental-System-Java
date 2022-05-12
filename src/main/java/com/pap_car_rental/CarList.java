@@ -46,7 +46,7 @@ public class CarList {
             matchingMake.addAll(allCars);
         } else {
             for (Car car2 : allCars) {
-                if (car2.Brand.toUpperCase().equals(App.searched_make)) {
+                if (car2.Brand.toUpperCase().contains(App.searched_make)) {
                     matchingMake.add(car2);
                 }
             }
@@ -57,7 +57,7 @@ public class CarList {
             matchingModel.addAll(matchingMake);
         } else {
             for (Car car4 : matchingMake) {
-                if (car4.Model.toUpperCase().equals(App.searched_model)) {
+                if (car4.Model.toUpperCase().contains(App.searched_model)) {
                     matchingModel.add(car4);
                 }
             }
