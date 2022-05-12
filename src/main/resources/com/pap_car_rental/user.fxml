@@ -105,8 +105,8 @@
            </HBox>
            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <Label alignment="CENTER_RIGHT" pickOnBounds="false" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost ($/d)" />
-               <Slider fx:id="costLow" majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="slider-1" stylesheets="@javaStyle.css" />
-               <Slider fx:id="costHigh" majorTickUnit="50.0" max="200.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="slider-1" stylesheets="@javaStyle.css" value="200.0" />
+               <Slider fx:id="costLow" majorTickUnit="50.0" max="300.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="slider-1" stylesheets="@javaStyle.css" />
+               <Slider fx:id="costHigh" majorTickUnit="50.0" max="300.0" minorTickCount="4" prefWidth="180.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="slider-1" stylesheets="@javaStyle.css" value="300.0" />
            </HBox>
            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
                <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Dates" />

@@ -64,7 +64,7 @@ public class CarList {
         }
 
         //Checking Cost
-        if (App.costLow == 0 & App.costHigh == 200) {
+        if (App.costLow == 0 & App.costHigh == 300) {
             matchingCost.addAll(matchingModel);
         } else {
             for (Car car5 : matchingModel) {
