@@ -40,15 +40,13 @@ public class MainMenuController {
     private void initialize() {
         //resize
         try {
-            Stage stage = (Stage) scene.getWindow();
+            Stage stage = (Stage) App.scene.getWindow();
             GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
             int width = gd.getDisplayMode().getWidth();
             int height = gd.getDisplayMode().getHeight();
             stage.setWidth(660);    //+20 to keep size
             stage.setHeight(360);   //+40 to keep size
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception e) {}
 
         //set first focus
         Platform.runLater(() -> invalidUser.requestFocus());
