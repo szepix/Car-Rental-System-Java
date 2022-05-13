@@ -178,7 +178,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label prefWidth="108.0" styleClass="label-1" text="Customer name:" GridPane.rowIndex="2" />
+                  <Label prefWidth="108.0" styleClass="label-1" text="Customer:" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="userName" styleClass="text-field-1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
