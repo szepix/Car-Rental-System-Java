@@ -25,7 +25,7 @@ public class CarEdit {
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
 
         ArrayList<Car> allCars = App.db.listCars();
-
+        //seting up the list for car editing
         for (var car : allCars) {
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("car_edit_pane.fxml"));

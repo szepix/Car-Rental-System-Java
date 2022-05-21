@@ -47,6 +47,7 @@ public class ClientListController {
                 e.printStackTrace();
             }
         }
+        //action to create a new client account
         createAccount.setOnAction(event -> {
             try {
                 invalidUser.setText("");

@@ -115,12 +115,7 @@ public class AdminCarListController {
             }
         }
 
-        //Diagnostics
-        for (Car car : matchingType) {
-            //System.out.println("Searched: " + car.Brand + " " + car.Car_type + " " + car.Model + " " + car.Cost);
-            //System.out.print(App.dateFrom);
-        }
-
+        //initializing car list
         carScroller.getChildren().clear();
         for (var car : matchingType) {
             FXMLLoader fxmloader = new FXMLLoader();

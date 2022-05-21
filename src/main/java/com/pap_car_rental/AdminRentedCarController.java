@@ -35,6 +35,7 @@ public class AdminRentedCarController implements Initializable {
     @FXML
     private Label userName;
 
+    //function to create car entries on the list
     public void setData(Car car, Reservation reservation) throws SQLException {
         AdminRentedCarController.reservation = reservation;
         ClientRentedCarController.textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);

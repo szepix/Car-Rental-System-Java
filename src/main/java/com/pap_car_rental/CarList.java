@@ -115,11 +115,6 @@ public class CarList {
             }
         }
 
-        //Diagnostics
-        for (Car car : matchingType) {
-            //System.out.println("Searched: " + car.Brand + " " + car.Car_type + " " + car.Model + " " + car.Cost);
-            //System.out.print(App.dateFrom);
-        }
 
         for (var car : matchingDate) {
             FXMLLoader fxmloader = new FXMLLoader();

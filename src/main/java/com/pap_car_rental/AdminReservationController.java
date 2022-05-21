@@ -79,19 +79,22 @@ public class AdminReservationController {
         App.setRoot("admin");
     }
     @FXML
-    private void changeToReservations() throws SQLException {
+    private void changeToReservations() {
         AdminController.mode = "reserve";
 
     }
+    //used to initialize the pick-up pane
     @FXML
     private void changeToPickUp() throws SQLException {
         AdminController.mode = "pickup";
         carScrollerPickup.getChildren().clear();
+        //used to clear the list after refreshing
         if(id == 0) {reservations = App.db.listReservations();}
         else{
             reservations = App.db.listClientReservations(id);
             id = 0;
         }
+        //lists all reserved cars
         for (var reservation : reservations) {
             if (!reservation.rented) {
                 FXMLLoader fxmloader = new FXMLLoader();
@@ -107,6 +110,7 @@ public class AdminReservationController {
             }
         }
     }
+    //used to search reservations by user id
     @FXML
     private void searchPickup() throws SQLException {
         id = Integer.parseInt(clientId.getText());
@@ -138,7 +142,7 @@ public class AdminReservationController {
             }
         });
     }
-
+    //checks all available cars matching the search
     @FXML
     private void checkAvailable() throws IOException {
         App.searched_make = searched_make_text.getText().toUpperCase();

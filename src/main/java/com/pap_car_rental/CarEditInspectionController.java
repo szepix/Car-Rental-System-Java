@@ -47,7 +47,7 @@ public class CarEditInspectionController {
         image.setImage(carImg);
 
     }
-
+    //editing cars using input values
     @FXML
     private void editCar() throws SQLException, IOException {
         System.out.println(CarEditPaneController.car.id);

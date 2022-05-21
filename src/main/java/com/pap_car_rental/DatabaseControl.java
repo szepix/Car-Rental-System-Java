@@ -17,7 +17,7 @@ public class DatabaseControl {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
+    //function to list all reservations from database
     public ArrayList<Reservation> listReservations() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM RESERVATIONS");
@@ -34,7 +34,7 @@ public class DatabaseControl {
         }
         return reservation_list;
     }
-
+    //function to list all reservations of a user identified by ClientId from the database
     public ArrayList<Reservation> listClientReservations(int ClientId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM RESERVATIONS WHERE ClientId = ?");
         pstmt.setInt(1, ClientId);
@@ -52,7 +52,7 @@ public class DatabaseControl {
         }
         return reservation_list;
     }
-
+    //function to list all cars from the database
     public ArrayList<Car> listCars() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM CAR_LIST");
@@ -68,7 +68,7 @@ public class DatabaseControl {
         }
         return car_list;
     }
-
+    //function to list all clients from the database
     public ArrayList<Client> listClients() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM CLIENT_LIST");
@@ -82,7 +82,7 @@ public class DatabaseControl {
         }
         return client_list;
     }
-
+    //function to add a car to the database
     public void addCar(String car_type, String brand, int cost, String model) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("INSERT INTO `CAR_LIST`(Id, Car_type, Brand, Cost, Model) VALUES (NULL, ?, ?, ?, ?)");
         //THAT IS NOT HOW DATES IN A DATABAASE SHOULD BE
@@ -93,14 +93,14 @@ public class DatabaseControl {
         pstmt.setString(4, model);
         pstmt.executeUpdate();
     }
-
+    //function to add a client to the database
     public void addClient(String login, String password) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("INSERT INTO `CLIENT_LIST`(Id, Login, Password) VALUES (NULL, ?, ?)");
         pstmt.setString(1, login);
         pstmt.setString(2, password);
         pstmt.executeUpdate();
     }
-
+    //function to edit selected client info
     public void editClient(int id, String login, String password) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("UPDATE `CLIENT_LIST`SET Login = ?, Password = ? WHERE Id = ?");
         pstmt.setString(1, login);
@@ -108,7 +108,7 @@ public class DatabaseControl {
         pstmt.setInt(3, id);
         pstmt.executeUpdate();
     }
-
+    //function to edit selected car info
     public void editCar(Car car) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("UPDATE `CAR_LIST`SET Car_type = ?, Brand = ?, Cost = ?, Model = ? WHERE Id = ?");
         pstmt.setString(1, car.Car_type);
@@ -118,13 +118,13 @@ public class DatabaseControl {
         pstmt.setString(5, String.valueOf(car.id));
         pstmt.executeUpdate();
     }
-
+    //function to mark a car as rented
     public void rentCar(int reservationId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("UPDATE `RESERVATIONS`SET Rented = TRUE WHERE Id = ?");
         pstmt.setInt(1, reservationId);
         pstmt.executeUpdate();
     }
-
+    //function to add a reservation to the database
     public void addReservation(Date DateFrom, Date DateTo, int ClientId, int CarId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("INSERT INTO `RESERVATIONS`(Id, DateFrom, DateTo, ClientId, CarId, Rented) VALUES (NULL, ?, ?, ?, ?, FALSE)");
         pstmt.setDate(1, DateFrom);
@@ -133,13 +133,13 @@ public class DatabaseControl {
         pstmt.setInt(4, CarId);
         pstmt.executeUpdate();
     }
-
+    //function to remove reservations from the system
     public void removeReservation(int ReservationId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("DELETE FROM `RESERVATIONS` WHERE Id = ?");
         pstmt.setInt(1, ReservationId);
         pstmt.executeUpdate();
     }
-
+    //function to find a client by their id
     public Client findClientById(int clientId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CLIENT_LIST WHERE Id = ?");
         pstmt.setInt(1, clientId);
@@ -149,7 +149,7 @@ public class DatabaseControl {
         String password = rs.getString("Password");
         return new Client(id, login, password);
     }
-
+    //function to find a client by their username
     public Client findClientByName(String clientName) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CLIENT_LIST WHERE Login = ?");
         pstmt.setString(1, clientName);
@@ -159,7 +159,7 @@ public class DatabaseControl {
         String password = rs.getString("Password");
         return new Client(id, login, password);
     }
-
+    //function to find a car using their id
     public Car findCar(int carId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM CAR_LIST WHERE Id = ?");
         pstmt.setInt(1, carId);
@@ -171,7 +171,7 @@ public class DatabaseControl {
         String Model = rs.getString("Model");
         return new Car(id, carType, Brand, cost, Model);
     }
-
+    //function to find reservations using their id
     public Reservation findReservation(int resId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM RESERVATIONS WHERE Id = ?");
         pstmt.setInt(1, resId);

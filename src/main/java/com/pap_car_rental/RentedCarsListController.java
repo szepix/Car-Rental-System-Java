@@ -19,7 +19,7 @@ public class RentedCarsListController {
     @FXML
     private VBox carScroller;
 
-
+    //setup a list of currently rented cars
     @FXML
     private void initialize() throws SQLException {
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");

@@ -77,15 +77,16 @@ public class CarInspectionControl {
 
         dateFrom.setValue(UserController.dateFrom_search);
         dateTo.setValue(UserController.dateTo_search);
-        Timeline fiveSecondsWonder = new Timeline(
+        //timer to calculate the total cost
+        Timeline timer = new Timeline(
                 new KeyFrame(Duration.millis(100),
                         event -> {
                             if (dateTo.getValue() != null && dateFrom.getValue() != null) {
                                 total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
                             }
                         }));
-        fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
-        fiveSecondsWonder.play();
+        timer.setCycleCount(Timeline.INDEFINITE);
+        timer.play();
         InspectedMake.setText(insMake);
         InspectedModel.setText(insModel);
         InspectedType.setText(insType);
@@ -97,7 +98,7 @@ public class CarInspectionControl {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
         image.setImage(carImg);
-
+        //block to dates older than today and reserved dates
         dateFrom.setDayCellFactory(picker -> new DateCell() {
             final LocalDate today = LocalDate.now();
             final Set<LocalDate> datesToDisable = new HashSet<>();
@@ -121,7 +122,7 @@ public class CarInspectionControl {
 
         });
 
-        //block to dates older than today
+        //block to dates older than today and reserved dates
         dateTo.setDayCellFactory(picker -> new DateCell() {
             final LocalDate today = LocalDate.now();
             final Set<LocalDate> datesToDisable = new HashSet<>();
