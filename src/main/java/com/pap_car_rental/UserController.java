@@ -114,7 +114,6 @@ public class UserController {
         stage.setWidth(720);
         stage.setHeight(640);
 
-
         //initialize username
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
 

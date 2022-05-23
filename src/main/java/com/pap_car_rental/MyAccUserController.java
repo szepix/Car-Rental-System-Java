@@ -31,7 +31,6 @@ public class MyAccUserController {
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         username.setText(App.currentUser.login);
         password.setText(App.currentUser.password);
-
         //action to create a new client account
         editAccount.setOnAction(event -> {
             try {
@@ -49,16 +48,9 @@ public class MyAccUserController {
                 if (potentialUser[1].length() < 4) toShort = true;
 
                 if (!App.isUser && !badText && !toShort) {
-                    //register
-                    if (user_list.size() == 0) {
-                        user_list.add(new Client(0, potentialUser[0], potentialUser[1]));
-                        App.currentUser = user_list.get(0);
-                    } else {
-                        user_list.add(new Client(user_list.get(user_list.size() - 1).id + 1, potentialUser[0], potentialUser[1]));
-                        App.currentUser = user_list.get(user_list.size() - 1);
-                    }
 
                     App.isUser = true;
+
                     App.db.editClient(App.currentUser.id , username.getText(), password.getText()); //does not work
                     switchToUser();
                 } else {

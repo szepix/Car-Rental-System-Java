@@ -148,7 +148,8 @@ public class MainMenuController {
             boolean isUser = e.login.equals(potentialUser[0]);
             if (!e.password.equals(potentialUser[1])) isUser = false;
             if (isUser) {
-                currentUser = e;
+                System.out.println(e.id);
+                App.currentUser = e;
                 App.isUser = true;
             }
         });
