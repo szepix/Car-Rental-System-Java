@@ -14,7 +14,10 @@ public class AdminController {
 
     @FXML
     private void initialize() {
+        //set username text
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
+
+        //resize
         Stage stage = (Stage) App.scene.getWindow();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         stage.setWidth(720);
