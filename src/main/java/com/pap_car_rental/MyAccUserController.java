@@ -36,8 +36,6 @@ public class MyAccUserController {
             try {
                 invalidUser.setText("");
                 String[] potentialUser = {username.getText(), password.getText()};
-                App.isUser = false;
-                App.isAdmin = false;
                 ArrayList<Client> user_list = App.db.listClients();
 
                 //pass check
@@ -47,10 +45,7 @@ public class MyAccUserController {
                 boolean toShort = potentialUser[0].length() < 4;
                 if (potentialUser[1].length() < 4) toShort = true;
 
-                if (!App.isUser && !badText && !toShort) {
-
-                    App.isUser = true;
-
+                if (!badText && !toShort) {
                     App.db.editClient(App.currentUser.id , username.getText(), password.getText()); //does not work
                     switchToUser();
                 } else {
