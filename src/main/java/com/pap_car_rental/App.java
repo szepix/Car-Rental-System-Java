@@ -48,7 +48,7 @@ public class App extends Application {
         System.out.println(db.listClientReservations(2));
         scene = new Scene(loadFXML("main_menu"), 640, 320);
         stage.setScene(scene);
-        stage.setTitle("Car Rental System v0.0");
+        stage.setTitle("Car Rental System v1.0");
         stage.show();
 
     }
