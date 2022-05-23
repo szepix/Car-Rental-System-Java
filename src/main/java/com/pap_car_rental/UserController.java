@@ -169,6 +169,11 @@ public class UserController {
     }
 
     @FXML
+    private void switchToMyAcc() throws IOException {
+        App.setRoot("my_acc_user");
+    }
+
+    @FXML
     private void limitToDate() {
         //block to dates older than from day + 1
         dateTo.setDayCellFactory(picker -> new DateCell() {
