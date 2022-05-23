@@ -21,6 +21,7 @@ import java.util.Random;
 public class UserController {
     public static LocalDate dateTo_search;
     public static LocalDate dateFrom_search;
+
     @FXML
     private Label userNameDisplay;
     @FXML
@@ -50,22 +51,8 @@ public class UserController {
     @FXML
     private GridPane carDisplay;
 
-    @FXML
-    private void initialize() throws SQLException {
-        //resize
-        Stage stage = (Stage) App.scene.getWindow();
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        int width = gd.getDisplayMode().getWidth();
-        int height = gd.getDisplayMode().getHeight();
-        stage.setWidth(720);
-        stage.setHeight(640);
 
-
-        //initialize username
-        userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
-
-        //block illegal dates:
-
+    private void limitDates() {
         //block from dates older than today
         dateFrom.setDayCellFactory(picker -> new DateCell() {
             public void updateItem(LocalDate date, boolean empty) {
@@ -85,19 +72,9 @@ public class UserController {
                 setDisable(empty || date.compareTo(today) < 0);
             }
         });
+    }
 
-        //block typing in date picker
-        dateTo.getEditor().setDisable(true);
-        dateTo.getEditor().setOpacity(1);
-        dateFrom.getEditor().setDisable(true);
-        dateFrom.getEditor().setOpacity(1);
-
-
-        //got to limit the date from the top, when decided what is the limit
-
-
-        //add promoted cars
-
+    private void addPromoCars() throws SQLException{
         ArrayList<Car> allCars = App.db.listCars();
         Collections.sort(allCars);
         Random rand = new Random();
@@ -124,6 +101,34 @@ public class UserController {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    @FXML
+    private void initialize() throws SQLException{
+        //resize
+        Stage stage = (Stage) App.scene.getWindow();
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
+        stage.setWidth(720);
+        stage.setHeight(640);
+
+
+        //initialize username
+        userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
+
+        //block illegal dates:
+        limitDates();
+
+        //block typing in date picker
+        dateTo.getEditor().setDisable(true);
+        dateTo.getEditor().setOpacity(1);
+        dateFrom.getEditor().setDisable(true);
+        dateFrom.getEditor().setOpacity(1);
+
+        //add promoted cars
+        addPromoCars();
     }
 
     @FXML

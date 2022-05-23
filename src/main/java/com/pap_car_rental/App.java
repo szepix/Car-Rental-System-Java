@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -47,9 +46,6 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         System.out.println(db.listClientReservations(2));
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        int width = gd.getDisplayMode().getWidth();
-        int height = gd.getDisplayMode().getHeight();
         scene = new Scene(loadFXML("main_menu"), 640, 320);
         stage.setScene(scene);
         stage.setTitle("Car Rental System v0.0");
