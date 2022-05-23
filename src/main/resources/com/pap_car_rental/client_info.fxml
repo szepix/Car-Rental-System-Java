@@ -9,33 +9,33 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="line" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.ClientInfoController">
    <top>
-       <HBox BorderPane.alignment="CENTER">
+       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
            <BorderPane.margin>
                <Insets bottom="10.0" />
            </BorderPane.margin>
-           <Label text="Id:">
+           <Label styleClass="label-1" text="Id:">
               <HBox.margin>
                   <Insets left="10.0" />
               </HBox.margin>
            </Label>
-         <Label fx:id="id" layoutX="20.0" layoutY="10.0" text="Id">
+         <Label fx:id="id" layoutX="20.0" layoutY="10.0" styleClass="label-2" text="Id">
             <HBox.margin>
                <Insets left="10.0" right="10.0" />
             </HBox.margin>
          </Label>
-           <Label text="login:">
+           <Label styleClass="label-1" text=" login: ">
               <HBox.margin>
                   <Insets />
               </HBox.margin>
            </Label>
-         <TextField fx:id="login" />
-           <Label text="password:">
+         <TextField fx:id="login" prefWidth="100.0" styleClass="text-field-1" />
+           <Label styleClass="label-1" text="pass: ">
               <HBox.margin>
                   <Insets left="10.0" />
               </HBox.margin>
            </Label>
-         <TextField fx:id="password" />
-         <Button fx:id="edit" mnemonicParsing="false" text="Edit">
+         <TextField fx:id="password" prefWidth="100.0" styleClass="text-field-1" />
+         <Button fx:id="edit" mnemonicParsing="false" styleClass="button-1" text="Edit">
             <HBox.margin>
                <Insets left="20.0" />
             </HBox.margin>
