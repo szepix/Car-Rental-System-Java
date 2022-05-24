@@ -1,16 +1,15 @@
 package com.pap_car_rental;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static com.pap_car_rental.App.*;
 
 public class MyAccUserController {
     @FXML
@@ -31,7 +30,7 @@ public class MyAccUserController {
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         username.setText(App.currentUser.login);
         password.setText(App.currentUser.password);
-        //action to create a new client account
+        //action to edit account
         editAccount.setOnAction(event -> {
             try {
                 invalidUser.setText("");
@@ -46,7 +45,17 @@ public class MyAccUserController {
                 if (potentialUser[1].length() < 4) toShort = true;
 
                 if (!badText && !toShort) {
-                    App.db.editClient(App.currentUser.id , username.getText(), password.getText()); //does not work
+                    //edit account data
+                    App.db.editClient(App.currentUser.id , username.getText(), password.getText());
+                    //relogin
+                    ArrayList<Client> client_list = db.listClients();
+                    client_list.forEach(e -> {
+                        boolean isUser = e.login.equals(potentialUser[0]);
+                        if (isUser) {
+                            System.out.println(e.id);
+                            App.currentUser = e;
+                        }
+                    });
                     switchToUser();
                 } else {
                     if (badText)
