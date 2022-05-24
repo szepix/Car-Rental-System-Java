@@ -34,7 +34,10 @@ public class CarAddController {
     private void switchToAdminMenu() throws IOException {
         App.setRoot("admin");
     }
-
+    @FXML
+    private void switchToMainMenu() throws IOException {
+        App.setRoot("main_menu");
+    }
     @FXML
     private void addCar() throws SQLException {
         String Car_type = car_type.getValue();
