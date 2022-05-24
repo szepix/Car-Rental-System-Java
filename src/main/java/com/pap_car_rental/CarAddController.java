@@ -3,6 +3,7 @@ package com.pap_car_rental;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -21,10 +22,12 @@ public class CarAddController {
     private DatePicker dateFrom_button;
     @FXML
     private DatePicker dateTo_button;
-
+    @FXML
+    private Label adminNameDisplay;
     @FXML
     private void initialize() {
         car_type.getItems().addAll("City", "Mid", "Large", "SUV", "Sport", "Special");
+        adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
     }
 
     @FXML

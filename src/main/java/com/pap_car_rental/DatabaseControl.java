@@ -184,4 +184,42 @@ public class DatabaseControl {
         Date dateTo = rs.getDate("DateTo");
         return new Reservation(id, dateFrom, dateTo, clientId, carId, rented);
     }
+
+
+    public ArrayList<Complaint> listComplaints() throws SQLException {
+        this.stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM COMPLAINTS");
+        ArrayList<Complaint> complaints_list = new ArrayList<>();
+        while (rs.next()) {
+            int id = rs.getInt("Id");
+            int ClientId = rs.getInt("ClientId");
+            String Text = rs.getString("Text");
+            boolean resolved = rs.getBoolean("Resolved");
+            Complaint new_complaint = new Complaint(id, ClientId, Text, resolved);
+            complaints_list.add(new_complaint);
+        }
+        return complaints_list;
+    }
+
+    public void addComplaint(int ClientId, String Text) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("INSERT INTO `COMPLAINTS`(Id, ClientId, Text, Resolved) VALUES (NULL, ?, ?, FALSE)");
+        pstmt.setInt(1, ClientId);
+        pstmt.setString(2, Text);
+        pstmt.executeUpdate();
+    }
+
+    public ArrayList<Complaint> listComplaintsByClientId(int ClientId) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("SELECT * FROM COMPLAINTS WHERE ClientId = ?");
+        pstmt.setInt(1, ClientId);
+        ResultSet rs = pstmt.executeQuery();
+        ArrayList<Complaint> complaints_list = new ArrayList<>();
+        while(rs.next()) {
+            int id = rs.getInt("Id");
+            String Text = rs.getString("Text");
+            boolean resolved = rs.getBoolean("Resolved");
+            complaints_list.add(new Complaint(id, ClientId, Text, resolved));
+        }
+        return complaints_list;
+    }
+
 }

@@ -198,5 +198,14 @@ public class UserController {
             }
         });
     }
+
+    @FXML
+    private void switchToNewComplaint() throws IOException {
+        App.setRoot("new_complaint");
+    }
+    @FXML
+    private void switchToMyComplaints() throws IOException {
+        App.setRoot("user_complaints");
+    }
 }
 
