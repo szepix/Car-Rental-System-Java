@@ -93,7 +93,7 @@
                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAddCar" styleClass="button-1" text="Add a car" GridPane.rowIndex="1" />
                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToReservationController" styleClass="button-1" stylesheets="@javaStyle.css" text="Reserve/pick up cars" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToRentedCarList" styleClass="button-1" text="List of rented cars" GridPane.rowIndex="2" />
-               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" text="Customer complaints" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToComplaints" styleClass="button-1" text="Customer complaints" GridPane.columnIndex="1" GridPane.rowIndex="2" />
            </GridPane>
        </VBox>
    </center>

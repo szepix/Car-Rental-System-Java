@@ -1,5 +1,7 @@
 package com.pap_car_rental;
 
+import javafx.scene.layout.BorderPane;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -221,5 +223,12 @@ public class DatabaseControl {
         }
         return complaints_list;
     }
-
+    public void editComplaint(int id, int ClientId, String Text, Boolean Resolved) throws SQLException {
+        PreparedStatement pstmt = c.prepareStatement("UPDATE `COMPLAINTS` SET ClientId = ?, Text = ?, Resolved = ?  WHERE Id = ?");
+        pstmt.setInt(1, ClientId);
+        pstmt.setString(2, Text);
+        pstmt.setBoolean(3, Resolved);
+        pstmt.setInt(4, id);
+        pstmt.executeUpdate();
+    }
 }

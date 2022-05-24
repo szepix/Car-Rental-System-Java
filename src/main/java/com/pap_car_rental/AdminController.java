@@ -58,4 +58,8 @@ public class AdminController {
     private void switchToMyAcc() throws IOException {
         App.setRoot("my_acc_admin");
     }
+    @FXML
+    private void switchToComplaints() throws IOException {
+        App.setRoot("admin_complaints_list");
+    }
 }
