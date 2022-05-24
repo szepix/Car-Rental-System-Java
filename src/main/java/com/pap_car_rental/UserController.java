@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
+// import java.awt.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -108,9 +108,9 @@ public class UserController {
     private void initialize() throws SQLException{
         //resize
         Stage stage = (Stage) App.scene.getWindow();
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        int width = gd.getDisplayMode().getWidth();
-        int height = gd.getDisplayMode().getHeight();
+        // GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        // int width = gd.getDisplayMode().getWidth();
+        // int height = gd.getDisplayMode().getHeight();
         stage.setWidth(720);
         stage.setHeight(640);
 

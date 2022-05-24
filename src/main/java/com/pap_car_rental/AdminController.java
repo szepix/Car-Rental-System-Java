@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.awt.*;
+// import java.awt.*;
 import java.io.IOException;
 
 public class AdminController {
@@ -19,7 +19,7 @@ public class AdminController {
 
         //resize
         Stage stage = (Stage) App.scene.getWindow();
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        // GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         stage.setWidth(720);
         stage.setHeight(640);
     }
@@ -52,5 +52,10 @@ public class AdminController {
     @FXML
     private void switchToRentedCarList() throws IOException {
         App.setRoot("rented_cars_list");
+    }
+
+    @FXML
+    private void switchToMyAcc() throws IOException {
+        App.setRoot("my_acc_admin");
     }
 }

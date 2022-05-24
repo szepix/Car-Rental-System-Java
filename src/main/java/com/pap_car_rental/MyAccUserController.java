@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static com.pap_car_rental.App.*;
@@ -35,7 +34,6 @@ public class MyAccUserController {
             try {
                 invalidUser.setText("");
                 String[] potentialUser = {username.getText(), password.getText()};
-                ArrayList<Client> user_list = App.db.listClients();
 
                 //pass check
                 boolean badText = potentialUser[0].indexOf(',') != -1;

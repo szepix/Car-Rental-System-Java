@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyCode;
 
-import java.awt.*;
+// import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -83,9 +83,9 @@ public class MainMenuController {
         //resize
         try {
             Stage stage = (Stage) App.scene.getWindow();
-            GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-            int width = gd.getDisplayMode().getWidth();
-            int height = gd.getDisplayMode().getHeight();
+            // GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+            // int width = gd.getDisplayMode().getWidth();
+            // int height = gd.getDisplayMode().getHeight();
             stage.setWidth(660);    //+20 to keep size
             stage.setHeight(360);   //+40 to keep size
         } catch (Exception e) {}
