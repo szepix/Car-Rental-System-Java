@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class AdminController {
     public static String mode;
+    public static int id=0;
+    public static boolean onlyUnres = false;
     @FXML
     private Label adminNameDisplay;
 
@@ -61,5 +63,7 @@ public class AdminController {
     @FXML
     private void switchToComplaints() throws IOException {
         App.setRoot("admin_complaints_list");
+        onlyUnres = false;
+        id = 0;
     }
 }

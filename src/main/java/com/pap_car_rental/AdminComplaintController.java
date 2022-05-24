@@ -2,6 +2,7 @@ package com.pap_car_rental;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -23,7 +24,6 @@ public class AdminComplaintController {
     private HBox hbox;
     @FXML
     private Button resolve;
-
     public void setData(Complaint complaint) throws SQLException {
         this.complaint = complaint;
         if(complaint.Resolved)
@@ -37,7 +37,7 @@ public class AdminComplaintController {
         }
         text.getChildren().add(new Text(complaint.Text));
         Client client = App.db.findClientById(complaint.ClientId);
-        info.setText(client.login + " " + "id: " + client.id);
+        info.setText(complaint.id+ ". " + client.login + " " + "id: " + client.id);
     }
 
     @FXML
