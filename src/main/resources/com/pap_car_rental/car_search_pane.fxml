@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane minHeight="232.0" minWidth="439.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
-   <left>
-      <ImageView fx:id="image" fitHeight="185.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
-   </left>
-   <top>
-       <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
-           <Pane prefHeight="37.0" prefWidth="438.0">
-               <Label fx:id="carType" layoutY="13.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Type" />
-               <Label fx:id="carModel" layoutX="185.0" layoutY="13.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model" />
-               <Label fx:id="carMake" layoutX="99.0" layoutY="13.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Make" />
-           </Pane>
-       </HBox>
-   </top>
-   <right>
-       <HBox spacing="30.0" stylesheets="@javaStyle.css" BorderPane.alignment="CENTER">
-           <Pane prefHeight="100.0" prefWidth="107.0">
-               <Button fx:id="selectButton" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Select" />
-               <Label fx:id="carName" contentDisplay="CENTER" layoutX="19.0" layoutY="14.0" prefHeight="20.0" prefWidth="69.0" styleClass="label-1" stylesheets="@javaStyle.css" text="" textAlignment="CENTER" />
-               <Label fx:id="carCost" layoutX="57.0" layoutY="40.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
-            <Label fx:id="carCost1" layoutX="14.0" layoutY="40.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost:" />
-           </Pane>
-       </HBox>
-   </right>
-   <bottom>
-      <Line endX="428.0" fill="BLACK" startX="-81.0" strokeLineCap="ROUND" strokeWidth="10.0" styleClass="line" />
-   </bottom>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="232.0" minWidth="439.0" styleClass="tab-pane-1" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
+   <center>
+      <HBox alignment="CENTER" prefHeight="232.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="229.0" prefWidth="445.0">
+               <children>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="400.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="carType" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Type" GridPane.rowIndex="1" />
+                        <Label fx:id="carMake" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Make" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="carModel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="100.0" prefWidth="100.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:" />
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Car make:" GridPane.columnIndex="1" />
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Car model:" GridPane.columnIndex="2" />
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Price:" GridPane.columnIndex="3" />
+                        <Label fx:id="carCost" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="185.0" prefWidth="439.0">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="186.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@images/BUM_BUM.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="selectButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Select" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets left="80.0" top="50.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
 </BorderPane>
