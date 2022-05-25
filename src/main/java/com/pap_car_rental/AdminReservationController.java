@@ -57,6 +57,28 @@ public class AdminReservationController {
     public AdminReservationController() {
     }
 
+    private void limitDates() {
+        //block from dates older than today
+        dateFrom.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(today) < 0);
+            }
+        });
+
+        //block to dates older than today
+        dateTo.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(today) < 0);
+            }
+        });
+    }
+
     @FXML
     private void initialize() throws SQLException {
         System.out.println(AdminController.mode);
@@ -66,6 +88,8 @@ public class AdminReservationController {
             this.changeToPickUp();
         }
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
+
+        limitDates();
 
     }
 
