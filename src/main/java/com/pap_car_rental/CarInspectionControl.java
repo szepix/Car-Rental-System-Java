@@ -98,6 +98,8 @@ public class CarInspectionControl {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
         image.setImage(carImg);
+
+
         //block to dates older than today and reserved dates
         dateFrom.setDayCellFactory(picker -> new DateCell() {
             final LocalDate today = LocalDate.now();
@@ -178,5 +180,32 @@ public class CarInspectionControl {
         int ClientId = App.currentUser.id;
         App.db.addReservation(DateFrom, DateTo, ClientId, CarId);
         App.setRoot("user");
+    }
+
+    @FXML
+    private void limitToDate() {
+        //block to dates older than from day + 1
+        dateTo.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate min = dateFrom.getValue();
+
+                setDisable(empty || date.compareTo(min) < 0);
+            }
+        });
+    }
+
+    @FXML
+    private void limitFromDate() {
+        //block to dates older than from day + 1
+        dateFrom.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                LocalDate max = dateTo.getValue();
+                LocalDate today = LocalDate.now();
+
+                setDisable(empty || date.compareTo(max) > 0 || date.compareTo(today) < 0);
+            }
+        });
     }
 }
