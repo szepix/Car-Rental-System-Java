@@ -33,7 +33,6 @@ public class CarPaneController implements Initializable {
     private Label carMake;
     @FXML
     private Label carModel;
-
     @FXML
     private Label carType;
     @FXML
@@ -42,7 +41,7 @@ public class CarPaneController implements Initializable {
     private Button selectButton;
 
     public void setData(Car car) {
-        carCost.setText(Integer.toString(car.Cost));
+        carCost.setText(Integer.toString(car.Cost) + " zł");
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
         carType.setText("(" + car.Car_type + ")");

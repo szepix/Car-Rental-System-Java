@@ -166,7 +166,7 @@
                         </VBox>
                      </content>
                 </Tab>
-                <Tab fx:id="pickUpCars" onSelectionChanged="#changeToPickUp" styleClass="tab-1" text="Pick up cars">
+                <Tab fx:id="pickUpCars" onSelectionChanged="#changeToPickUp" styleClass="tab-1" text="Pick up reservation">
                   <content>
                         <VBox>
                            <children>

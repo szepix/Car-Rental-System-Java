@@ -119,7 +119,7 @@ public class AdminCarInspectionController {
 
                         }
                     }
-                    setDisable(empty || datesToDisable.contains(date) || date.compareTo(today) < 0);
+                    setDisable(empty || datesToDisable.contains(date) || date.compareTo(today) < 0 || date.compareTo(dateFrom.getValue()) < 0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
