@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="232.0" minWidth="439.0" styleClass="tab-pane-1" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="265.0" minWidth="439.0" styleClass="tab-pane-1" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
    <center>
       <HBox alignment="CENTER" prefHeight="232.0" prefWidth="439.0" BorderPane.alignment="CENTER">
          <children>
@@ -59,4 +59,11 @@
          </children>
       </HBox>
    </center>
+   <bottom>
+      <HBox maxWidth="470.0" prefHeight="10.0" styleClass="backbox-1" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
 </BorderPane>

@@ -90,7 +90,7 @@ public class CarInspectionControl {
         InspectedMake.setText(insMake);
         InspectedModel.setText(insModel);
         InspectedType.setText(insType);
-        InspectedPrice.setText(Integer.toString(insCost));
+        InspectedPrice.setText("$ "+Integer.toString(insCost));
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + insMake + "_" + insModel + ".jpg")));

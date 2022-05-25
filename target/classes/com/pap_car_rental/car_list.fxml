@@ -37,7 +37,7 @@
                <VBox.margin>
                    <Insets />
                </VBox.margin>
-               <VBox fx:id="carScroller" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               <VBox fx:id="carScroller" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
            </ScrollPane>
          <Label fx:id="noResultLabel" styleClass="label-1" stylesheets="@javaStyle.css" textFill="#040404">
             <font>
