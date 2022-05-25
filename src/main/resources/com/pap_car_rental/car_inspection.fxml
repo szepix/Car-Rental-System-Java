@@ -82,7 +82,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="total_price" layoutX="258.0" layoutY="189.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css">
+            <Label fx:id="totalCost" layoutX="258.0" layoutY="189.0" prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css">
                <font>
                   <Font size="15.0" />
                </font>

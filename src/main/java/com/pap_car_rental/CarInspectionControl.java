@@ -27,7 +27,7 @@ public class CarInspectionControl {
 
     Image carImg;
     @FXML
-    private Label total_price;
+    private Label totalCost;
     @FXML
     private Label InspectedMake;
     @FXML
@@ -82,7 +82,7 @@ public class CarInspectionControl {
                 new KeyFrame(Duration.millis(100),
                         event -> {
                             if (dateTo.getValue() != null && dateFrom.getValue() != null) {
-                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
+                                totalCost.setText("$" + String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
                             }
                         }));
         timer.setCycleCount(Timeline.INDEFINITE);

@@ -36,7 +36,6 @@ public class CarEditInspectionController {
     private void initialize() {
         car_make.setText(CarEditPaneController.inspectedMake);
         car_model.setText(CarEditPaneController.inspectedModel);
-        car_name.setText(CarEditPaneController.inspectedName);
         car_type.setText(CarEditPaneController.inspectedType);
         car_price.setText(Integer.toString(CarEditPaneController.inspectedCost));
         try {

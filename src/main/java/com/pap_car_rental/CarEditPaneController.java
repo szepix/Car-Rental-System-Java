@@ -24,7 +24,6 @@ public class CarEditPaneController implements Initializable {
     public static int inspectedCost;
     public static String inspectedMake;
     public static String inspectedModel;
-    public static String inspectedName;
     public static String inspectedType;
     Image carImg;
     @FXML
@@ -60,7 +59,6 @@ public class CarEditPaneController implements Initializable {
             inspectedCost = car.Cost;
             inspectedMake = car.Brand;
             inspectedModel = car.Model;
-            inspectedName = "Car";
             inspectedType = car.Car_type;
             try {
                 App.setRoot("car_edit_inspection");

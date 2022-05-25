@@ -24,7 +24,6 @@ public class AdminReservationPaneController implements Initializable {
     public static int inspectedCost;
     public static String inspectedMake;
     public static String inspectedModel;
-    public static String inspectedName;
     public static String inspectedType;
     Image carImg;
     @FXML
@@ -56,7 +55,6 @@ public class AdminReservationPaneController implements Initializable {
             inspectedCost = car.Cost;
             inspectedMake = car.Brand;
             inspectedModel = car.Model;
-            inspectedName = "Car";
             inspectedType = car.Car_type;
             try {
                 App.setRoot("admin_car_inspection");

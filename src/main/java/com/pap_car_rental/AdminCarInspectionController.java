@@ -24,15 +24,13 @@ public class AdminCarInspectionController {
 
     Image carImg;
     @FXML
-    private Label total_price;
+    private Label totalCost;
     @FXML
     private Label InspectedMake;
     @FXML
     private Label adminNameDisplay;
     @FXML
     private Label InspectedModel;
-    @FXML
-    private Label InspectedName;
     @FXML
     private Label InspectedPrice;
     @FXML
@@ -59,7 +57,7 @@ public class AdminCarInspectionController {
                 new KeyFrame(Duration.millis(100),
                         event -> {
                             if (dateTo.getValue() != null && dateFrom.getValue() != null) {
-                                total_price.setText(String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * AdminReservationPaneController.inspectedCost));
+                                totalCost.setText("$" + String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * AdminReservationPaneController.inspectedCost));
                             }
                         }));
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -70,9 +68,8 @@ public class AdminCarInspectionController {
         }
         InspectedMake.setText(AdminReservationPaneController.inspectedMake);
         InspectedModel.setText(AdminReservationPaneController.inspectedModel);
-        InspectedName.setText(AdminReservationPaneController.inspectedName);
         InspectedType.setText(AdminReservationPaneController.inspectedType);
-        InspectedPrice.setText(Integer.toString(AdminReservationPaneController.inspectedCost));
+        InspectedPrice.setText("$" + Integer.toString(AdminReservationPaneController.inspectedCost));
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg")));

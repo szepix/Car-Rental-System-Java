@@ -100,16 +100,6 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="28.0" prefWidth="71.0" styleClass="label-1" stylesheets="@javaStyle.css" text=":">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="InspectedName" alignment="CENTER" contentDisplay="CENTER" styleClass="label-1" stylesheets="@javaStyle.css" text="" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
                         <Label prefHeight="28.0" prefWidth="60.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:" GridPane.rowIndex="1">
                            <font>
                               <Font size="15.0" />
@@ -173,7 +163,7 @@
                   <DatePicker fx:id="dateTo" prefWidth="140.0" promptText="To" styleClass="date-field-1" stylesheets="@javaStyle.css" GridPane.columnIndex="2" />
                   <Label alignment="CENTER_RIGHT" styleClass="label-1" text="Dates" />
                   <Label styleClass="label-1" stylesheets="@javaStyle.css" text="Total price:" GridPane.rowIndex="1" />
-                  <Label fx:id="total_price" styleClass="label-1" stylesheets="@javaStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="totalCost" styleClass="label-1" stylesheets="@javaStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>

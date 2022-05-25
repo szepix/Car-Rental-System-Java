@@ -40,7 +40,7 @@ public class ClientRentedCarController implements Initializable {
     private Button cancelButton;
 
     static void textSetup(Car car, Reservation reservation, Label carTotalCost, Label dateFrom, Label dateTo, Label carMake, Label carModel, Label carType) {
-        carTotalCost.setText(String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(), reservation.dateTo.toLocalDate().plusDays(1)) * car.Cost));
+        carTotalCost.setText("$" + String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(), reservation.dateTo.toLocalDate().plusDays(1)) * car.Cost));
         dateFrom.setText(String.valueOf(reservation.dateFrom));
         dateTo.setText(String.valueOf(reservation.dateTo));
         carMake.setText(car.Brand);
