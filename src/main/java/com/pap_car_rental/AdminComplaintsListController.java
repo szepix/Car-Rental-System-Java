@@ -14,6 +14,7 @@ import javafx.scene.text.TextFlow;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class AdminComplaintsListController {
@@ -42,7 +43,7 @@ public class AdminComplaintsListController {
         {
             complaints_list = App.db.listComplaintsByClientId(AdminController.id);
         }
-
+       Collections.reverse(complaints_list);
         for (var complaint : complaints_list) {
             if(AdminController.onlyUnres)
             {
