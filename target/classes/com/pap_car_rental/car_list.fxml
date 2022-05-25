@@ -20,11 +20,11 @@
            <BorderPane.margin>
                <Insets left="5.0" right="5.0" />
            </BorderPane.margin>
-           <HBox prefHeight="19.0" prefWidth="534.0">
+           <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="19.0" prefWidth="534.0">
                <VBox.margin>
                    <Insets top="5.0" />
                </VBox.margin>
-               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="546.0" styleClass="title" stylesheets="@javaStyle.css" text="MIETEK car rental" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="546.0" styleClass="title" stylesheets="@javaStyle.css" text="MIETEK car rental" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                    <font>
                        <Font name="AdobeHeitiStd-Regular" size="20.0" />
                    </font>
