@@ -13,9 +13,6 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane prefHeight="377.0" prefWidth="644.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.ClientRentedCarController">
-   <right>
-      <HBox spacing="30.0" stylesheets="@javaStyle.css" BorderPane.alignment="CENTER" />
-   </right>
    <center>
       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -47,7 +44,7 @@
                         <Label fx:id="carModel31" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="14.0" styleClass="label-1" stylesheets="@javaStyle.css" text="-" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <HBox prefHeight="186.0" prefWidth="457.0">
+                  <HBox>
                      <children>
                         <ImageView fx:id="image" fitHeight="186.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                            <image>
@@ -61,8 +58,16 @@
                            <children>
                               <Label fx:id="carTotalCost1" styleClass="label-1" stylesheets="@javaStyle.css" text="Total cost:" />
                               <Label fx:id="carTotalCost" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
-                              <Button fx:id="payButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Pay" />
-                              <Button fx:id="cancelButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Cancel" />
+                              <Label styleClass="label-1" text="Reservation status:" wrapText="true">
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="reservationStatus" styleClass="label-1" text="Status" />
+                              <Button fx:id="cancelButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Cancel">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin></Button>
                            </children>
                         </VBox>
                      </children>

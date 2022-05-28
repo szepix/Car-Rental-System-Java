@@ -38,7 +38,8 @@ public class ClientRentedCarController implements Initializable {
     private ImageView image;
     @FXML
     private Button cancelButton;
-
+    @FXML
+    private Label reservationStatus;
     static void textSetup(Car car, Reservation reservation, Label carTotalCost, Label dateFrom, Label dateTo, Label carMake, Label carModel, Label carType) {
         carTotalCost.setText("$" + String.valueOf(DAYS.between(reservation.dateFrom.toLocalDate(), reservation.dateTo.toLocalDate().plusDays(1)) * car.Cost));
         dateFrom.setText(String.valueOf(reservation.dateFrom));
@@ -49,6 +50,8 @@ public class ClientRentedCarController implements Initializable {
     }
 
     public void setData(Car car, Reservation reservation) {
+        reservationStatus.setText(reservation.rented ? "Rented" : "Not rented");
+        cancelButton.setVisible(!reservation.rented);
         ClientRentedCarController.reservation = reservation;
         textSetup(car, reservation, carTotalCost, dateFrom, dateTo, carMake, carModel, carType);
         try {
