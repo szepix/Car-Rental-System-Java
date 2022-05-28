@@ -63,6 +63,12 @@
     -fx-font-weight: bold;
 }
 
+.label-3 {
+    -fx-font: 14px "System";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
 .title {
     -fx-font: 28px "System";
     -fx-text-fill: -fx-aqua-dark;
@@ -169,4 +175,12 @@
 .backbox-1 {
     -fx-background-color: -fx-aqua-mid;
     -fx-background-radius: 8;
+}
+
+.viewer-1 {
+    -fx-background-color: -fx-aqua-mid;
+    -fx-background-radius: 8;
+    -fx-font: 14px "System";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
