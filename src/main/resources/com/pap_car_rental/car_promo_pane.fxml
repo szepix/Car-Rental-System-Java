@@ -30,15 +30,21 @@
                      <children>
                         <GridPane prefHeight="30.0">
                            <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label fx:id="carMake" styleClass="label-3" stylesheets="@javaStyle.css" text="Car Make" GridPane.columnIndex="1" />
+                              <Label fx:id="carMake" styleClass="label-3" stylesheets="@javaStyle.css" text="Car Make" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding></Label>
                               <Label fx:id="carModel" styleClass="label-3" stylesheets="@javaStyle.css" text="Car Model" GridPane.columnIndex="2" />
                               <Label fx:id="carType" styleClass="label-3" stylesheets="@javaStyle.css" text="Car Type" />
                            </children>

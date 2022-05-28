@@ -83,8 +83,8 @@ public class UserController {
         for (int i = 0; i < k; i++) {
             int randIndex;
             do {
-                randIndex = rand.nextInt(Math.min(10, allCars.size()));
-            } while (usedIndices.contains(randIndex));
+                randIndex = rand.nextInt(Math.min(12, allCars.size()));
+            } while (usedIndices.contains(randIndex) || allCars.get(randIndex).Car_type.equals("Special"));
             usedIndices.add(randIndex);
 
 
@@ -111,7 +111,7 @@ public class UserController {
         // GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         // int width = gd.getDisplayMode().getWidth();
         // int height = gd.getDisplayMode().getHeight();
-        stage.setWidth(720);
+        stage.setWidth(740);
         stage.setHeight(640);
 
         //initialize username

@@ -58,7 +58,7 @@
 }
 
 .label-2 {
-    -fx-font: 14px "System";
+    -fx-font: 12px "System";
     -fx-text-fill: -fx-aqua;
     -fx-font-weight: bold;
 }

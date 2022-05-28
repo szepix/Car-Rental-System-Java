@@ -22,7 +22,7 @@ public class AdminController {
         //resize
         Stage stage = (Stage) App.scene.getWindow();
         // GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        stage.setWidth(720);
+        stage.setWidth(740);
         stage.setHeight(640);
     }
 

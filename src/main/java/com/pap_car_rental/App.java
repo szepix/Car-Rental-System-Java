@@ -50,7 +50,6 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("Car Rental System v1.0");
         stage.show();
-
     }
 
 }
