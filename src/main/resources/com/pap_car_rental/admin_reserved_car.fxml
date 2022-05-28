@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane prefHeight="377.0" prefWidth="644.0" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.AdminReservedCarController">
    <center>
       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
@@ -61,7 +60,10 @@
                               <Label fx:id="carTotalCost" styleClass="label-1" stylesheets="@javaStyle.css" text="Cost" />
                               <Label styleClass="label-1" text="Rented by:" />
                               <Label fx:id="userName" styleClass="label-1" text="Name" />
-                              <Button fx:id="rentButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Rent" />
+                              <Button fx:id="rentButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Rent">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="5.0" />
+                                 </VBox.margin></Button>
                               <Button fx:id="cancelButton" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Cancel" />
                            </children>
                         </VBox>

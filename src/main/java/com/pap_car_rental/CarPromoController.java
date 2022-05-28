@@ -39,7 +39,7 @@ public class CarPromoController implements Initializable {
     private Button selectButton;
 
     public void setData(Car car) {
-        carCost.setText("$ " + Integer.toString(car.Cost));
+        carCost.setText(Integer.toString(car.Cost)+" $/d");
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
         carType.setText("(" + car.Car_type + ")");

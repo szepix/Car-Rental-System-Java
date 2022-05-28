@@ -82,7 +82,7 @@ public class CarInspectionControl {
                 new KeyFrame(Duration.millis(100),
                         event -> {
                             if (dateTo.getValue() != null && dateFrom.getValue() != null) {
-                                totalCost.setText("$" + String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
+                                totalCost.setText("$"+String.valueOf(DAYS.between(dateFrom.getValue(), dateTo.getValue().plusDays(1)) * insCost));
                             }
                         }));
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -90,7 +90,7 @@ public class CarInspectionControl {
         InspectedMake.setText(insMake);
         InspectedModel.setText(insModel);
         InspectedType.setText(insType);
-        InspectedPrice.setText("$ "+Integer.toString(insCost));
+        InspectedPrice.setText(Integer.toString(insCost)+" $/d");
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + insMake + "_" + insModel + ".jpg")));

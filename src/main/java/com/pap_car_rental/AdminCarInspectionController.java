@@ -69,7 +69,7 @@ public class AdminCarInspectionController {
         InspectedMake.setText(AdminReservationPaneController.inspectedMake);
         InspectedModel.setText(AdminReservationPaneController.inspectedModel);
         InspectedType.setText(AdminReservationPaneController.inspectedType);
-        InspectedPrice.setText("$" + Integer.toString(AdminReservationPaneController.inspectedCost));
+        InspectedPrice.setText(Integer.toString(AdminReservationPaneController.inspectedCost)+" $/d");
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0] + "!");
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + AdminReservationPaneController.inspectedMake + "_" + AdminReservationPaneController.inspectedModel + ".jpg")));
