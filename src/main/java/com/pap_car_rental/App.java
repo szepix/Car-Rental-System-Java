@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -46,10 +48,25 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         System.out.println(db.listClientReservations(2));
+        removePastReservations();
         scene = new Scene(loadFXML("main_menu"), 640, 320);
         stage.setScene(scene);
         stage.setTitle("Car Rental System v1.0");
         stage.show();
     }
 
+    private void removePastReservations() throws SQLException {
+        ArrayList<Reservation> reservations = db.listReservations();
+        for (Reservation reservation : reservations) {
+            if(reservation.rented && reservation.dateTo.toLocalDate().isBefore(LocalDate.now())) {
+                db.removeReservation(reservation.id);
+            }
+            else
+            {
+                if (reservation.dateFrom.toLocalDate().isBefore(LocalDate.now())) {
+                    db.removeReservation(reservation.id);
+                }
+            }
+        }
+    }
 }
