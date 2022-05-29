@@ -54,12 +54,6 @@
                        <Font size="15.0" />
                    </font>
                </Label>
-               <Label layoutX="211.0" layoutY="6.0" prefHeight="28.0" prefWidth="71.0" styleClass="label-1" stylesheets="@javaStyle.css" text=":">
-                   <font>
-                       <Font size="15.0" />
-                   </font>
-               </Label>
-               <TextField fx:id="car_name" layoutX="284.0" layoutY="8.0" />
                <TextField fx:id="car_type" layoutX="284.0" layoutY="36.0" />
                <TextField fx:id="car_make" layoutX="284.0" layoutY="66.0" />
                <TextField fx:id="car_model" layoutX="284.0" layoutY="95.0" />
