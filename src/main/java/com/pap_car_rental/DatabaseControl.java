@@ -14,7 +14,6 @@ public class DatabaseControl {
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:file:src/main/resources/com/pap_car_rental/database.db");
-            System.out.println("Connected to DB");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

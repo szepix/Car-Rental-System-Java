@@ -79,7 +79,7 @@
                                  <Font size="15.0" />
                               </font>
                            </Label>
-                           <Label fx:id="InspectedModel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="123.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <Label fx:id="InspectedModel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="123.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car Model" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                               <font>
                                  <Font size="15.0" />
                               </font>
