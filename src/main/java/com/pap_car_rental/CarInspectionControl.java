@@ -154,22 +154,26 @@ public class CarInspectionControl {
 
     }
 
+     //action on sign off button
     @FXML
     private void switchToMainMenu() throws IOException {
         App.setRoot("main_menu");
     }
 
+    //action on go back button
     @FXML
     private void goBackAction() throws IOException {
         if(!App.inspectionSourcePromo) App.setRoot("car_list");
         else App.setRoot("user");
     }
 
+    //action on main menu button
     @FXML
     private void switchToUser() throws IOException {
         App.setRoot("user");
     }
 
+    //action on reserve button
     @FXML
     private void reserve() throws SQLException, IOException {
         Date DateFrom = Date.valueOf(dateFrom.getValue());

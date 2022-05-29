@@ -39,11 +39,13 @@ public class CarPaneController implements Initializable {
     @FXML
     private Button selectButton;
 
+    //Creates a search result for selected car
     public void setData(Car car) {
         carCost.setText(Integer.toString(car.Cost)+" $/d");
         carMake.setText(car.Brand);
         carModel.setText(car.Model);
         carType.setText("(" + car.Car_type + ")");
+        //Sets image if is avaliable
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + car.Brand.toUpperCase() + "_" + car.Model.toUpperCase() + ".jpg")));
         } catch (Exception e) {
@@ -60,6 +62,7 @@ public class CarPaneController implements Initializable {
             inspectedMake = car.Brand;
             inspectedModel = car.Model;
             inspectedType = car.Car_type;
+            //Creates button that transfers user to car inspection panel of particular car
             App.inspectionSourcePromo = false;
             try {
                 App.setRoot("car_inspection");

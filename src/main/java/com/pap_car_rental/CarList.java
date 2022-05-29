@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 
 import javafx.fxml.FXML;
@@ -115,11 +116,14 @@ public class CarList {
             }
         }
 
+        Collections.sort(matchingDate);
+        Collections.reverse(matchingDate);
 
+        //Adding cars on final list each to search pane
         for (var car : matchingDate) {
             FXMLLoader fxmloader = new FXMLLoader();
             fxmloader.setLocation(getClass().getResource("car_search_pane.fxml"));
-
+            //Adding search pane with car info and button
             try {
                 BorderPane hbox = fxmloader.load();
                 CarPaneController carPane = fxmloader.getController();
@@ -129,11 +133,12 @@ public class CarList {
                 e.printStackTrace();
             }
         }
-
+        //If no results were found:
         if (matchingDate.size() == 0)
         {
             noResultLabel.setText("No results Found");
         }
+        //If any result were found:
         else
         {
             noResultLabel.setText("");
@@ -142,11 +147,13 @@ public class CarList {
 
     }
 
+    //Action on go sign off
     @FXML
     private void switchToMainMenu() throws IOException {
         App.setRoot("main_menu");
     }
 
+    //Action on go back button
     @FXML
     private void switchToUser() throws IOException {
         App.setRoot("user");
