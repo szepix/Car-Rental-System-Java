@@ -163,7 +163,7 @@ public class UserController {
 
         }
 
-        System.out.println("From " + App.dateFrom + " To " + App.dateTo);
+        //System.out.println("From " + App.dateFrom + " To " + App.dateTo);
         App.setRoot("car_list");
     }
 
