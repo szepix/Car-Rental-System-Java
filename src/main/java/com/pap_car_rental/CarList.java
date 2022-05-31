@@ -100,7 +100,7 @@ public class CarList {
                 valid = true;
                 for (Reservation res : reservations) {
                     if (res.carId == car7.id) {
-                        System.out.println((Objects.requireNonNull(App.dateTo).compareTo(res.dateFrom) < 0));
+                        //System.out.println((Objects.requireNonNull(App.dateTo).compareTo(res.dateFrom) < 0));
                         if ((App.dateTo.compareTo(res.dateFrom) < 0) & (App.dateFrom.compareTo(res.dateFrom) < 0)) {
                         } else if ((App.dateFrom.compareTo(res.dateTo) > 0) & (App.dateTo.compareTo(res.dateTo) > 0)) {
                         } else {
