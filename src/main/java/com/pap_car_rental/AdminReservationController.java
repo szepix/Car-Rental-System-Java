@@ -54,6 +54,8 @@ public class AdminReservationController {
     private Slider costLow;
     @FXML
     private Slider costHigh;
+    @FXML
+    private Label noReservations;
     public AdminReservationController() {
     }
 
@@ -82,6 +84,7 @@ public class AdminReservationController {
     @FXML
     private void initialize() throws SQLException {
         //System.out.println(AdminController.mode);
+        noReservations.setVisible(false);
         if (Objects.equals(AdminController.mode, "reserve")) {
             this.changeToReservations();
         } else if (Objects.equals(AdminController.mode, "pickup")) {
@@ -110,6 +113,7 @@ public class AdminReservationController {
     //used to initialize the pick-up pane
     @FXML
     private void changeToPickUp() throws SQLException {
+        noReservations.setVisible(false);
         AdminController.mode = "pickup";
         carScrollerPickup.getChildren().clear();
         //used to clear the list after refreshing
@@ -118,6 +122,7 @@ public class AdminReservationController {
             reservations = App.db.listClientReservations(id);
             id = 0;
         }
+
         //lists all reserved cars
         for (var reservation : reservations) {
             if (!reservation.rented) {
@@ -132,13 +137,22 @@ public class AdminReservationController {
                     e.printStackTrace();
                 }
             }
+
+        }
+        if (carScrollerPickup.getChildren().size() == 0) {
+            noReservations.setVisible(true);
         }
     }
     //used to search reservations by user id
     @FXML
     private void searchPickup() throws SQLException {
-        id = Integer.parseInt(clientId.getText());
-        changeToPickUp();
+        try {
+            noReservations.setVisible(false);
+            id = Integer.parseInt(clientId.getText());
+            changeToPickUp();
+        } catch (Exception e) {
+            noReservations.setVisible(true);
+        }
     }
     @FXML
     private void limitToDate() {
