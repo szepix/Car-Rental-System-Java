@@ -186,7 +186,7 @@ public class DatabaseControl {
         return new Reservation(id, dateFrom, dateTo, clientId, carId, rented);
     }
 
-
+    //function to list all complaints in the database
     public ArrayList<Complaint> listComplaints() throws SQLException {
         this.stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM COMPLAINTS");
@@ -201,14 +201,14 @@ public class DatabaseControl {
         }
         return complaints_list;
     }
-
+    //function to add a new complaint to the database
     public void addComplaint(int ClientId, String Text) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("INSERT INTO `COMPLAINTS`(Id, ClientId, Text, Resolved) VALUES (NULL, ?, ?, FALSE)");
         pstmt.setInt(1, ClientId);
         pstmt.setString(2, Text);
         pstmt.executeUpdate();
     }
-
+    //function to list all complaints of a certain users
     public ArrayList<Complaint> listComplaintsByClientId(int ClientId) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM COMPLAINTS WHERE ClientId = ?");
         pstmt.setInt(1, ClientId);
@@ -222,6 +222,7 @@ public class DatabaseControl {
         }
         return complaints_list;
     }
+    //function to edit complaints
     public void editComplaint(int id, int ClientId, String Text, Boolean Resolved) throws SQLException {
         PreparedStatement pstmt = c.prepareStatement("UPDATE `COMPLAINTS` SET ClientId = ?, Text = ?, Resolved = ?  WHERE Id = ?");
         pstmt.setInt(1, ClientId);

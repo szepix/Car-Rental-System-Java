@@ -1,9 +1,7 @@
 package com.pap_car_rental;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -17,7 +15,7 @@ public class CarEditInspectionController {
     @FXML
     private TextField car_name;
     @FXML
-    private TextField car_type;
+    private ChoiceBox car_type;
     @FXML
     private TextField car_make;
     @FXML
@@ -38,9 +36,10 @@ public class CarEditInspectionController {
     @FXML
     private void initialize() {
         adminNameDisplay.setText("Hi, " + App.currentAdmin[0]+"!");
+        car_type.getItems().addAll("City", "Mid", "Large", "SUV", "Sport", "Special");
         car_make.setText(CarEditPaneController.inspectedMake);
         car_model.setText(CarEditPaneController.inspectedModel);
-        car_type.setText(CarEditPaneController.inspectedType);
+        car_type.setValue(CarEditPaneController.inspectedType);
         car_price.setText(Integer.toString(CarEditPaneController.inspectedCost));
         try {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + CarEditPaneController.inspectedMake + "_" + CarEditPaneController.inspectedModel + ".jpg")));
@@ -54,7 +53,7 @@ public class CarEditInspectionController {
     @FXML
     private void editCar() throws SQLException, IOException {
         //System.out.println(CarEditPaneController.car.id);
-        Car car = new Car(CarEditPaneController.car.id, car_type.getText(), car_make.getText(), Integer.parseInt(car_price.getText()), car_model.getText());
+        Car car = new Car(CarEditPaneController.car.id, (String) car_type.getValue(), car_make.getText(), Integer.parseInt(car_price.getText()), car_model.getText());
         App.db.editCar(car);
         App.setRoot("car_edit");
     }
