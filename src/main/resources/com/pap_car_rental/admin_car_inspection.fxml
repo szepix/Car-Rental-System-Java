@@ -100,7 +100,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="28.0" prefWidth="60.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:" GridPane.rowIndex="1">
+                        <Label prefHeight="28.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car type:" GridPane.rowIndex="1">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -110,7 +110,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="28.0" prefWidth="70.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car make:" GridPane.rowIndex="2">
+                        <Label prefHeight="28.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car make:" GridPane.rowIndex="2">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -120,7 +120,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="21.0" prefWidth="77.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car model:" GridPane.rowIndex="3">
+                        <Label prefHeight="21.0" styleClass="label-1" stylesheets="@javaStyle.css" text="Car model:" GridPane.rowIndex="3">
                            <font>
                               <Font size="15.0" />
                            </font>
