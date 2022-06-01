@@ -50,7 +50,7 @@ public class MyAccUserController {
                     client_list.forEach(e -> {
                         boolean isUser = e.login.equals(potentialUser[0]);
                         if (isUser) {
-                            System.out.println(e.id);
+                            //System.out.println(e.id);
                             App.currentUser = e;
                         }
                     });

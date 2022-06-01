@@ -81,7 +81,7 @@ public class AdminReservationController {
 
     @FXML
     private void initialize() throws SQLException {
-        System.out.println(AdminController.mode);
+        //System.out.println(AdminController.mode);
         if (Objects.equals(AdminController.mode, "reserve")) {
             this.changeToReservations();
         } else if (Objects.equals(AdminController.mode, "pickup")) {

@@ -47,7 +47,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        System.out.println(db.listClientReservations(2));
+        //System.out.println(db.listClientReservations(2));
         removePastReservations();
         scene = new Scene(loadFXML("main_menu"), 640, 320);
         stage.setScene(scene);

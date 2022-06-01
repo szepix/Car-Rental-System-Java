@@ -15,7 +15,7 @@ public class DatabaseControl {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:file:src/main/resources/com/pap_car_rental/database.db");
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            //System.out.println("Error: " + e.getMessage());
         }
     }
     //function to list all reservations from database

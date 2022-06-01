@@ -52,10 +52,10 @@ public class CarEditPaneController implements Initializable {
         image.setImage(carImg);
         selectButton.setOnAction(event -> {
             CarEditPaneController.car = car;
-            System.out.println("Make:" + car.Brand);
-            System.out.println("Model:" + car.Model);
-            System.out.println("Cost:" + car.Cost);
-            System.out.println("Type:" + car.Car_type);
+            //System.out.println("Make:" + car.Brand);
+            //System.out.println("Model:" + car.Model);
+            //System.out.println("Cost:" + car.Cost);
+            //System.out.println("Type:" + car.Car_type);
             inspectedCost = car.Cost;
             inspectedMake = car.Brand;
             inspectedModel = car.Model;

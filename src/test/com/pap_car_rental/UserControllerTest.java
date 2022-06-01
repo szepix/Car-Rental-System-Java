@@ -38,12 +38,12 @@ public class UserControllerTest extends ApplicationTest {
                 App.isUser = true;
             }
         });
-        System.out.println("fake login");
+        //System.out.println("fake login");
 //        Parent mainNode = FXMLLoader.load(App.class.getResource("user.fxml"));
         Parent mainNode = FXMLLoader.load(App.class.getResource("user.fxml"));
-        System.out.println("window loaded");
+        //System.out.println("window loaded");
         stage.setScene(new Scene(mainNode));
-        System.out.println("scene set");
+        //System.out.println("scene set");
         stage.show();
         stage.toFront();
     }
