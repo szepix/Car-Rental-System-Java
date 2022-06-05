@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="232.0" minWidth="439.0" styleClass="tab-pane-1" stylesheets="@javaStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pap_car_rental.CarPaneController">
    <center>
-      <HBox alignment="CENTER" prefHeight="232.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="232.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="229.0" prefWidth="445.0">
                <children>
@@ -47,7 +47,7 @@
                               <Image url="@images/BUM_BUM.jpg" />
                            </image>
                         </ImageView>
-                        <Button fx:id="selectButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Select" textAlignment="CENTER">
+                        <Button fx:id="selectButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="button-1" stylesheets="@javaStyle.css" text="Select" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="80.0" top="50.0" />
                            </HBox.margin>

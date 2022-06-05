@@ -93,7 +93,7 @@ public class CarInspectionControl {
         InspectedPrice.setText(Integer.toString(insCost)+" $/d");
         userNameDisplay.setText("Hi, " + App.currentUser.login + "!");
         try {
-            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + insMake + "_" + insModel + ".jpg")));
+            carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/" + insMake.toUpperCase() + "_" + insModel.toUpperCase() + ".jpg")));
         } catch (Exception e) {
             carImg = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/pap_car_rental/images/no_img_found.png")));
         }
