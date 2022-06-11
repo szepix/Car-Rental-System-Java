@@ -8,5 +8,5 @@ UWAGA!
 Aby program miał możliwość kompilacji niezbędny jest zainstalowany openjdk.
 
 Przykładowe dane do logowania administratora: login: admin hasło: admin
-Przykładowe dane do logowania użytkownika: login: adam hasło: misiak
+Przykładowe dane do logowania użytkownika: login: mietek hasło: 1234
 
